@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SaS-hl-GfI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZV2-a7-gOl">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -308,12 +308,12 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0N-No-GK7" customClass="CardView">
                                                     <rect key="frame" x="0.0" y="86" width="342" height="200"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAN-Ty-V65">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAN-Ty-V65">
                                                             <rect key="frame" x="16" y="72" width="310" height="74.666666666666686"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="310" id="Zy9-fZ-8ST"/>
                                                             </constraints>
-                                                            <string key="text">texto textoo texto texto texo texto texto texo texto texto texto texto texto texo texo texto texto texto texo texto texot texto texot</string>
+                                                            <string key="text">texto textoo texto texto texo texto texto texo texto texto texto textoo texto texto texo texto texto texo texto texttexto textoo texto texto texo texto texto texo texto text</string>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                             <color key="textColor" red="0.21176470588235294" green="0.20784313725490194" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -351,31 +351,12 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bor-qK-M6z">
                                                             <rect key="frame" x="0.0" y="146.66666666666666" width="342" height="53.333333333333343"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJZ-Iu-igw">
-                                                                    <rect key="frame" x="245" y="6.3333333333333428" width="81" height="31"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="81" id="nVU-xt-DRi"/>
-                                                                    </constraints>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="filled" title="Detalle">
-                                                                        <color key="baseBackgroundColor" red="1" green="0.68627450980392157" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </buttonConfiguration>
-                                                                    <connections>
-                                                                        <segue destination="0Sb-hZ-Gu5" kind="show" identifier="showDetail" id="d8T-BV-wz8"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="dJZ-Iu-igw" secondAttribute="trailing" constant="16" id="A2m-Xo-Dvb"/>
-                                                                <constraint firstItem="dJZ-Iu-igw" firstAttribute="top" secondItem="Bor-qK-M6z" secondAttribute="top" constant="6.3300000000000001" id="iEG-oO-p8T"/>
-                                                                <constraint firstAttribute="bottom" secondItem="dJZ-Iu-igw" secondAttribute="bottom" constant="16" id="vn3-dW-y2D"/>
-                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.83137254901960778" green="0.87450980392156863" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="Bor-qK-M6z" firstAttribute="leading" secondItem="b0N-No-GK7" secondAttribute="leading" id="1aI-8s-mIh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pAN-Ty-V65" secondAttribute="bottom" constant="53.329999999999998" id="2zy-Uz-pOY"/>
                                                         <constraint firstItem="Bor-qK-M6z" firstAttribute="top" secondItem="pAN-Ty-V65" secondAttribute="bottom" id="FjS-ov-lhR"/>
                                                         <constraint firstItem="bI0-Es-3YH" firstAttribute="leading" secondItem="b0N-No-GK7" secondAttribute="leading" id="KLw-nK-2Eq"/>
                                                         <constraint firstAttribute="trailing" secondItem="bI0-Es-3YH" secondAttribute="trailing" id="KxW-ar-33Q"/>
@@ -401,7 +382,6 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="btnDetailView" destination="dJZ-Iu-igw" id="6Sy-pO-cds"/>
                                             <outlet property="imgProjectImg" destination="wW6-lf-mR4" id="FbX-ud-dhQ"/>
                                             <outlet property="lbProjectDesc" destination="pAN-Ty-V65" id="Oku-mB-RE8"/>
                                             <outlet property="lbProjectName" destination="hvE-9V-9vR" id="2Cs-KK-AjK"/>
@@ -430,6 +410,7 @@
                     <tabBarItem key="tabBarItem" title="Proyectos" image="books.vertical" catalog="system" id="Nnv-l2-DlI"/>
                     <connections>
                         <outlet property="projectCollectionView" destination="rMh-Pd-bni" id="lFp-uC-RoV"/>
+                        <segue destination="0Sb-hZ-Gu5" kind="show" identifier="showDetail" id="eXh-Lq-pmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0Y-4X-xnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -653,6 +634,7 @@
                                 <connections>
                                     <action selector="btnLogIn:" destination="iwG-PD-mif" eventType="touchUpInside" id="UpM-9O-lhw"/>
                                     <action selector="btnRegister:" destination="ndi-0O-1KO" eventType="touchUpInside" id="2VD-U8-1Jg"/>
+                                    <segue destination="SaS-hl-GfI" kind="show" id="2ht-7N-iSX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twh-Ip-Xtz">
@@ -1143,8 +1125,8 @@
                     <connections>
                         <outlet property="degradadoImagen" destination="kkx-y7-1Xb" id="Rfb-qR-wPX"/>
                         <outlet property="imageViewAlimentos" destination="HkU-4z-6tb" id="NKN-nX-v8r"/>
-                        <outlet property="imgProject" destination="btX-eW-btq" id="ChH-SK-hOr"/>
-                        <outlet property="lbProjectNambre" destination="8KS-tv-pBb" id="PmP-A9-bZm"/>
+                        <outlet property="imgProyecto" destination="btX-eW-btq" id="f0d-JL-GnC"/>
+                        <outlet property="lbNombreProyecto" destination="8KS-tv-pBb" id="u75-74-Ham"/>
                         <outlet property="postularseView" destination="E6C-X7-8zc" id="Ub0-09-Oyg"/>
                         <outlet property="textViewActividades" destination="nAM-uV-MZ6" id="4zP-Sr-fKg"/>
                         <outlet property="textViewDescription" destination="bcQ-iR-tnn" id="hMb-3H-RdD"/>
@@ -1327,6 +1309,9 @@
             <point key="canvasLocation" x="4070.7692307692305" y="88.862559241706151"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2ht-7N-iSX"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="books.vertical" catalog="system" width="128" height="107"/>

@@ -17,9 +17,9 @@ class ProjectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btnDetailView: UIButton!
     
     func setupCell(name: String, desc: String, image: UIImage){
-        imgProjectImg.image = image
-        lbProjectDesc.text = desc
         lbProjectName.text = name
+        lbProjectDesc.text = desc
+        imgProjectImg.image = image
         imgProjectImg.layer.cornerRadius = 5
     }
     

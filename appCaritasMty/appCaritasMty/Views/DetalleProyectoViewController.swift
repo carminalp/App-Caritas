@@ -31,7 +31,10 @@ class DetalleProyectoViewController: UIViewController {
     @IBOutlet weak var tlHoras: UILabel!
     @IBOutlet weak var tlFecha: UILabel!
     
+    @IBOutlet weak var lbNombreProyecto: UILabel!
+    @IBOutlet weak var imgProyecto: UIImageView!
     
+    var projectReceived = projectList(projectName: "oli", projectDesc: "", projectImage: UIImage(named: "imgAlimentos")!)
 
 
     override func viewDidLoad() {
@@ -86,6 +89,10 @@ class DetalleProyectoViewController: UIViewController {
         
         textViewActividades.attributedText = attributedString
         textViewHeightAct.constant = self.textViewActividades.contentSize.height
+        
+        lbNombreProyecto.text = projectReceived.projectName
+        textViewDescription.text = projectReceived.projectDesc
+        imgProyecto.image = projectReceived.projectImage
         
     }
     

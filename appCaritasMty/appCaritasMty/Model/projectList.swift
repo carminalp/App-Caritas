@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-struct projectList{
+struct projectList
+{
     let projectName: String
     let projectDesc: String
     let projectImage: UIImage
