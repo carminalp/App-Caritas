@@ -1165,7 +1165,7 @@
         <!--Horas-->
         <scene sceneID="h4J-80-O75">
             <objects>
-                <viewController id="Y3C-rg-e19" sceneMemberID="viewController">
+                <viewController id="Y3C-rg-e19" customClass="RegistroHorasViewController" customModule="appCaritasMty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ks-lB-91F">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1211,8 +1211,8 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.26274509800000001" green="0.59215686270000001" blue="0.65490196079999996" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" textContentType="date-time"/>
                                         <connections>
                                             <action selector="nameChanged:" destination="ndi-0O-1KO" eventType="editingChanged" id="FkA-ea-qHg"/>
                                         </connections>
@@ -1221,8 +1221,8 @@
                                         <rect key="frame" x="175" y="0.0" width="163" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.26274509800000001" green="0.59215686270000001" blue="0.65490196079999996" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" textContentType="date-time"/>
                                         <connections>
                                             <action selector="lastNameChanged:" destination="ndi-0O-1KO" eventType="editingChanged" id="u0l-O3-een"/>
                                         </connections>
@@ -1316,6 +1316,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Horas" image="clock" catalog="system" id="Qem-JO-Qn6"/>
+                    <connections>
+                        <outlet property="tfEndDate" destination="0g1-0B-wOT" id="zhb-BJ-2fH"/>
+                        <outlet property="tfProject" destination="9bW-aA-BxA" id="oyM-KV-16W"/>
+                        <outlet property="tfStartDate" destination="doh-29-xGg" id="1Ln-ha-gX2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdB-6w-jMB" sceneMemberID="firstResponder"/>
             </objects>

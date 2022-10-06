@@ -12,6 +12,7 @@
 		1A026C5A28C8E49300632C31 /* VoluntarioIngresoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A026C5928C8E49300632C31 /* VoluntarioIngresoViewController.swift */; };
 		1A2B972828C9665C00470ABF /* RegistroVoluntarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B972728C9665B00470ABF /* RegistroVoluntarioViewController.swift */; };
 		1A669ACF28EF12960022FC89 /* gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A669ACE28EF12960022FC89 /* gradient.swift */; };
+		1A669AD128EF1BFB0022FC89 /* RegistroHorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */; };
 		1A6E806528C795D300C195F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E806428C795D300C195F7 /* AppDelegate.swift */; };
 		1A6E806728C795D300C195F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E806628C795D300C195F7 /* SceneDelegate.swift */; };
 		1A6E806928C795D300C195F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E806828C795D300C195F7 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		1A026C5928C8E49300632C31 /* VoluntarioIngresoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoluntarioIngresoViewController.swift; sourceTree = "<group>"; };
 		1A2B972728C9665B00470ABF /* RegistroVoluntarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroVoluntarioViewController.swift; sourceTree = "<group>"; };
 		1A669ACE28EF12960022FC89 /* gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = gradient.swift; path = ../gradient.swift; sourceTree = "<group>"; };
+		1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroHorasViewController.swift; sourceTree = "<group>"; };
 		1A6E806128C795D300C195F7 /* appCaritasMty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appCaritasMty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6E806428C795D300C195F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A6E806628C795D300C195F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				F1330F9A28EF10F6004EA682 /* DetalleProyectoViewController.swift */,
 				1A02468928D8B3D70045B54B /* LogInAdministradorViewController.swift */,
 				FBF878BB28EC78180038A5AA /* ProjectCollectionViewCell.swift */,
+				1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				1A6E806928C795D300C195F7 /* ViewController.swift in Sources */,
 				1A2B972828C9665C00470ABF /* RegistroVoluntarioViewController.swift in Sources */,
 				FBD1566228E8C11500830139 /* ProyectosViewController.swift in Sources */,
+				1A669AD128EF1BFB0022FC89 /* RegistroHorasViewController.swift in Sources */,
 				1A026C5A28C8E49300632C31 /* VoluntarioIngresoViewController.swift in Sources */,
 				F1330F9928EF10E9004EA682 /* colors.swift in Sources */,
 				1A02468828D7D10C0045B54B /* LogInVoluntarioViewController.swift in Sources */,
