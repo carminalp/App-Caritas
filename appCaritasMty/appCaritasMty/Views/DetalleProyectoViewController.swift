@@ -34,7 +34,7 @@ class DetalleProyectoViewController: UIViewController {
     @IBOutlet weak var lbNombreProyecto: UILabel!
     @IBOutlet weak var imgProyecto: UIImageView!
     
-    var projectReceived = projectList(projectName: "oli", projectDesc: "", projectImage: UIImage(named: "imgAlimentos")!)
+    var projectReceived = projectList(projectName: "oli", projectDesc: "",projectActivities: "", projectImage: UIImage(named: "imgAlimentos")!)
 
 
     override func viewDidLoad() {
@@ -47,51 +47,50 @@ class DetalleProyectoViewController: UIViewController {
         
         degradadoImagen.setTwoGradient(colorOne: UIColor.white.withAlphaComponent(0.1), colorTwo: UIColor(red: 0.56, green: 0.76, blue: 0.62, alpha: 1.00))
         
-        // TITULO TEXTO
-
-        textViewTitulo.text = "Organización del Almacén"
-        
         tituloHeight.constant = self.textViewTitulo.contentSize.height
         
         // HORAS Y FECHA
-        tlHoras.text = "31 Mayo"
+        tlHoras.text = "06 octubre"
         tlFecha.text = ""
         
         
         
         // DESCRIPCION TEXTO
         
-        let descripcion = NSMutableParagraphStyle()
-        descripcion.lineSpacing = 4.0
-        let attributedStringDesc = NSMutableAttributedString(string: "Maneja alimentos a gran escala para hacerlos llegar a comunidades de extrema pobreza con problemas de desnutrición.", attributes: [NSAttributedString.Key.font:UIFont(name: "Helvetica Neue", size: 17.0)!])
-        
-        attributedStringDesc.addAttribute(NSAttributedString.Key.paragraphStyle, value: descripcion, range: NSMakeRange(0, attributedStringDesc.length))
-        
-        textViewDescription.attributedText = attributedStringDesc
-        textViewHeightDescription.constant = self.textViewDescription.contentSize.height
+//        let descripcion = NSMutableParagraphStyle()
+//        descripcion.lineSpacing = 4.0
+//        let attributedStringDesc = NSMutableAttributedString(string: "Maneja alimentos a gran escala para hacerlos llegar a comunidades de extrema pobreza con problemas de desnutrición.", attributes: [NSAttributedString.Key.font:UIFont(name: "Helvetica Neue", size: 17.0)!])
+//
+//        attributedStringDesc.addAttribute(NSAttributedString.Key.paragraphStyle, value: descripcion, range: NSMakeRange(0, attributedStringDesc.length))
+//
+//        textViewDescription.attributedText = attributedStringDesc
+//        textViewHeightDescription.constant = self.textViewDescription.contentSize.height
         
         
         
         // SUBTITULO TEXTO
         
         
-        textViewSubtitulo.text = "Actividades generales a realizar: "
-        textViewHeightSub.constant = self.textViewSubtitulo.contentSize.height
+//        textViewSubtitulo.text = "Actividades generales a realizar: "
+//        textViewHeightSub.constant = self.textViewSubtitulo.contentSize.height
 
         // ACTIVIDADES TEXTO
         
-        let actividades = NSMutableParagraphStyle()
-        actividades.lineSpacing = 4.0
-        let attributedString = NSMutableAttributedString(string: "— Apoyar en la selección, peso y clasificación de alimentos\n— Lavar tarimas y cajas plásticas con pistola y cepillos en exterior del almacén\n— Apoyar en el registro y captura de vales de las instituciones beneficiadas con algún programa", attributes: [NSAttributedString.Key.font:UIFont(name: "Helvetica Neue", size: 17.0)!])
+//        let actividades = NSMutableParagraphStyle()
+//        actividades.lineSpacing = 4.0
+//        let attributedString = NSMutableAttributedString(string: "— Apoyar en la selección, peso y clasificación de alimentos\n— Lavar tarimas y cajas plásticas con pistola y cepillos en exterior del almacén\n— Apoyar en el registro y captura de vales de las instituciones beneficiadas con algún programa", attributes: [NSAttributedString.Key.font:UIFont(name: "Helvetica Neue", size: 17.0)!])
+//
+//
+//        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: actividades, range: NSMakeRange(0, attributedString.length))
         
+       
         
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: actividades, range: NSMakeRange(0, attributedString.length))
-        
-        textViewActividades.attributedText = attributedString
-        textViewHeightAct.constant = self.textViewActividades.contentSize.height
+//        textViewActividades.attributedText = attributedString
+//        textViewHeightAct.constant = self.textViewActividades.contentSize.height
         
         lbNombreProyecto.text = projectReceived.projectName
         textViewDescription.text = projectReceived.projectDesc
+        textViewActividades.text = projectReceived.projectActivities
         imgProyecto.image = projectReceived.projectImage
         
     }

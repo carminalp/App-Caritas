@@ -13,10 +13,16 @@ class RegistroHorasViewController: UIViewController {
     @IBOutlet weak var tfStartDate: UITextField!
     @IBOutlet weak var tfEndDate: UITextField!
     let datePicker = UIDatePicker()
-    
+    let projectPicker = UIPickerView()
+    let projects = ["Banco de Alimentos","Banco de Ropa y Artículos Varios","Banco de Medicamentos","Posada del Peregrino","Dignamente Vestido","Ducha-T","Reestructuración de Centros","Campañas de Emergencia"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        createDatePicker()
+        
+        
+        projectPicker.delegate = self
+        projectPicker.dataSource = self
+        
+        createsPickers()
         
         tfProject.tintColor = .clear
         tfStartDate.tintColor = .clear
@@ -46,6 +52,15 @@ class RegistroHorasViewController: UIViewController {
         tfEndDate.setRightPaddingPoints(10)
     }
     
+    @IBAction func BtnRegistrarHoras(_ sender: UIButton) {
+        let alerta = UIAlertController(title: "✅\nHoras Registradas", message: "Tus horas han sido correctamente registradas en el sistema", preferredStyle: .alert);
+                   let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+                   alerta.addAction(botonAceptar)
+                   present(alerta, animated: true)
+        tfProject.text = ""
+        tfEndDate.text = ""
+        tfStartDate.text = ""
+    }
     
         
     func createToolBar1()-> UIToolbar{
@@ -72,16 +87,31 @@ class RegistroHorasViewController: UIViewController {
         return toolbar
     }
     
-    func createDatePicker(){
+    func createToolBar3()-> UIToolbar{
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // done button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed3))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        return toolbar
+    }
+    
+    func createsPickers(){
         datePicker.preferredDatePickerStyle = .wheels
         tfStartDate.inputView = datePicker
         tfStartDate.inputAccessoryView = createToolBar1()
         tfEndDate.inputView = datePicker
         tfEndDate.inputAccessoryView = createToolBar2()
+        tfProject.inputView = projectPicker
+        tfProject.inputAccessoryView = createToolBar3()
     }
     
     @objc func donePressed1(){
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "es_MX")
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         self.tfStartDate.text = dateFormatter.string(from: datePicker.date)
@@ -90,9 +120,16 @@ class RegistroHorasViewController: UIViewController {
     
     @objc func donePressed2(){
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "es_MX")
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         self.tfEndDate.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func donePressed3(){
+        let selectedProject = projects[projectPicker.selectedRow(inComponent: 0)]
+        tfProject.text = selectedProject
         self.view.endEditing(true)
     }
  
@@ -103,4 +140,26 @@ extension UITextField {
     open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         return false
     }
+}
+
+
+extension RegistroHorasViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return projects.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return projects[row]
+    }
+    
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        tfProject.text = projects[row]
+//        tfProject.resignFirstResponder()
+//    }
+    
 }

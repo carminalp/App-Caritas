@@ -14,13 +14,13 @@ class ProjectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lbProjectDesc: UILabel!
     @IBOutlet weak var imgProjectImg: UIImageView!
     
-    @IBOutlet weak var btnDetailView: UIButton!
-    
+    @IBOutlet weak var vwContentCell: UIView!
     func setupCell(name: String, desc: String, image: UIImage){
         lbProjectName.text = name
         lbProjectDesc.text = desc
         imgProjectImg.image = image
-        imgProjectImg.layer.cornerRadius = 5
+        vwContentCell.layer.cornerRadius = 8
+        
     }
     
 }

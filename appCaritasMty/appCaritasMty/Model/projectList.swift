@@ -12,5 +12,6 @@ struct projectList
 {
     let projectName: String
     let projectDesc: String
+    let projectActivities: String
     let projectImage: UIImage
 }

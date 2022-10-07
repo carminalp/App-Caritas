@@ -102,13 +102,14 @@ class LogInVoluntarioViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-        if API() == "invalid"{
+        let ans = API()
+        if ans == "invalid"{
             let alerta = UIAlertController(title: "Usuario inválido", message: "Verifica que tu correo y contraseña estén correctos.", preferredStyle: .alert);
                        let botonCancel = UIAlertAction(title: "Volver a intentar", style: .cancel, handler: nil)
                        alerta.addAction(botonCancel)
                        present(alerta, animated: true)
         }
-        else if API() == "valid"{
+        else if ans == "valid"{
             print("FUNCIONA")
             // Se va a mover a donde vamos a usar el id de voluntario y el nombre
             let idVol = defaults.integer(forKey: "idVol")
