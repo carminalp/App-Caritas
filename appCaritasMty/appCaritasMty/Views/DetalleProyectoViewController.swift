@@ -9,23 +9,24 @@ import UIKit
 
 class DetalleProyectoViewController: UIViewController {
     
-    @IBOutlet weak var textViewTitulo: UITextView!
-    @IBOutlet weak var tituloHeight: NSLayoutConstraint!
+    //@IBOutlet weak var tituloHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var textViewDescription: UITextView!
-    @IBOutlet weak var textViewHeightDescription: NSLayoutConstraint!
+
+    @IBOutlet weak var lbDescripcion: UILabel!
+    //    @IBOutlet weak var textViewHeightDescription: NSLayoutConstraint!
     
-    @IBOutlet weak var textViewSubtitulo: UITextView!
-    @IBOutlet weak var textViewHeightSub: NSLayoutConstraint!
+
+    @IBOutlet weak var lbActividades: UILabel!
+    //    @IBOutlet weak var textViewHeightSub: NSLayoutConstraint!
     
-    @IBOutlet weak var textViewActividades: UITextView!
-    @IBOutlet weak var textViewHeightAct: NSLayoutConstraint!
+
+//    @IBOutlet weak var textViewHeightAct: NSLayoutConstraint!
     
     @IBOutlet weak var degradadoImagen: UIView!
     
     @IBOutlet weak var postularseView: UIView!
     @IBOutlet weak var imageViewAlimentos: UIView!
-    @IBOutlet weak var postularseV: UIView!
+    //@IBOutlet weak var postularseV: UIView!
     
     
     @IBOutlet weak var tlHoras: UILabel!
@@ -43,13 +44,17 @@ class DetalleProyectoViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.bringSubviewToFront(postularseView)
+        lbActividades.numberOfLines = 0
+        lbDescripcion.numberOfLines = 0
+        lbDescripcion.sizeToFit()
+        lbActividades.sizeToFit()
         
         imageViewAlimentos.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 15)
         postularseView.roundCorners(corners: [.bottomLeft, .bottomRight, .topLeft, .topRight], radius: 15)
         
         degradadoImagen.setTwoGradient(colorOne: UIColor.white.withAlphaComponent(0.1), colorTwo: UIColor(red: 0.56, green: 0.76, blue: 0.62, alpha: 1.00))
         
-        tituloHeight.constant = self.textViewTitulo.contentSize.height
+//        tituloHeight.constant = self.textViewTitulo.contentSize.height
         
         // HORAS Y FECHA
         tlHoras.text = "06 octubre"
@@ -91,8 +96,8 @@ class DetalleProyectoViewController: UIViewController {
 //        textViewHeightAct.constant = self.textViewActividades.contentSize.height
         
         lbNombreProyecto.text = projectReceived.projectName
-        textViewDescription.text = projectReceived.projectDesc
-        textViewActividades.text = projectReceived.projectActivities
+        lbDescripcion.text = projectReceived.projectDesc
+        lbActividades.text = projectReceived.projectActivities
         imgProyecto.image = projectReceived.projectImage
         
     }
