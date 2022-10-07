@@ -34,6 +34,8 @@ class DetalleProyectoViewController: UIViewController {
     @IBOutlet weak var lbNombreProyecto: UILabel!
     @IBOutlet weak var imgProyecto: UIImageView!
     
+    @IBOutlet weak var btnInscribirme: UIButton!
+    
     var projectReceived = projectList(projectName: "oli", projectDesc: "",projectActivities: "", projectImage: UIImage(named: "imgAlimentos")!)
 
 
@@ -106,4 +108,12 @@ class DetalleProyectoViewController: UIViewController {
     }
     */
 
+    @IBAction func inscribirme(_ sender: UIButton) {
+        let alerta = UIAlertController(title: "Inscripción completada", message: "La inscripción ha sido validada correctamente.", preferredStyle: .alert);
+                   let botonCancel = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+                   alerta.addAction(botonCancel)
+                   present(alerta, animated: true)
+        btnInscribirme.isEnabled = false
+    }
+    
 }

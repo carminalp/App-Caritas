@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SaS-hl-GfI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZV2-a7-gOl">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -869,6 +869,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Inscribirme">
                                             <color key="baseBackgroundColor" red="0.9529411793" green="0.69803923369999998" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="inscribirme:" destination="0Sb-hZ-Gu5" eventType="touchUpInside" id="Odo-X2-rSU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.5568627451" green="0.76078431369999999" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1110,6 +1113,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="syH-Z2-xYx"/>
                     <connections>
+                        <outlet property="btnInscribirme" destination="9kL-rO-tgp" id="NzR-c3-gCn"/>
                         <outlet property="degradadoImagen" destination="kkx-y7-1Xb" id="Rfb-qR-wPX"/>
                         <outlet property="imageViewAlimentos" destination="HkU-4z-6tb" id="NKN-nX-v8r"/>
                         <outlet property="imgProyecto" destination="btX-eW-btq" id="f0d-JL-GnC"/>
