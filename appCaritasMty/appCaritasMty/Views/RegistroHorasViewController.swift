@@ -52,17 +52,6 @@ class RegistroHorasViewController: UIViewController {
         tfEndDate.setRightPaddingPoints(10)
     }
     
-    @IBAction func BtnRegistrarHoras(_ sender: UIButton) {
-        let alerta = UIAlertController(title: "✅\nHoras Registradas", message: "Tus horas han sido correctamente registradas en el sistema", preferredStyle: .alert);
-                   let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
-                   alerta.addAction(botonAceptar)
-                   present(alerta, animated: true)
-        tfProject.text = ""
-        tfEndDate.text = ""
-        tfStartDate.text = ""
-    }
-    
-        
     func createToolBar1()-> UIToolbar{
         //toolbar
         let toolbar = UIToolbar()
@@ -111,27 +100,88 @@ class RegistroHorasViewController: UIViewController {
     
     @objc func donePressed1(){
         let dateFormatter = DateFormatter()
+        let dateFormatter2 = DateFormatter()
         dateFormatter.locale = Locale(identifier: "es_MX")
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         self.tfStartDate.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
+        dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let f1 = dateFormatter2.string(from: datePicker.date)
+        let feIn = defaults.set(f1, forKey: "FechaIn")
     }
     
     @objc func donePressed2(){
         let dateFormatter = DateFormatter()
+        let dateFormatter2 = DateFormatter()
         dateFormatter.locale = Locale(identifier: "es_MX")
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         self.tfEndDate.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
+        dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let f2 = dateFormatter2.string(from: datePicker.date)
+        let feFin = defaults.set(f2, forKey: "FechaFin")
     }
+    
     
     @objc func donePressed3(){
         let selectedProject = projects[projectPicker.selectedRow(inComponent: 0)]
         tfProject.text = selectedProject
         self.view.endEditing(true)
     }
+    
+    let defaults = UserDefaults.standard
+    func API(){
+        let idVol = defaults.integer(forKey: "idVol")
+        let idCat = "1"
+        let fechaIn = defaults.string(forKey: "FechaIn")
+        let fechaFi = defaults.string(forKey: "FechaFin")
+        
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/registro/horas") else{
+                return
+            }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let parameters: [String: AnyHashable] = [
+            "idVol": idVol,
+            "idCategoria": idCat,
+            "horaFechaEntrada": fechaIn,
+            "horaFechaSalida": fechaFi
+        ]
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            do {
+                let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                print("No murio:  \(response)")
+            }
+            catch{
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    
+    @IBAction func BtnRegistrarHoras(_ sender: UIButton) {
+        
+        let alerta = UIAlertController(title: "✅\nHoras Registradas", message: "Tus horas han sido correctamente registradas en el sistema", preferredStyle: .alert);
+                   let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+                   alerta.addAction(botonAceptar)
+                   present(alerta, animated: true)
+        tfProject.text = ""
+        tfEndDate.text = ""
+        tfStartDate.text = ""
+        API()
+    }
+    
  
     
 }
