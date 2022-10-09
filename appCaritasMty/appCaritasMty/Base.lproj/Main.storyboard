@@ -310,7 +310,7 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="u3R-N1-hMT" secondAttribute="trailing" constant="16" id="6wB-XI-G31"/>
-                                                                        <constraint firstAttribute="height" constant="80" id="7HS-W2-eqX"/>
+                                                                        <constraint firstAttribute="height" constant="70" id="7HS-W2-eqX"/>
                                                                         <constraint firstItem="u3R-N1-hMT" firstAttribute="top" secondItem="4VP-Kn-xik" secondAttribute="top" constant="31" id="A8d-hO-2sK"/>
                                                                         <constraint firstItem="2Dq-1W-T3e" firstAttribute="leading" secondItem="4VP-Kn-xik" secondAttribute="leading" constant="16" id="dJ2-H8-GYI"/>
                                                                         <constraint firstItem="u3R-N1-hMT" firstAttribute="leading" secondItem="2Dq-1W-T3e" secondAttribute="trailing" constant="16" id="hb8-mv-6Jz"/>
