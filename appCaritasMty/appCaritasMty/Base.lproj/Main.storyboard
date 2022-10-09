@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pWO-83-GEd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQo-Xf-wFN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -238,7 +238,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ub9-ia-M6N">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="145"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola, Geraldine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgU-ii-OMV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola, Cristina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgU-ii-OMV">
                                         <rect key="frame" x="20" y="58.333333333333343" width="350" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="5aH-OF-Xb3"/>
@@ -247,7 +247,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenid@ de nuevo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1X-ye-uJV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valida las horas de voluntariado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1X-ye-uJV">
                                         <rect key="frame" x="20" y="104.33333333333333" width="350" height="18.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18.670000000000002" id="cmY-cz-GZX"/>
@@ -420,6 +420,7 @@
                                             <outlet property="lbTituloProyecto" destination="Snp-GT-FHt" id="N6b-RA-JZg"/>
                                             <outlet property="vistaVoluntario" destination="Txb-x7-Xll" id="nIU-It-CNO"/>
                                             <outlet property="vistaVoluntarioRoundC" destination="pp2-dD-5GN" id="juh-cw-tlJ"/>
+                                            <segue destination="pWO-83-GEd" kind="show" id="WbL-Dw-lTV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -462,14 +463,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Picture-1" translatesAutoresizingMaskIntoConstraints="NO" id="so4-hV-pfg">
-                                <rect key="frame" x="132.66666666666666" y="79" width="124.99999999999997" height="125"/>
+                                <rect key="frame" x="132.66666666666666" y="85" width="124.99999999999997" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="GJ3-d7-rwe"/>
                                     <constraint firstAttribute="height" constant="125" id="gnB-1q-960"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geraldine Torres" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-du-fpF">
-                                <rect key="frame" x="20" y="212" width="350" height="30"/>
+                                <rect key="frame" x="20" y="218" width="350" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OVy-Va-dqX"/>
                                 </constraints>
@@ -493,7 +494,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A93-ot-ubz">
-                                <rect key="frame" x="20" y="262" width="350" height="455"/>
+                                <rect key="frame" x="20" y="278" width="350" height="439"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmb-7X-nCL" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
@@ -540,7 +541,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rC7-cX-qyA">
-                                        <rect key="frame" x="0.0" y="50" width="350" height="405"/>
+                                        <rect key="frame" x="0.0" y="50" width="350" height="389"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hrsData" id="Hsi-AT-Obd" customClass="HrsDataTableViewCell" customModule="appCaritasMty" customModuleProvider="target">
@@ -624,19 +625,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SIf-J1-Dkd" firstAttribute="bottom" secondItem="Cah-5v-wg3" secondAttribute="bottom" constant="-20" id="2H8-0z-dzq"/>
+                            <constraint firstItem="jVm-du-fpF" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="20" id="2ng-Ea-E6R"/>
                             <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="A93-ot-ubz" secondAttribute="trailing" constant="20" id="4tp-gy-Ans"/>
                             <constraint firstItem="2bT-zA-zLs" firstAttribute="top" secondItem="XvA-Z3-9Ol" secondAttribute="top" id="5wh-p3-BDV"/>
                             <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="SIf-J1-Dkd" secondAttribute="trailing" constant="20" id="6En-d4-QC5"/>
+                            <constraint firstItem="so4-hV-pfg" firstAttribute="top" secondItem="XvA-Z3-9Ol" secondAttribute="top" constant="85" id="9Qy-1b-qAH"/>
                             <constraint firstItem="2bT-zA-zLs" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" id="CZ8-2X-079"/>
-                            <constraint firstItem="jVm-du-fpF" firstAttribute="top" secondItem="so4-hV-pfg" secondAttribute="bottom" constant="8" symbolic="YES" id="HPC-FQ-7MG"/>
+                            <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="jVm-du-fpF" secondAttribute="trailing" constant="20" id="LCu-Ze-jyK"/>
                             <constraint firstItem="2bT-zA-zLs" firstAttribute="trailing" secondItem="Cah-5v-wg3" secondAttribute="trailing" id="Lxn-Sa-OBs"/>
                             <constraint firstItem="A93-ot-ubz" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="20" id="PIg-Fv-a9K"/>
-                            <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="jVm-du-fpF" secondAttribute="trailing" constant="20" id="cmm-YL-sBz"/>
-                            <constraint firstItem="so4-hV-pfg" firstAttribute="top" secondItem="Cah-5v-wg3" secondAttribute="top" constant="35" id="h6S-1h-DSc"/>
-                            <constraint firstItem="SIf-J1-Dkd" firstAttribute="top" secondItem="A93-ot-ubz" secondAttribute="bottom" constant="20" id="mpK-3e-VWt"/>
-                            <constraint firstItem="jVm-du-fpF" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="20" id="qA7-OZ-RXL"/>
-                            <constraint firstItem="A93-ot-ubz" firstAttribute="top" secondItem="jVm-du-fpF" secondAttribute="bottom" constant="20" id="r2H-ay-eIP"/>
-                            <constraint firstItem="so4-hV-pfg" firstAttribute="centerX" secondItem="XvA-Z3-9Ol" secondAttribute="centerX" id="syv-i2-ayi"/>
+                            <constraint firstItem="SIf-J1-Dkd" firstAttribute="top" secondItem="A93-ot-ubz" secondAttribute="bottom" constant="20" id="RZc-iF-haG"/>
+                            <constraint firstItem="jVm-du-fpF" firstAttribute="top" secondItem="so4-hV-pfg" secondAttribute="bottom" constant="8" symbolic="YES" id="RmK-oV-iA0"/>
+                            <constraint firstItem="so4-hV-pfg" firstAttribute="centerX" secondItem="XvA-Z3-9Ol" secondAttribute="centerX" id="ZKh-dg-uii"/>
+                            <constraint firstItem="A93-ot-ubz" firstAttribute="top" secondItem="jVm-du-fpF" secondAttribute="bottom" constant="30" id="joW-ci-qSb"/>
                             <constraint firstItem="SIf-J1-Dkd" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="20" id="zzQ-fr-DNc"/>
                         </constraints>
                     </view>
