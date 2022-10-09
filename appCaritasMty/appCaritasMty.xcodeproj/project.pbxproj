@@ -11,6 +11,7 @@
 		1A02468A28D8B3D70045B54B /* LogInAdministradorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A02468928D8B3D70045B54B /* LogInAdministradorViewController.swift */; };
 		1A026C5A28C8E49300632C31 /* VoluntarioIngresoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A026C5928C8E49300632C31 /* VoluntarioIngresoViewController.swift */; };
 		1A2B972828C9665C00470ABF /* RegistroVoluntarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B972728C9665B00470ABF /* RegistroVoluntarioViewController.swift */; };
+		1A551ABA28F26A490036A278 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A551AB928F26A490036A278 /* CustomTableViewCell.swift */; };
 		1A669ACF28EF12960022FC89 /* gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A669ACE28EF12960022FC89 /* gradient.swift */; };
 		1A669AD128EF1BFB0022FC89 /* RegistroHorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */; };
 		1A6E806528C795D300C195F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E806428C795D300C195F7 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 		1A6E806C28C795D300C195F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E806A28C795D300C195F7 /* Main.storyboard */; };
 		1A6E806E28C795D900C195F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E806D28C795D900C195F7 /* Assets.xcassets */; };
 		1A6E807128C795D900C195F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E806F28C795D900C195F7 /* LaunchScreen.storyboard */; };
+		1AE8E15A28F2515600F05E1D /* ListaVoluntariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */; };
 		F1330F9928EF10E9004EA682 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1330F9828EF10E8004EA682 /* colors.swift */; };
 		F1330F9B28EF10F6004EA682 /* DetalleProyectoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1330F9A28EF10F6004EA682 /* DetalleProyectoViewController.swift */; };
 		F175E70828DA91B000AC01CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F175E70728DA91B000AC01CB /* Model.swift */; };
@@ -32,6 +34,7 @@
 		1A02468928D8B3D70045B54B /* LogInAdministradorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInAdministradorViewController.swift; sourceTree = "<group>"; };
 		1A026C5928C8E49300632C31 /* VoluntarioIngresoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoluntarioIngresoViewController.swift; sourceTree = "<group>"; };
 		1A2B972728C9665B00470ABF /* RegistroVoluntarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroVoluntarioViewController.swift; sourceTree = "<group>"; };
+		1A551AB928F26A490036A278 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		1A669ACE28EF12960022FC89 /* gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = gradient.swift; path = ../gradient.swift; sourceTree = "<group>"; };
 		1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroHorasViewController.swift; sourceTree = "<group>"; };
 		1A6E806128C795D300C195F7 /* appCaritasMty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appCaritasMty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +45,7 @@
 		1A6E806D28C795D900C195F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A6E807028C795D900C195F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A6E807228C795D900C195F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaVoluntariosViewController.swift; sourceTree = "<group>"; };
 		F1330F9828EF10E8004EA682 /* colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		F1330F9A28EF10F6004EA682 /* DetalleProyectoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleProyectoViewController.swift; sourceTree = "<group>"; };
 		F175E70728DA91B000AC01CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				1A02468928D8B3D70045B54B /* LogInAdministradorViewController.swift */,
 				FBF878BB28EC78180038A5AA /* ProjectCollectionViewCell.swift */,
 				1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */,
+				1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */,
+				1A551AB928F26A490036A278 /* CustomTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF878BC28EC78180038A5AA /* ProjectCollectionViewCell.swift in Sources */,
+				1AE8E15A28F2515600F05E1D /* ListaVoluntariosViewController.swift in Sources */,
 				F1330F9B28EF10F6004EA682 /* DetalleProyectoViewController.swift in Sources */,
 				1A6E806928C795D300C195F7 /* ViewController.swift in Sources */,
 				1A2B972828C9665C00470ABF /* RegistroVoluntarioViewController.swift in Sources */,
@@ -198,6 +205,7 @@
 				1A669AD128EF1BFB0022FC89 /* RegistroHorasViewController.swift in Sources */,
 				1A026C5A28C8E49300632C31 /* VoluntarioIngresoViewController.swift in Sources */,
 				F1330F9928EF10E9004EA682 /* colors.swift in Sources */,
+				1A551ABA28F26A490036A278 /* CustomTableViewCell.swift in Sources */,
 				1A02468828D7D10C0045B54B /* LogInVoluntarioViewController.swift in Sources */,
 				1A6E806528C795D300C195F7 /* AppDelegate.swift in Sources */,
 				FBF878BE28EC80510038A5AA /* projectList.swift in Sources */,
