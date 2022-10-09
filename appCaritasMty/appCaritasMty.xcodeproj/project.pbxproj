@@ -12,7 +12,8 @@
 		1A026C5A28C8E49300632C31 /* VoluntarioIngresoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A026C5928C8E49300632C31 /* VoluntarioIngresoViewController.swift */; };
 		1A2B972828C9665C00470ABF /* RegistroVoluntarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B972728C9665B00470ABF /* RegistroVoluntarioViewController.swift */; };
 		1A551ABA28F26A490036A278 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A551AB928F26A490036A278 /* CustomTableViewCell.swift */; };
-		1A551ABC28F274010036A278 /* HorasVoluntarioDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A551ABB28F274010036A278 /* HorasVoluntarioDetalleViewController.swift */; };
+		1A551AC628F338540036A278 /* HrsVoluntarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A551AC528F338540036A278 /* HrsVoluntarioViewController.swift */; };
+		1A551AC828F33FD20036A278 /* HrsDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A551AC728F33FD20036A278 /* HrsDataTableViewCell.swift */; };
 		1A669ACF28EF12960022FC89 /* gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A669ACE28EF12960022FC89 /* gradient.swift */; };
 		1A669AD128EF1BFB0022FC89 /* RegistroHorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */; };
 		1A6E806528C795D300C195F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E806428C795D300C195F7 /* AppDelegate.swift */; };
@@ -36,7 +37,8 @@
 		1A026C5928C8E49300632C31 /* VoluntarioIngresoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoluntarioIngresoViewController.swift; sourceTree = "<group>"; };
 		1A2B972728C9665B00470ABF /* RegistroVoluntarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroVoluntarioViewController.swift; sourceTree = "<group>"; };
 		1A551AB928F26A490036A278 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		1A551ABB28F274010036A278 /* HorasVoluntarioDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorasVoluntarioDetalleViewController.swift; sourceTree = "<group>"; };
+		1A551AC528F338540036A278 /* HrsVoluntarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HrsVoluntarioViewController.swift; sourceTree = "<group>"; };
+		1A551AC728F33FD20036A278 /* HrsDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HrsDataTableViewCell.swift; sourceTree = "<group>"; };
 		1A669ACE28EF12960022FC89 /* gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = gradient.swift; path = ../gradient.swift; sourceTree = "<group>"; };
 		1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroHorasViewController.swift; sourceTree = "<group>"; };
 		1A6E806128C795D300C195F7 /* appCaritasMty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appCaritasMty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,9 +83,17 @@
 				1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */,
 				1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */,
 				1A551AB928F26A490036A278 /* CustomTableViewCell.swift */,
-				1A551ABB28F274010036A278 /* HorasVoluntarioDetalleViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1A551AC428F3383C0036A278 /* Detalle Hrs voluntario */ = {
+			isa = PBXGroup;
+			children = (
+				1A551AC528F338540036A278 /* HrsVoluntarioViewController.swift */,
+				1A551AC728F33FD20036A278 /* HrsDataTableViewCell.swift */,
+			);
+			path = "Detalle Hrs voluntario";
 			sourceTree = "<group>";
 		};
 		1A6E805828C795D300C195F7 = {
@@ -105,6 +115,7 @@
 		1A6E806328C795D300C195F7 /* appCaritasMty */ = {
 			isa = PBXGroup;
 			children = (
+				1A551AC428F3383C0036A278 /* Detalle Hrs voluntario */,
 				1A026C5828C8E46900632C31 /* Views */,
 				F175E70628DA918700AC01CB /* Model */,
 				1A6E806428C795D300C195F7 /* AppDelegate.swift */,
@@ -201,6 +212,8 @@
 			files = (
 				FBF878BC28EC78180038A5AA /* ProjectCollectionViewCell.swift in Sources */,
 				1AE8E15A28F2515600F05E1D /* ListaVoluntariosViewController.swift in Sources */,
+				1A551AC828F33FD20036A278 /* HrsDataTableViewCell.swift in Sources */,
+				1A551AC628F338540036A278 /* HrsVoluntarioViewController.swift in Sources */,
 				F1330F9B28EF10F6004EA682 /* DetalleProyectoViewController.swift in Sources */,
 				1A6E806928C795D300C195F7 /* ViewController.swift in Sources */,
 				1A2B972828C9665C00470ABF /* RegistroVoluntarioViewController.swift in Sources */,
@@ -212,7 +225,6 @@
 				1A02468828D7D10C0045B54B /* LogInVoluntarioViewController.swift in Sources */,
 				1A6E806528C795D300C195F7 /* AppDelegate.swift in Sources */,
 				FBF878BE28EC80510038A5AA /* projectList.swift in Sources */,
-				1A551ABC28F274010036A278 /* HorasVoluntarioDetalleViewController.swift in Sources */,
 				1A669ACF28EF12960022FC89 /* gradient.swift in Sources */,
 				1A02468A28D8B3D70045B54B /* LogInAdministradorViewController.swift in Sources */,
 				1A6E806728C795D300C195F7 /* SceneDelegate.swift in Sources */,
