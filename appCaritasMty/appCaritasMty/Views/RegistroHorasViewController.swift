@@ -170,16 +170,63 @@ class RegistroHorasViewController: UIViewController {
         task.resume()
     }
     
+    func validaFecha()->Bool{
+        var horasTotal = 0, ini = 0, fin = 0
+        let dateIni = tfStartDate.text
+        let dateFin = tfEndDate.text
+        let diaIni = Int(dateIni!.substring(with: 0..<2))
+        let diaFin = Int(dateFin!.substring(with: 0..<2))
+        let mesIni = Int(dateIni!.substring(with: 3..<5))
+        let mesFin = Int(dateFin!.substring(with: 3..<5))
+        let anioIni = Int(dateIni!.substring(with: 6..<8))
+        let anioFin = Int(dateFin!.substring(with: 6..<8))
+        let horasIni = Int(dateIni!.substring(with: 10..<12))
+        let horasFin = Int(dateFin!.substring(with: 10..<12))
+        
+        ini = (horasIni!) + (diaIni! * 24) + (mesIni! * 730) + (anioIni! * 8760)
+        fin = (horasFin!) + (diaFin! * 24) + (mesFin! * 730) + (anioFin! * 8760)
+        horasTotal = fin - ini
+        
+        if (horasTotal > 0){
+            return true
+        }else{
+            return false
+        }
+                
+    }
+    
+    func calculaHoras()->Int{
+        var horas = 0
+        let dateIni = tfStartDate.text
+        let dateFin = tfEndDate.text
+        let horasIni = Int(dateIni!.substring(with: 10..<12))
+        let horasFin = Int(dateFin!.substring(with: 10..<12))
+        horas = horasFin! - horasIni!
+        return horas
+    }
+    
+    
     @IBAction func BtnRegistrarHoras(_ sender: UIButton) {
         
-        let alerta = UIAlertController(title: "✅\nHoras Registradas", message: "Tus horas han sido correctamente registradas en el sistema", preferredStyle: .alert);
-                   let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
-                   alerta.addAction(botonAceptar)
-                   present(alerta, animated: true)
-        tfProject.text = ""
-        tfEndDate.text = ""
-        tfStartDate.text = ""
-        API()
+        if validaFecha(){
+            let horas = calculaHoras()
+            let alerta = UIAlertController(title: "✅\nHoras Registradas", message: "Tus horas han sido correctamente registradas en el sistema", preferredStyle: .alert);
+                       let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+                       alerta.addAction(botonAceptar)
+                       present(alerta, animated: true)
+            tfProject.text = ""
+            tfEndDate.text = ""
+            tfStartDate.text = ""
+            API()
+        }else{
+            let alerta = UIAlertController(title: "❌\nFecha inválida", message: "Verifica la fecha introducida", preferredStyle: .alert);
+                       let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+                       alerta.addAction(botonAceptar)
+                       present(alerta, animated: true)
+            tfEndDate.text = ""
+            tfStartDate.text = ""
+        }
+
     }
     
  
@@ -212,4 +259,26 @@ extension RegistroHorasViewController: UIPickerViewDelegate, UIPickerViewDataSou
 //        tfProject.resignFirstResponder()
 //    }
     
+}
+
+extension String {
+    func index(from: Int) -> Index {
+         return self.index(startIndex, offsetBy: from)
+     }
+
+     func substring(from: Int) -> String {
+         let fromIndex = index(from: from)
+         return String(self[fromIndex...])
+     }
+
+     func substring(to: Int) -> String {
+         let toIndex = index(from: to)
+         return String(self[..<toIndex])
+     }
+
+     func substring(with r: Range<Int>) -> String {
+         let startIndex = index(from: r.lowerBound)
+         let endIndex = index(from: r.upperBound)
+         return String(self[startIndex..<endIndex])
+     }
 }
