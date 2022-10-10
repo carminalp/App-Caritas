@@ -14,6 +14,11 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var hrsTable: UITableView!
     
+    @IBOutlet weak var btnNoValidar: UIButton!
+    
+    @IBOutlet weak var btnValidarHoras: UIButton!
+    
+    
     let fechas = ["09/08/2022", "10/08/2022", "11/08/2022", "09/08/2022", "10/08/2022", "11/08/2022","09/08/2022", "10/08/2022", "11/08/2022", "09/08/2022", "10/08/2022", "11/08/2022"]
     let horasEntrada = ["9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM"]
     let horasSalida = ["13:00 PM", "14:00 PM", "12:00 PM","13:00 PM", "14:00 PM", "12:00 PM","13:00 PM", "14:00 PM", "12:00 PM","13:00 PM", "14:00 PM", "12:00 PM"]
@@ -21,6 +26,11 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        btnNoValidar.layer.borderWidth = 2
+        btnNoValidar.layer.borderColor = UIColor(rgb: 0xFFAF80).cgColor
+        btnNoValidar.layer.cornerRadius = 10
+        
         
         vistaTabla.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
         

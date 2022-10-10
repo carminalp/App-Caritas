@@ -478,23 +478,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIf-J1-Dkd">
-                                <rect key="frame" x="20" y="737" width="350" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="X0g-di-i5n"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Validar Horas">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                    <color key="baseBackgroundColor" red="0.9529411793" green="0.69803923369999998" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="BtnRegistrarHoras:" destination="Y3C-rg-e19" eventType="touchUpInside" id="KwA-Vn-9f5"/>
-                                    <action selector="btnLogIn:" destination="iwG-PD-mif" eventType="touchUpInside" id="kPT-4X-Psg"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A93-ot-ubz">
-                                <rect key="frame" x="20" y="278" width="350" height="439"/>
+                                <rect key="frame" x="20" y="278" width="350" height="250"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmb-7X-nCL" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
@@ -524,7 +509,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.84705882349999995" green="0.86078917980000003" blue="0.76580744010000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.84705882352941175" green="0.86274509803921573" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="N8M-cv-dGN" firstAttribute="leading" secondItem="Jvm-ol-vuq" secondAttribute="trailing" constant="10" id="0dV-WC-Tfq"/>
                                             <constraint firstItem="zyh-KC-B0q" firstAttribute="width" secondItem="Jvm-ol-vuq" secondAttribute="width" id="BAZ-WK-9rg"/>
@@ -541,7 +526,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rC7-cX-qyA">
-                                        <rect key="frame" x="0.0" y="50" width="350" height="389"/>
+                                        <rect key="frame" x="0.0" y="50" width="350" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hrsData" id="Hsi-AT-Obd" customClass="HrsDataTableViewCell" customModule="appCaritasMty" customModuleProvider="target">
@@ -616,33 +601,80 @@
                                     <constraint firstItem="rC7-cX-qyA" firstAttribute="leading" secondItem="A93-ot-ubz" secondAttribute="leading" id="Lxc-pb-LgZ"/>
                                     <constraint firstAttribute="bottom" secondItem="rC7-cX-qyA" secondAttribute="bottom" id="QxF-6g-9F1"/>
                                     <constraint firstItem="qmb-7X-nCL" firstAttribute="leading" secondItem="A93-ot-ubz" secondAttribute="leading" id="UVi-VR-Gad"/>
+                                    <constraint firstAttribute="height" constant="250" id="gYp-Q1-6FC"/>
                                     <constraint firstAttribute="trailing" secondItem="rC7-cX-qyA" secondAttribute="trailing" id="gbR-g3-aOz"/>
                                     <constraint firstAttribute="trailing" secondItem="qmb-7X-nCL" secondAttribute="trailing" id="yJQ-Yl-Gmc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sfb-Nv-DJa">
+                                <rect key="frame" x="22" y="568" width="346" height="53"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLA-dY-t3A">
+                                        <rect key="frame" x="178" y="0.0" width="168" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="UWB-fo-mNp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="No Validar Horas">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="BtnRegistrarHoras:" destination="Y3C-rg-e19" eventType="touchUpInside" id="15C-8c-nBD"/>
+                                            <action selector="btnLogIn:" destination="iwG-PD-mif" eventType="touchUpInside" id="oHR-Ql-YgQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIf-J1-Dkd">
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="X0g-di-i5n"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Validar Horas">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" red="0.95294117647058818" green="0.69803921568627447" blue="0.53333333333333333" alpha="0.89779076986754969" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="BtnRegistrarHoras:" destination="Y3C-rg-e19" eventType="touchUpInside" id="KwA-Vn-9f5"/>
+                                            <action selector="btnLogIn:" destination="iwG-PD-mif" eventType="touchUpInside" id="kPT-4X-Psg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hLA-dY-t3A" secondAttribute="trailing" id="CAQ-dt-GP6"/>
+                                    <constraint firstItem="hLA-dY-t3A" firstAttribute="centerY" secondItem="Sfb-Nv-DJa" secondAttribute="centerY" id="UbK-nU-oIn"/>
+                                    <constraint firstItem="hLA-dY-t3A" firstAttribute="leading" secondItem="SIf-J1-Dkd" secondAttribute="trailing" constant="10" id="hRl-WH-66p"/>
+                                    <constraint firstItem="SIf-J1-Dkd" firstAttribute="centerY" secondItem="Sfb-Nv-DJa" secondAttribute="centerY" id="lcT-Tr-ySt"/>
+                                    <constraint firstItem="hLA-dY-t3A" firstAttribute="width" secondItem="SIf-J1-Dkd" secondAttribute="width" id="rDm-6v-cFn"/>
+                                    <constraint firstItem="SIf-J1-Dkd" firstAttribute="leading" secondItem="Sfb-Nv-DJa" secondAttribute="leading" id="sHh-kQ-lYH"/>
+                                    <constraint firstAttribute="height" constant="53" id="xtB-Lr-Wab"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cah-5v-wg3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SIf-J1-Dkd" firstAttribute="bottom" secondItem="Cah-5v-wg3" secondAttribute="bottom" constant="-20" id="2H8-0z-dzq"/>
                             <constraint firstItem="jVm-du-fpF" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="20" id="2ng-Ea-E6R"/>
                             <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="A93-ot-ubz" secondAttribute="trailing" constant="20" id="4tp-gy-Ans"/>
                             <constraint firstItem="2bT-zA-zLs" firstAttribute="top" secondItem="XvA-Z3-9Ol" secondAttribute="top" id="5wh-p3-BDV"/>
-                            <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="SIf-J1-Dkd" secondAttribute="trailing" constant="20" id="6En-d4-QC5"/>
                             <constraint firstItem="so4-hV-pfg" firstAttribute="top" secondItem="XvA-Z3-9Ol" secondAttribute="top" constant="85" id="9Qy-1b-qAH"/>
                             <constraint firstItem="2bT-zA-zLs" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" id="CZ8-2X-079"/>
                             <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="jVm-du-fpF" secondAttribute="trailing" constant="20" id="LCu-Ze-jyK"/>
                             <constraint firstItem="2bT-zA-zLs" firstAttribute="trailing" secondItem="Cah-5v-wg3" secondAttribute="trailing" id="Lxn-Sa-OBs"/>
                             <constraint firstItem="A93-ot-ubz" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="20" id="PIg-Fv-a9K"/>
-                            <constraint firstItem="SIf-J1-Dkd" firstAttribute="top" secondItem="A93-ot-ubz" secondAttribute="bottom" constant="20" id="RZc-iF-haG"/>
                             <constraint firstItem="jVm-du-fpF" firstAttribute="top" secondItem="so4-hV-pfg" secondAttribute="bottom" constant="8" symbolic="YES" id="RmK-oV-iA0"/>
+                            <constraint firstItem="Cah-5v-wg3" firstAttribute="trailing" secondItem="Sfb-Nv-DJa" secondAttribute="trailing" constant="22" id="Yti-37-I71"/>
                             <constraint firstItem="so4-hV-pfg" firstAttribute="centerX" secondItem="XvA-Z3-9Ol" secondAttribute="centerX" id="ZKh-dg-uii"/>
                             <constraint firstItem="A93-ot-ubz" firstAttribute="top" secondItem="jVm-du-fpF" secondAttribute="bottom" constant="30" id="joW-ci-qSb"/>
-                            <constraint firstItem="SIf-J1-Dkd" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="20" id="zzQ-fr-DNc"/>
+                            <constraint firstItem="Sfb-Nv-DJa" firstAttribute="top" secondItem="A93-ot-ubz" secondAttribute="bottom" constant="40" id="lx6-L9-SaJ"/>
+                            <constraint firstItem="Sfb-Nv-DJa" firstAttribute="leading" secondItem="Cah-5v-wg3" secondAttribute="leading" constant="22" id="sWf-RP-O34"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bW0-wE-oQw"/>
                     <connections>
+                        <outlet property="btnNoValidar" destination="hLA-dY-t3A" id="Kaf-i7-O8K"/>
+                        <outlet property="btnValidarHoras" destination="SIf-J1-Dkd" id="1pa-fG-7u6"/>
                         <outlet property="hrsTable" destination="rC7-cX-qyA" id="2e5-AM-kqq"/>
                         <outlet property="vistaTabla" destination="A93-ot-ubz" id="ibt-V9-59k"/>
                     </connections>
