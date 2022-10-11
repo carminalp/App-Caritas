@@ -137,6 +137,8 @@ class RegistroHorasViewController: UIViewController {
         let idCat = "1"
         let fechaIn = defaults.string(forKey: "FechaIn")
         let fechaFi = defaults.string(forKey: "FechaFin")
+        let validar = "0"
+        let h = calculaHoras()
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/registro/horas") else{
                 return
@@ -149,7 +151,9 @@ class RegistroHorasViewController: UIViewController {
             "idVol": idVol,
             "idCategoria": idCat,
             "horaFechaEntrada": fechaIn,
-            "horaFechaSalida": fechaFi
+            "horaFechaSalida": fechaFi,
+            "validacion": validar,
+            "horas": h
         ]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
@@ -209,7 +213,6 @@ class RegistroHorasViewController: UIViewController {
     @IBAction func BtnRegistrarHoras(_ sender: UIButton) {
         
         if validaFecha(){
-            let horas = calculaHoras()
             let alerta = UIAlertController(title: "✅\nHoras Registradas", message: "Tus horas han sido correctamente registradas en el sistema", preferredStyle: .alert);
                        let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
                        alerta.addAction(botonAceptar)
