@@ -13,13 +13,14 @@ class PerfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.addChartData(data: [
-             JPieChartDataSet(percent: 20, colors: [UIColor.purpleishBlueThree,UIColor.brightLilac]),
-             JPieChartDataSet(percent: 20, colors: [UIColor.darkishPink,UIColor.lightSalmon]),
-             JPieChartDataSet(percent: 20, colors: [UIColor.dustyOrange,UIColor.lightMustard]),
+             JPieChartDataSet(percent: 20, colors: [UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 1.0),UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 0.5)]),
+             JPieChartDataSet(percent: 20, colors: [UIColor(red: 255/255.0, green: 175/255, blue: 128/255, alpha: 1.0), UIColor(red: 255/255.0, green: 175/255, blue: 128/255, alpha: 0.5)]),
+             JPieChartDataSet(percent: 20, colors: [UIColor(red: 21/255.0, green: 57/255, blue: 90/255, alpha: 1.0), UIColor(red: 21/255.0, green: 57/255, blue: 90/255, alpha: 0.5)]),
              JPieChartDataSet(percent: 0.5, colors: [UIColor.greenyBlue,UIColor.hospitalGreen])
          ])
          pieChart.lineWidth = 0.85
         // Do any additional setup after loading the view.
+        //(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 1.0)
     }
     
 
