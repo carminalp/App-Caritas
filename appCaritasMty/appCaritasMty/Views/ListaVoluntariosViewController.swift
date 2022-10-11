@@ -14,10 +14,15 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     
     let voluntarios = ["Geraldine Torres", "Cristina Hernández", "Carmina López", "Eduardo Hernández", "Andrés Ramírez"]
     
+    var backButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        backButton.title = ""
+        backButton.isEnabled = false
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         tablaVoluntarios.delegate = self
         tablaVoluntarios.dataSource = self
     }

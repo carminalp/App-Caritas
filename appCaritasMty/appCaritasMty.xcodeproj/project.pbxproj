@@ -24,12 +24,12 @@
 		1A6E807128C795D900C195F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E806F28C795D900C195F7 /* LaunchScreen.storyboard */; };
 		1AE8E15A28F2515600F05E1D /* ListaVoluntariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */; };
 		DF556F8128F5400C0079D7DC /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF556F8028F5400C0079D7DC /* PerfilViewController.swift */; };
-		DF556F8628F5986E0079D7DC /* JPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF556F8328F5986E0079D7DC /* JPieChart.swift */; };
-		DF556F8728F5986E0079D7DC /* JPieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF556F8428F5986E0079D7DC /* JPieChartDataSet.swift */; };
-		DF556F8828F5986E0079D7DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF556F8528F5986E0079D7DC /* UIColor+Extension.swift */; };
 		F1330F9928EF10E9004EA682 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1330F9828EF10E8004EA682 /* colors.swift */; };
 		F1330F9B28EF10F6004EA682 /* DetalleProyectoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1330F9A28EF10F6004EA682 /* DetalleProyectoViewController.swift */; };
 		F175E70828DA91B000AC01CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F175E70728DA91B000AC01CB /* Model.swift */; };
+		F1C28F0828F5A0160015C3ED /* JPieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C28F0528F5A0160015C3ED /* JPieChartDataSet.swift */; };
+		F1C28F0928F5A0160015C3ED /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C28F0628F5A0160015C3ED /* UIColor+Extension.swift */; };
+		F1C28F0A28F5A0160015C3ED /* JPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C28F0728F5A0160015C3ED /* JPieChart.swift */; };
 		FBD1566228E8C11500830139 /* ProyectosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1566128E8C11500830139 /* ProyectosViewController.swift */; };
 		FBF878BC28EC78180038A5AA /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF878BB28EC78180038A5AA /* ProjectCollectionViewCell.swift */; };
 		FBF878BE28EC80510038A5AA /* projectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF878BD28EC80510038A5AA /* projectList.swift */; };
@@ -55,12 +55,12 @@
 		1A6E807228C795D900C195F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaVoluntariosViewController.swift; sourceTree = "<group>"; };
 		DF556F8028F5400C0079D7DC /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
-		DF556F8328F5986E0079D7DC /* JPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JPieChart.swift; path = ../../../../../../../../JPieChart/JPieChart.swift; sourceTree = "<group>"; };
-		DF556F8428F5986E0079D7DC /* JPieChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JPieChartDataSet.swift; path = ../../../../../../../../JPieChart/JPieChartDataSet.swift; sourceTree = "<group>"; };
-		DF556F8528F5986E0079D7DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "../../../../../../../../JPieChart/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F1330F9828EF10E8004EA682 /* colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		F1330F9A28EF10F6004EA682 /* DetalleProyectoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleProyectoViewController.swift; sourceTree = "<group>"; };
 		F175E70728DA91B000AC01CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F1C28F0528F5A0160015C3ED /* JPieChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPieChartDataSet.swift; sourceTree = "<group>"; };
+		F1C28F0628F5A0160015C3ED /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F1C28F0728F5A0160015C3ED /* JPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPieChart.swift; sourceTree = "<group>"; };
 		FBD1566128E8C11500830139 /* ProyectosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectosViewController.swift; sourceTree = "<group>"; };
 		FBF878BB28EC78180038A5AA /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBF878BD28EC80510038A5AA /* projectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectList.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		1A6E806328C795D300C195F7 /* appCaritasMty */ = {
 			isa = PBXGroup;
 			children = (
-				DF556F8228F598060079D7DC /* Grafica */,
+				F1C28F0428F59FC50015C3ED /* Grafica */,
 				1A551AC428F3383C0036A278 /* Detalle Hrs voluntario */,
 				1A026C5828C8E46900632C31 /* Views */,
 				F175E70628DA918700AC01CB /* Model */,
@@ -140,16 +140,6 @@
 			path = appCaritasMty;
 			sourceTree = "<group>";
 		};
-		DF556F8228F598060079D7DC /* Grafica */ = {
-			isa = PBXGroup;
-			children = (
-				DF556F8328F5986E0079D7DC /* JPieChart.swift */,
-				DF556F8428F5986E0079D7DC /* JPieChartDataSet.swift */,
-				DF556F8528F5986E0079D7DC /* UIColor+Extension.swift */,
-			);
-			path = Grafica;
-			sourceTree = "<group>";
-		};
 		F175E70628DA918700AC01CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +147,16 @@
 				F175E70728DA91B000AC01CB /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F1C28F0428F59FC50015C3ED /* Grafica */ = {
+			isa = PBXGroup;
+			children = (
+				F1C28F0728F5A0160015C3ED /* JPieChart.swift */,
+				F1C28F0528F5A0160015C3ED /* JPieChartDataSet.swift */,
+				F1C28F0628F5A0160015C3ED /* UIColor+Extension.swift */,
+			);
+			path = Grafica;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,24 +233,24 @@
 				FBF878BC28EC78180038A5AA /* ProjectCollectionViewCell.swift in Sources */,
 				1AE8E15A28F2515600F05E1D /* ListaVoluntariosViewController.swift in Sources */,
 				1A551AC828F33FD20036A278 /* HrsDataTableViewCell.swift in Sources */,
+				F1C28F0928F5A0160015C3ED /* UIColor+Extension.swift in Sources */,
 				1A551AC628F338540036A278 /* HrsVoluntarioViewController.swift in Sources */,
 				F1330F9B28EF10F6004EA682 /* DetalleProyectoViewController.swift in Sources */,
 				1A6E806928C795D300C195F7 /* ViewController.swift in Sources */,
 				1A2B972828C9665C00470ABF /* RegistroVoluntarioViewController.swift in Sources */,
 				FBD1566228E8C11500830139 /* ProyectosViewController.swift in Sources */,
+				F1C28F0A28F5A0160015C3ED /* JPieChart.swift in Sources */,
 				1A669AD128EF1BFB0022FC89 /* RegistroHorasViewController.swift in Sources */,
+				F1C28F0828F5A0160015C3ED /* JPieChartDataSet.swift in Sources */,
 				1A026C5A28C8E49300632C31 /* VoluntarioIngresoViewController.swift in Sources */,
 				F1330F9928EF10E9004EA682 /* colors.swift in Sources */,
 				1A551ABA28F26A490036A278 /* CustomTableViewCell.swift in Sources */,
 				1A02468828D7D10C0045B54B /* LogInVoluntarioViewController.swift in Sources */,
 				1A6E806528C795D300C195F7 /* AppDelegate.swift in Sources */,
-				DF556F8628F5986E0079D7DC /* JPieChart.swift in Sources */,
 				DF556F8128F5400C0079D7DC /* PerfilViewController.swift in Sources */,
 				FBF878BE28EC80510038A5AA /* projectList.swift in Sources */,
-				DF556F8828F5986E0079D7DC /* UIColor+Extension.swift in Sources */,
 				1A669ACF28EF12960022FC89 /* gradient.swift in Sources */,
 				1A02468A28D8B3D70045B54B /* LogInAdministradorViewController.swift in Sources */,
-				DF556F8728F5986E0079D7DC /* JPieChartDataSet.swift in Sources */,
 				1A6E806728C795D300C195F7 /* SceneDelegate.swift in Sources */,
 				F175E70828DA91B000AC01CB /* Model.swift in Sources */,
 			);
