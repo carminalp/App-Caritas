@@ -18,6 +18,7 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var btnValidarHoras: UIButton!
     
+    var backButton = UIBarButtonItem()
     
     let fechas = ["09/08/2022", "10/08/2022", "11/08/2022", "09/08/2022", "10/08/2022", "11/08/2022","09/08/2022", "10/08/2022", "11/08/2022", "09/08/2022", "10/08/2022", "11/08/2022"]
     let horasEntrada = ["9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM"]
@@ -26,6 +27,12 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backButton.title = "Back"
+        backButton.isEnabled = true
+        backButton.tintColor = .white
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         
         btnNoValidar.layer.borderWidth = 2
         btnNoValidar.layer.borderColor = UIColor(rgb: 0xFFAF80).cgColor

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nqc-CS-N0j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZV2-a7-gOl">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -167,6 +167,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="login:" destination="6pf-Qs-uAp" eventType="touchUpInside" id="wLt-Ts-5Zc"/>
+                                    <segue destination="FfD-7f-zDL" kind="show" id="07H-xd-eEo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-qv-sD6">
@@ -445,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1z-qL-e30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3096.9230769230767" y="944.78672985781986"/>
+            <point key="canvasLocation" x="2362" y="945"/>
         </scene>
         <!--Hrs Voluntario View Controller-->
         <scene sceneID="jnG-vi-A1O">
@@ -681,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbZ-1u-eFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4067.6923076923076" y="944.78672985781986"/>
+            <point key="canvasLocation" x="3218" y="945"/>
         </scene>
         <!--Proyectos-->
         <scene sceneID="ckx-Pe-Mka">
@@ -1851,25 +1852,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdB-6w-jMB" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4070.1612903225805" y="88.702559576345976"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="mXA-Gg-oBk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RQo-Xf-wFN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ffr-Pr-nNu"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vWp-I2-fiU">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="FfD-7f-zDL" kind="relationship" relationship="rootViewController" id="Hcc-fq-Aap"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CIK-r6-Mio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2255" y="945"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
