@@ -15,6 +15,7 @@ class RegistroHorasViewController: UIViewController {
     let datePicker = UIDatePicker()
     let projectPicker = UIPickerView()
     var projects = [String] ()
+    var idP = [String: Int] ()
     
     
     override func viewDidLoad() {
@@ -76,51 +77,8 @@ class RegistroHorasViewController: UIViewController {
                                     tasks.forEach{ i in
                                         print("-------- Jaló ---------")
                                         self.projects.append(i.Proyecto)
-                                        // Agregar segue a la vista de voluntario
-                                        apiAnswer = "valid"
-                                    }
-                                }else{
-                                    // Ventana emergente usuario inválido
-                                    apiAnswer = "invalid"
-                                    print("----- ERROR -----")
-                                }
-                            }catch{
-                                print(error)
-                                print("----- ERROR2 -----")
-                            }
-                        }
-                group.leave()
-            }
-            task.resume()
-
-        group.wait()
-        createsPickers()
-        return apiAnswer
-    }
-    
-    func API02() -> String{
-        let proyecto = tfProject.text!
-        print(proyecto)
-        var apiAnswer = ""
-        
-        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/auxIDP?Proyecto=\(proyecto)") else{
-                return apiAnswer
-        }
-            
-            let group = DispatchGroup()
-            group.enter()
-        
-            let task = URLSession.shared.dataTask(with: url){
-                data, response, error in
-                        if let data = data{
-                            do{
-                                let decoder = JSONDecoder()
-                                let tasks = try decoder.decode([ProyectoAux].self, from: data)
-                                if (!tasks.isEmpty){
-                                    tasks.forEach{ i in
-                                        print("-------- Jaló ---------")
-                                        self.defaults.set(i.idProyecto, forKey: "idProyecto")
-                                        print(i.idProyecto)
+                                        self.idP[i.Proyecto]=(i.idProyecto)
+                                        
                                         // Agregar segue a la vista de voluntario
                                         apiAnswer = "valid"
                                     }
@@ -223,12 +181,11 @@ class RegistroHorasViewController: UIViewController {
     }
     
     func API(){
-        API02()
         let idVol = defaults.integer(forKey: "idVol")
-        let idCat = defaults.integer(forKey: "idProyecto")
+        let idCat = Int(idP[tfProject.text!]!)
         let fechaIn = defaults.string(forKey: "FechaIn")
         let fechaFi = defaults.string(forKey: "FechaFin")
-        let validar = "0"
+        let validar = 0
         let h = calculaHoras()
         print("idVol: \(idVol)")
         print("idCat: \(idCat)")
@@ -246,7 +203,7 @@ class RegistroHorasViewController: UIViewController {
         
         let parameters: [String: AnyHashable] = [
             "idVol": idVol,
-            "idCategoria": idCat,
+            "idProyecto": idCat,
             "horaFechaEntrada": fechaIn!,
             "horaFechaSalida": fechaFi!,
             "validacion": validar,

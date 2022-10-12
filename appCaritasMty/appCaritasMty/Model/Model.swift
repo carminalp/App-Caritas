@@ -21,8 +21,5 @@ struct Administrador:Codable{
 
 struct Proyecto:Codable{
     let Proyecto: String
-}
-
-struct ProyectoAux:Codable{
-    let idProyecto: String
+    let idProyecto: Int
 }
