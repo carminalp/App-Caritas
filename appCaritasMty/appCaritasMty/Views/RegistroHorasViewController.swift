@@ -99,7 +99,8 @@ class RegistroHorasViewController: UIViewController {
     }
     
     func API02() -> String{
-        let proyecto = tfProject.text
+        let proyecto = tfProject.text!
+        print(proyecto)
         var apiAnswer = ""
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/auxIDP?Proyecto=\(proyecto)") else{
@@ -119,6 +120,7 @@ class RegistroHorasViewController: UIViewController {
                                     tasks.forEach{ i in
                                         print("-------- Jaló ---------")
                                         self.defaults.set(i.idProyecto, forKey: "idProyecto")
+                                        print(i.idProyecto)
                                         // Agregar segue a la vista de voluntario
                                         apiAnswer = "valid"
                                     }
@@ -230,8 +232,8 @@ class RegistroHorasViewController: UIViewController {
         let h = calculaHoras()
         print("idVol: \(idVol)")
         print("idCat: \(idCat)")
-        print("fechaIn: \(fechaIn)")
-        print("fechaFi: \(fechaFi)")
+        print("fechaIn: \(fechaIn!)")
+        print("fechaFi: \(fechaFi!)")
         print("validar: \(validar)")
         print("h: \(h)")
         
@@ -245,8 +247,8 @@ class RegistroHorasViewController: UIViewController {
         let parameters: [String: AnyHashable] = [
             "idVol": idVol,
             "idCategoria": idCat,
-            "horaFechaEntrada": fechaIn,
-            "horaFechaSalida": fechaFi,
+            "horaFechaEntrada": fechaIn!,
+            "horaFechaSalida": fechaFi!,
             "validacion": validar,
             "horas": h
         ]
