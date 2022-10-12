@@ -14,15 +14,16 @@ class RegistroHorasViewController: UIViewController {
     @IBOutlet weak var tfEndDate: UITextField!
     let datePicker = UIDatePicker()
     let projectPicker = UIPickerView()
-    let projects = ["Banco de Alimentos","Banco de Ropa y Artículos Varios","Banco de Medicamentos","Posada del Peregrino","Dignamente Vestido","Ducha-T","Reestructuración de Centros","Campañas de Emergencia"]
+    var projects = [String] ()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         projectPicker.delegate = self
         projectPicker.dataSource = self
         
-        createsPickers()
+        API01()
         
         tfProject.tintColor = .clear
         tfStartDate.tintColor = .clear
@@ -50,6 +51,94 @@ class RegistroHorasViewController: UIViewController {
         tfEndDate.backgroundColor = UIColor(rgb: 0x4397A7).withAlphaComponent(0.08)
         tfEndDate.setLeftPaddingPoints(10)
         tfEndDate.setRightPaddingPoints(10)
+        
+    }
+    
+    let defaults = UserDefaults.standard
+    func API01() -> String{
+        let id = defaults.integer(forKey: "idVol")
+        var apiAnswer = ""
+        
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/proyectoRegistro?idVol=\(id)") else{
+                return apiAnswer
+        }
+            
+            let group = DispatchGroup()
+            group.enter()
+        
+            let task = URLSession.shared.dataTask(with: url){
+                data, response, error in
+                        if let data = data{
+                            do{
+                                let decoder = JSONDecoder()
+                                let tasks = try decoder.decode([Proyecto].self, from: data)
+                                if (!tasks.isEmpty){
+                                    tasks.forEach{ i in
+                                        print("-------- Jaló ---------")
+                                        self.projects.append(i.Proyecto)
+                                        // Agregar segue a la vista de voluntario
+                                        apiAnswer = "valid"
+                                    }
+                                }else{
+                                    // Ventana emergente usuario inválido
+                                    apiAnswer = "invalid"
+                                    print("----- ERROR -----")
+                                }
+                            }catch{
+                                print(error)
+                                print("----- ERROR2 -----")
+                            }
+                        }
+                group.leave()
+            }
+            task.resume()
+
+        group.wait()
+        createsPickers()
+        return apiAnswer
+    }
+    
+    func API02() -> String{
+        let proyecto = tfProject.text
+        var apiAnswer = ""
+        
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/auxIDP?Proyecto=\(proyecto)") else{
+                return apiAnswer
+        }
+            
+            let group = DispatchGroup()
+            group.enter()
+        
+            let task = URLSession.shared.dataTask(with: url){
+                data, response, error in
+                        if let data = data{
+                            do{
+                                let decoder = JSONDecoder()
+                                let tasks = try decoder.decode([ProyectoAux].self, from: data)
+                                if (!tasks.isEmpty){
+                                    tasks.forEach{ i in
+                                        print("-------- Jaló ---------")
+                                        self.defaults.set(i.idProyecto, forKey: "idProyecto")
+                                        // Agregar segue a la vista de voluntario
+                                        apiAnswer = "valid"
+                                    }
+                                }else{
+                                    // Ventana emergente usuario inválido
+                                    apiAnswer = "invalid"
+                                    print("----- ERROR -----")
+                                }
+                            }catch{
+                                print(error)
+                                print("----- ERROR2 -----")
+                            }
+                        }
+                group.leave()
+            }
+            task.resume()
+
+        group.wait()
+        createsPickers()
+        return apiAnswer
     }
     
     func createToolBar1()-> UIToolbar{
@@ -131,10 +220,9 @@ class RegistroHorasViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    let defaults = UserDefaults.standard
     func API(){
         let idVol = defaults.integer(forKey: "idVol")
-        let idCat = "1"
+        let idCat = defaults.integer(forKey: "idProyecto")
         let fechaIn = defaults.string(forKey: "FechaIn")
         let fechaFi = defaults.string(forKey: "FechaFin")
         let validar = "0"
@@ -220,6 +308,7 @@ class RegistroHorasViewController: UIViewController {
             tfProject.text = ""
             tfEndDate.text = ""
             tfStartDate.text = ""
+            API02()
             API()
         }else{
             let alerta = UIAlertController(title: "❌\nFecha inválida", message: "Verifica la fecha introducida", preferredStyle: .alert);

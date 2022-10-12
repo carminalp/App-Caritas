@@ -18,3 +18,11 @@ struct Administrador:Codable{
     let Contrasenia: String
     let correo: String
 }
+
+struct Proyecto:Codable{
+    let Proyecto: String
+}
+
+struct ProyectoAux:Codable{
+    let idProyecto: String
+}
