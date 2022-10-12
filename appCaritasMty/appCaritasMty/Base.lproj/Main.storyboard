@@ -446,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1z-qL-e30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362" y="945"/>
+            <point key="canvasLocation" x="1915" y="945"/>
         </scene>
         <!--Hrs Voluntario View Controller-->
         <scene sceneID="jnG-vi-A1O">
@@ -682,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbZ-1u-eFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3218" y="945"/>
+            <point key="canvasLocation" x="2785" y="945"/>
         </scene>
         <!--Proyectos-->
         <scene sceneID="ckx-Pe-Mka">
@@ -1855,7 +1855,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qZ5-n9-q4F"/>
+        <segue reference="2ht-7N-iSX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

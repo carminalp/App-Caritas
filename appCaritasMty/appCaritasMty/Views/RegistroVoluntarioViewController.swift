@@ -219,6 +219,11 @@ let response =  try JSONSerialization.jsonObject(with: data, options: .allowFrag
         }
         task.resume()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 
