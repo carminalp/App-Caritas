@@ -204,8 +204,8 @@ class RegistroHorasViewController: UIViewController {
         let parameters: [String: AnyHashable] = [
             "idVol": idVol,
             "idProyecto": idCat,
-            "horaFechaEntrada": fechaIn!,
-            "horaFechaSalida": fechaFi!,
+            "horaFechaEntrada": String(fechaIn!),
+            "horaFechaSalida": String(fechaFi!),
             "validacion": validar,
             "horas": h
         ]
