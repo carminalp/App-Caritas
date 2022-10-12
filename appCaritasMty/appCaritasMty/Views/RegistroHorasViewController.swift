@@ -221,12 +221,19 @@ class RegistroHorasViewController: UIViewController {
     }
     
     func API(){
+        API02()
         let idVol = defaults.integer(forKey: "idVol")
         let idCat = defaults.integer(forKey: "idProyecto")
         let fechaIn = defaults.string(forKey: "FechaIn")
         let fechaFi = defaults.string(forKey: "FechaFin")
         let validar = "0"
         let h = calculaHoras()
+        print("idVol: \(idVol)")
+        print("idCat: \(idCat)")
+        print("fechaIn: \(fechaIn)")
+        print("fechaFi: \(fechaFi)")
+        print("validar: \(validar)")
+        print("h: \(h)")
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/registro/horas") else{
                 return
@@ -274,7 +281,7 @@ class RegistroHorasViewController: UIViewController {
         let anioFin = Int(dateFin!.substring(with: 6..<8))
         let horasIni = Int(dateIni!.substring(with: 10..<12))
         let horasFin = Int(dateFin!.substring(with: 10..<12))
-        
+
         ini = (horasIni!) + (diaIni! * 24) + (mesIni! * 730) + (anioIni! * 8760)
         fin = (horasFin!) + (diaFin! * 24) + (mesFin! * 730) + (anioFin! * 8760)
         horasTotal = fin - ini
@@ -305,11 +312,11 @@ class RegistroHorasViewController: UIViewController {
                        let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
                        alerta.addAction(botonAceptar)
                        present(alerta, animated: true)
+            API()
             tfProject.text = ""
             tfEndDate.text = ""
             tfStartDate.text = ""
-            API02()
-            API()
+
         }else{
             let alerta = UIAlertController(title: "❌\nFecha inválida", message: "Verifica la fecha introducida", preferredStyle: .alert);
                        let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
