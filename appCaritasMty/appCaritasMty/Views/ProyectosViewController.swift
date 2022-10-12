@@ -19,8 +19,8 @@ class ProyectosViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backButton.title = ""
-        backButton.isEnabled = false
+        self.backButton.title = ""
+        self.backButton.isEnabled = false
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         // aqui van los projects
