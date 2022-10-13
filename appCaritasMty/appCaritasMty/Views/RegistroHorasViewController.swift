@@ -179,8 +179,10 @@ class RegistroHorasViewController: UIViewController {
     
     
     @objc func donePressed3(){
-        let selectedProject = projects[projectPicker.selectedRow(inComponent: 0)]
-        tfProject.text = selectedProject
+        if(!projects.isEmpty){
+            let selectedProject = projects[projectPicker.selectedRow(inComponent: 0)]
+            tfProject.text = selectedProject
+        }
         self.view.endEditing(true)
     }
     
@@ -234,7 +236,7 @@ class RegistroHorasViewController: UIViewController {
     
     func validaFecha()->Bool{
         
-        if(tfStartDate.text == "" || tfEndDate.text == ""){ return false}
+        if(tfStartDate.text == "" || tfEndDate.text == "" || tfProject.text == ""){ return false}
         var horasTotal = 0, ini = 0, fin = 0
         let dateIni = tfStartDate.text
         let dateFin = tfEndDate.text
@@ -283,7 +285,7 @@ class RegistroHorasViewController: UIViewController {
             tfStartDate.text = ""
 
         }else{
-            let alerta = UIAlertController(title: "❌\nFecha inválida", message: "Verifica la fecha introducida", preferredStyle: .alert);
+            let alerta = UIAlertController(title: "❌\nDatos inválidos", message: "Verifica los datos introducidos", preferredStyle: .alert);
                        let botonAceptar = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
                        alerta.addAction(botonAceptar)
                        present(alerta, animated: true)
