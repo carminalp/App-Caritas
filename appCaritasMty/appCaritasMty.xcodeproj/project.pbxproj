@@ -27,6 +27,8 @@
 		F1330F9928EF10E9004EA682 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1330F9828EF10E8004EA682 /* colors.swift */; };
 		F1330F9B28EF10F6004EA682 /* DetalleProyectoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1330F9A28EF10F6004EA682 /* DetalleProyectoViewController.swift */; };
 		F175E70828DA91B000AC01CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F175E70728DA91B000AC01CB /* Model.swift */; };
+		F1841C7D28F7A885009FE4D5 /* VoluntariosAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1841C7C28F7A885009FE4D5 /* VoluntariosAdminViewController.swift */; };
+		F1841C7F28F7AE41009FE4D5 /* VoluntarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1841C7E28F7AE41009FE4D5 /* VoluntarioTableViewCell.swift */; };
 		F1C28F0828F5A0160015C3ED /* JPieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C28F0528F5A0160015C3ED /* JPieChartDataSet.swift */; };
 		F1C28F0928F5A0160015C3ED /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C28F0628F5A0160015C3ED /* UIColor+Extension.swift */; };
 		F1C28F0A28F5A0160015C3ED /* JPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C28F0728F5A0160015C3ED /* JPieChart.swift */; };
@@ -58,6 +60,8 @@
 		F1330F9828EF10E8004EA682 /* colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		F1330F9A28EF10F6004EA682 /* DetalleProyectoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleProyectoViewController.swift; sourceTree = "<group>"; };
 		F175E70728DA91B000AC01CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F1841C7C28F7A885009FE4D5 /* VoluntariosAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoluntariosAdminViewController.swift; sourceTree = "<group>"; };
+		F1841C7E28F7AE41009FE4D5 /* VoluntarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoluntarioTableViewCell.swift; sourceTree = "<group>"; };
 		F1C28F0528F5A0160015C3ED /* JPieChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPieChartDataSet.swift; sourceTree = "<group>"; };
 		F1C28F0628F5A0160015C3ED /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F1C28F0728F5A0160015C3ED /* JPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPieChart.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		1A026C5828C8E46900632C31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1A551AC428F3383C0036A278 /* Detalle Hrs voluntario */,
 				FBD1566128E8C11500830139 /* ProyectosViewController.swift */,
 				1A6E806828C795D300C195F7 /* ViewController.swift */,
 				1A026C5928C8E49300632C31 /* VoluntarioIngresoViewController.swift */,
@@ -91,6 +96,8 @@
 				1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */,
 				1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */,
 				1A551AB928F26A490036A278 /* CustomTableViewCell.swift */,
+				F1841C7C28F7A885009FE4D5 /* VoluntariosAdminViewController.swift */,
+				F1841C7E28F7AE41009FE4D5 /* VoluntarioTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				F1C28F0428F59FC50015C3ED /* Grafica */,
-				1A551AC428F3383C0036A278 /* Detalle Hrs voluntario */,
 				1A026C5828C8E46900632C31 /* Views */,
 				F175E70628DA918700AC01CB /* Model */,
 				1A6E806428C795D300C195F7 /* AppDelegate.swift */,
@@ -247,10 +253,12 @@
 				1A551ABA28F26A490036A278 /* CustomTableViewCell.swift in Sources */,
 				1A02468828D7D10C0045B54B /* LogInVoluntarioViewController.swift in Sources */,
 				1A6E806528C795D300C195F7 /* AppDelegate.swift in Sources */,
+				F1841C7F28F7AE41009FE4D5 /* VoluntarioTableViewCell.swift in Sources */,
 				DF556F8128F5400C0079D7DC /* PerfilViewController.swift in Sources */,
 				FBF878BE28EC80510038A5AA /* projectList.swift in Sources */,
 				1A669ACF28EF12960022FC89 /* gradient.swift in Sources */,
 				1A02468A28D8B3D70045B54B /* LogInAdministradorViewController.swift in Sources */,
+				F1841C7D28F7A885009FE4D5 /* VoluntariosAdminViewController.swift in Sources */,
 				1A6E806728C795D300C195F7 /* SceneDelegate.swift in Sources */,
 				F175E70828DA91B000AC01CB /* Model.swift in Sources */,
 			);
