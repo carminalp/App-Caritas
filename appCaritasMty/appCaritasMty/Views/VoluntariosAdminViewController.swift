@@ -11,7 +11,7 @@ class VoluntariosAdminViewController: UIViewController, UITableViewDelegate, UIT
    
     @IBOutlet weak var tablaVoluntarios: UITableView!
     
-    var voluntarios = ["Geraldine Torres", "Cristina Hernández", "Carmina López", "Eduardo Hernández", "Andrés Ramírez"]
+    var voluntarios = ["Geraldine Torres", "Cristina Hernández", "Carmina López", "Eduardo Hernández", "Andrés Ramírez","Omar Omar", "Emiliano Borreguito", "Axel Gru", "Brandiuxx Minions", "Ricardo Minions", "Ivan Minions", "Marifer Minion", "Alfonso Minions"]
     
     var sectionTittle = [String]()
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZV2-a7-gOl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H2T-b8-WQL">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -167,7 +167,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="login:" destination="6pf-Qs-uAp" eventType="touchUpInside" id="wLt-Ts-5Zc"/>
-                                    <segue destination="FfD-7f-zDL" kind="show" id="07H-xd-eEo"/>
+                                    <segue destination="dzu-nT-KxC" kind="show" id="07H-xd-eEo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-qv-sD6">
@@ -228,7 +228,7 @@
             </objects>
             <point key="canvasLocation" x="911" y="945"/>
         </scene>
-        <!--Lista Voluntarios View Controller-->
+        <!--Item-->
         <scene sceneID="u8c-Zm-F6Q">
             <objects>
                 <viewController id="FfD-7f-zDL" customClass="ListaVoluntariosViewController" customModule="appCaritasMty" customModuleProvider="target" sceneMemberID="viewController">
@@ -272,7 +272,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SPh-nu-wxR">
-                                <rect key="frame" x="0.0" y="140" width="390" height="670"/>
+                                <rect key="frame" x="0.0" y="140" width="390" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="166" id="eA7-w3-Wfn" customClass="CustomTableViewCell" customModule="appCaritasMty" customModuleProvider="target">
@@ -421,7 +421,6 @@
                                             <outlet property="lbTituloProyecto" destination="Snp-GT-FHt" id="N6b-RA-JZg"/>
                                             <outlet property="vistaVoluntario" destination="Txb-x7-Xll" id="nIU-It-CNO"/>
                                             <outlet property="vistaVoluntarioRoundC" destination="pp2-dD-5GN" id="juh-cw-tlJ"/>
-                                            <segue destination="pWO-83-GEd" kind="show" id="WbL-Dw-lTV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -439,6 +438,7 @@
                             <constraint firstItem="SPh-nu-wxR" firstAttribute="leading" secondItem="GK8-hV-7pn" secondAttribute="leading" id="txM-FC-mVk"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="YVp-8J-gL1"/>
                     <navigationItem key="navigationItem" id="ZeF-CY-SGU"/>
                     <connections>
                         <outlet property="lbNombre" destination="JgU-ii-OMV" id="b42-aZ-xd0"/>
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1z-qL-e30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915" y="945"/>
+            <point key="canvasLocation" x="3533.8461538461538" y="944.78672985781986"/>
         </scene>
         <!--Hrs Voluntario View Controller-->
         <scene sceneID="jnG-vi-A1O">
@@ -683,7 +683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbZ-1u-eFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2785" y="945"/>
+            <point key="canvasLocation" x="4491" y="1682"/>
         </scene>
         <!--Proyectos-->
         <scene sceneID="ckx-Pe-Mka">
@@ -1888,7 +1888,7 @@
             </objects>
             <point key="canvasLocation" x="4070.1612903225805" y="88.702559576345976"/>
         </scene>
-        <!--Voluntarios Admin View Controller-->
+        <!--Item-->
         <scene sceneID="N2h-70-1wO">
             <objects>
                 <viewController id="H2T-b8-WQL" customClass="VoluntariosAdminViewController" customModule="appCaritasMty" customModuleProvider="target" sceneMemberID="viewController">
@@ -1897,27 +1897,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOL-Yg-ojX">
-                                <rect key="frame" x="0.0" y="-5" width="390" height="145"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="140"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voluntarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-hT-4wO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voluntarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-hT-4wO">
                                         <rect key="frame" x="20" y="58.333333333333343" width="350" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descubre los voluntarios inscritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqs-O5-eP1">
-                                        <rect key="frame" x="20" y="104.33333333333333" width="350" height="18.666666666666671"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descubre los voluntarios inscritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqs-O5-eP1">
+                                        <rect key="frame" x="22" y="104.33333333333333" width="346" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.08235294118" green="0.22352941179999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="oqs-O5-eP1" firstAttribute="leading" secondItem="cOL-Yg-ojX" secondAttribute="leading" constant="22" id="EDs-RD-suH"/>
+                                    <constraint firstAttribute="trailing" secondItem="oqs-O5-eP1" secondAttribute="trailing" constant="22" id="ETv-ep-6Uw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hjt-hT-4wO" secondAttribute="trailing" constant="20" symbolic="YES" id="I8Z-uf-Zt0"/>
+                                    <constraint firstItem="Hjt-hT-4wO" firstAttribute="leading" secondItem="cOL-Yg-ojX" secondAttribute="leading" constant="20" symbolic="YES" id="VjC-K6-05y"/>
+                                    <constraint firstAttribute="height" constant="140" id="k31-NO-Ujh"/>
+                                    <constraint firstItem="oqs-O5-eP1" firstAttribute="top" secondItem="Hjt-hT-4wO" secondAttribute="bottom" constant="10" id="lsS-j9-aiS"/>
+                                    <constraint firstItem="Hjt-hT-4wO" firstAttribute="top" secondItem="cOL-Yg-ojX" secondAttribute="top" constant="58.329999999999998" id="oEX-l1-fT0"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tw2-c4-Qok">
-                                <rect key="frame" x="0.0" y="139" width="390" height="671"/>
+                                <rect key="frame" x="0.0" y="140" width="390" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="volCell" rowHeight="83" id="Amf-k4-nTr" customClass="VoluntarioTableViewCell" customModule="appCaritasMty" customModuleProvider="target">
@@ -1928,10 +1935,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZJ-Wq-IM3">
-                                                    <rect key="frame" x="22" y="7" width="346" height="69"/>
+                                                    <rect key="frame" x="0.0" y="7" width="390" height="69"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ozc-pU-fHL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="258" height="69"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="69"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="w98-Wb-SPx">
                                                                     <rect key="frame" x="16" y="14.999999999999091" width="40" height="40"/>
@@ -1955,7 +1962,7 @@
                                                             </subviews>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEj-Vc-Lk5">
-                                                            <rect key="frame" x="275" y="23" width="62" height="28"/>
+                                                            <rect key="frame" x="319" y="23" width="62" height="28"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hrs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-Md-gpA">
                                                                     <rect key="frame" x="39" y="4" width="20" height="16"/>
@@ -2000,10 +2007,11 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.83148866889999995" green="0.87101155519999995" blue="0.84705620999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="9ZJ-Wq-IM3" firstAttribute="leading" secondItem="2vc-n8-vKK" secondAttribute="leading" constant="22" id="C07-nr-rYL"/>
+                                                <constraint firstItem="9ZJ-Wq-IM3" firstAttribute="leading" secondItem="2vc-n8-vKK" secondAttribute="leading" id="C07-nr-rYL"/>
                                                 <constraint firstItem="9ZJ-Wq-IM3" firstAttribute="top" secondItem="2vc-n8-vKK" secondAttribute="top" constant="7" id="Qzc-p4-Aw5"/>
-                                                <constraint firstAttribute="trailing" secondItem="9ZJ-Wq-IM3" secondAttribute="trailing" constant="22" id="b2T-81-v8F"/>
+                                                <constraint firstAttribute="trailing" secondItem="9ZJ-Wq-IM3" secondAttribute="trailing" id="b2T-81-v8F"/>
                                                 <constraint firstAttribute="bottom" secondItem="9ZJ-Wq-IM3" secondAttribute="bottom" constant="7" id="ll7-B7-7pG"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2014,6 +2022,7 @@
                                             <outlet property="lbNombre" destination="88c-lR-pIg" id="c1m-io-BJ0"/>
                                             <outlet property="vistaVoluntario" destination="2vc-n8-vKK" id="q4j-uy-Ucl"/>
                                             <outlet property="vistaVoluntarioRoundC" destination="9ZJ-Wq-IM3" id="6MF-vb-Aqo"/>
+                                            <segue destination="pWO-83-GEd" kind="show" id="hLG-Hk-zlk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2026,27 +2035,46 @@
                         <viewLayoutGuide key="safeArea" id="gKc-GS-jJq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="leading" secondItem="tw2-c4-Qok" secondAttribute="leading" id="B3b-un-GY2"/>
-                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="trailing" secondItem="tw2-c4-Qok" secondAttribute="trailing" id="U0h-Qa-cdW"/>
-                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="top" secondItem="hFy-pt-qxp" secondAttribute="topMargin" constant="-49" id="ZR3-RZ-PN0"/>
-                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="centerX" secondItem="hFy-pt-qxp" secondAttribute="centerX" id="jff-pt-hXx"/>
-                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="leading" secondItem="gKc-GS-jJq" secondAttribute="leading" id="tT5-K0-Lth"/>
+                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="trailing" secondItem="gKc-GS-jJq" secondAttribute="trailing" id="1H8-iR-k76"/>
+                            <constraint firstItem="tw2-c4-Qok" firstAttribute="leading" secondItem="gKc-GS-jJq" secondAttribute="leading" id="KOv-K5-pHG"/>
+                            <constraint firstItem="tw2-c4-Qok" firstAttribute="trailing" secondItem="gKc-GS-jJq" secondAttribute="trailing" id="Ouw-dh-hvn"/>
+                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="leading" secondItem="gKc-GS-jJq" secondAttribute="leading" id="dCo-8l-ecV"/>
+                            <constraint firstItem="cOL-Yg-ojX" firstAttribute="top" secondItem="hFy-pt-qxp" secondAttribute="top" id="f9z-Ak-ALT"/>
+                            <constraint firstItem="tw2-c4-Qok" firstAttribute="top" secondItem="cOL-Yg-ojX" secondAttribute="bottom" id="sts-wd-GFY"/>
                             <constraint firstItem="tw2-c4-Qok" firstAttribute="bottom" secondItem="gKc-GS-jJq" secondAttribute="bottom" id="ul3-ZN-Zn3"/>
-                            <constraint firstItem="gKc-GS-jJq" firstAttribute="bottom" secondItem="cOL-Yg-ojX" secondAttribute="bottom" constant="670" id="vwG-L3-xY6"/>
-                            <constraint firstItem="tw2-c4-Qok" firstAttribute="top" secondItem="gKc-GS-jJq" secondAttribute="top" constant="95" id="zWy-Fm-Wv9"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Fha-Vy-q49"/>
                     <connections>
                         <outlet property="tablaVoluntarios" destination="tw2-c4-Qok" id="n8e-md-xeH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NF6-ts-2VO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921.5384615384614" y="1654.9763033175354"/>
+            <point key="canvasLocation" x="3534" y="1682"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nmC-uu-27G">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dzu-nT-KxC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="qYQ-5b-04T"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="APF-9c-yXm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FfD-7f-zDL" kind="relationship" relationship="viewControllers" id="V5j-2U-VC8"/>
+                        <segue destination="H2T-b8-WQL" kind="relationship" relationship="viewControllers" id="XlR-ax-LMj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mOF-6m-u8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2604.6153846153843" y="944.78672985781986"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2ht-7N-iSX"/>
+        <segue reference="qZ5-n9-q4F"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
