@@ -164,7 +164,7 @@ class RegistroVoluntarioViewController: UIViewController {
     }
     
     @IBAction func btnRegister(_ sender: UIButton) {
-        let idVol1 = API()
+        let idVol1 = Int(API())
         defaults.setValue(idVol1, forKey: "idVol")
     }
     
@@ -186,13 +186,12 @@ class RegistroVoluntarioViewController: UIViewController {
     }
     
     func API()->Int{
-        let email = etEmail.text
-        let nombre = etName.text
+        let nombre = etName.text!
         defaults.set(nombre, forKey: "nombreVol")
-        let apellido = etSecName.text
+        let apellido = etSecName.text!
+        let email = etEmail.text!
         let pass = hashing(password: etPassword.text!)
         var apiAns = 0
-        
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/vol/registro") else{
                 return 0
