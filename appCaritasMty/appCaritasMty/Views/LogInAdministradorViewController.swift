@@ -145,7 +145,7 @@ class LogInAdministradorViewController: UIViewController {
             searchPassword = hashing(password:  tfPassword.text!)
         }
         
-        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/admin?correo=\(searchEmail)&contrasenia=\(searchPassword)") else{
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/admin?Correo=\(searchEmail)&Contrasenia=\(searchPassword)") else{
                 return apiAnswer
             }
         
@@ -163,7 +163,7 @@ class LogInAdministradorViewController: UIViewController {
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
                                         print("-------- Administrador ---------")
-                                        print("Correo: \(i.correo)" )
+                                        print("Correo: \(i.Correo)" )
                                         print("Contraseña: \(i.Contrasenia)" )
                                         self.defaults.setValue(i.nombreAdmin, forKey: "nombreAd")
                                         // Agregar segue a la vista de voluntario
