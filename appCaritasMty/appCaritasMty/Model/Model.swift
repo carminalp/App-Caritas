@@ -17,6 +17,7 @@ struct Voluntario:Codable{
 struct Administrador:Codable{
     let Contrasenia: String
     let correo: String
+    let nombreAdmin: String
 }
 
 struct Proyecto:Codable{

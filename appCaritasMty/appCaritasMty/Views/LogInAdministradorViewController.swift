@@ -16,6 +16,7 @@ class LogInAdministradorViewController: UIViewController {
     @IBOutlet weak var lbPasswordError: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
     
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +123,7 @@ class LogInAdministradorViewController: UIViewController {
                        present(alerta, animated: true)
         }
         else if API() == "valid"{
+            
             // segue
         }
     }
@@ -163,6 +165,7 @@ class LogInAdministradorViewController: UIViewController {
                                         print("-------- Administrador ---------")
                                         print("Correo: \(i.correo)" )
                                         print("Contraseña: \(i.Contrasenia)" )
+                                        self.defaults.setValue(i.nombreAdmin, forKey: "nombreAd")
                                         // Agregar segue a la vista de voluntario
                                         apiAnswer = "valid"
                                     }

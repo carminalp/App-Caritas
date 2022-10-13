@@ -10,7 +10,8 @@ import UIKit
 class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tablaVoluntarios: UITableView!
-    
+    @IBOutlet weak var lbNombre: UILabel!
+    let defaults = UserDefaults.standard
     
     let voluntarios = ["Geraldine Torres", "Cristina Hernández", "Carmina López", "Eduardo Hernández", "Andrés Ramírez"]
     
@@ -18,7 +19,9 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        let nombreA = defaults.string(forKey: "nombreAd")
+        lbNombre.text = "Hola, " + nombreA!
+        
         backButton.title = ""
         backButton.isEnabled = false
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
