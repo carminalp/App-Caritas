@@ -12,14 +12,19 @@ class RegistroHorasViewController: UIViewController {
     @IBOutlet weak var tfProject: UITextField!
     @IBOutlet weak var tfStartDate: UITextField!
     @IBOutlet weak var tfEndDate: UITextField!
+    @IBOutlet weak var lbNombre: UILabel!
+    
     let datePicker = UIDatePicker()
     let projectPicker = UIPickerView()
     var projects = [String] ()
     var idP = [String: Int] ()
     
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nombre = defaults.string(forKey: "nombreVol")
+        lbNombre.text = "Hola, " + nombre!
         
         projectPicker.delegate = self
         projectPicker.dataSource = self
@@ -55,7 +60,6 @@ class RegistroHorasViewController: UIViewController {
         
     }
     
-    let defaults = UserDefaults.standard
     func API01() -> String{
         let id = defaults.integer(forKey: "idVol")
         var apiAnswer = ""

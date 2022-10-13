@@ -10,8 +10,14 @@ import UIKit
 class PerfilViewController: UIViewController {
 
     @IBOutlet weak var pieChart: JPieChart!
+    @IBOutlet weak var lbNombre: UILabel!
+    
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nombre = defaults.string(forKey: "nombreVol")
+        lbNombre.text = nombre!
         pieChart.addChartData(data: [
              JPieChartDataSet(percent: 20, colors: [UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 1.0),UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 0.5)]),
              JPieChartDataSet(percent: 20, colors: [UIColor(red: 255/255.0, green: 175/255, blue: 128/255, alpha: 1.0), UIColor(red: 255/255.0, green: 175/255, blue: 128/255, alpha: 0.5)]),
