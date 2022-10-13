@@ -101,22 +101,47 @@ class LogInVoluntarioViewController: UIViewController {
         }
     }
     
+    let messageFrame = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    var strLabel = UILabel()
+    let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    func activityIndicator(_ title: String) {
+           strLabel.removeFromSuperview()
+           activityIndicator.removeFromSuperview()
+           effectView.removeFromSuperview()
+           strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 160, height: 46))
+           strLabel.text = title
+           strLabel.font = .systemFont(ofSize: 14, weight: .medium)
+           strLabel.textColor = UIColor(white: 0.9, alpha: 0.7)
+           effectView.frame = CGRect(x: view.frame.midX - strLabel.frame.width/2, y: view.frame.midY - strLabel.frame.height/2 , width: 160, height: 46)
+           effectView.layer.cornerRadius = 15
+           effectView.layer.masksToBounds = true
+        activityIndicator = UIActivityIndicatorView(style: .white)
+           activityIndicator.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
+           activityIndicator.startAnimating()
+           effectView.contentView.addSubview(activityIndicator)
+           effectView.contentView.addSubview(strLabel)
+           view.addSubview(effectView)
+       }
+    
     @IBAction func login(_ sender: UIButton) {
+        activityIndicator("Logging...")
         let ans = API()
-        if ans == "invalid"{
-            let alerta = UIAlertController(title: "Usuario inválido", message: "Verifica que tu correo y contraseña estén correctos.", preferredStyle: .alert);
-                       let botonCancel = UIAlertAction(title: "Volver a intentar", style: .cancel, handler: nil)
-                       alerta.addAction(botonCancel)
-                       present(alerta, animated: true)
-        }
-        else if ans == "valid"{
+        if ans == "valid"{
             print("FUNCIONA")
             // Se va a mover a donde vamos a usar el id de voluntario y el nombre
             let idVol = defaults.integer(forKey: "idVol")
             let nombre = defaults.string(forKey: "nombreVol")
             print("ID: \(idVol)" )
             print("Nombre: \(nombre ?? "")" )
-            // segue
+        }else{
+            activityIndicator.stopAnimating()
+            self.effectView.removeFromSuperview()
+            
+            let alerta = UIAlertController(title: "Usuario inválido", message: "Verifica que tu correo y contraseña estén correctos.", preferredStyle: .alert);
+                       let botonCancel = UIAlertAction(title: "Volver a intentar", style: .cancel, handler: nil)
+                       alerta.addAction(botonCancel)
+                       present(alerta, animated: true)
         }
     }
     
