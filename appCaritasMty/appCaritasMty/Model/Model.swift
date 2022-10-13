@@ -24,3 +24,7 @@ struct Proyecto:Codable{
     let Proyecto: String
     let idProyecto: Int
 }
+
+struct HorasR:Codable{
+    let HorasVol: String
+}

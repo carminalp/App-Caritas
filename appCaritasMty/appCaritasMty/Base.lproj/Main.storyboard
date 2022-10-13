@@ -1580,15 +1580,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iA-R8-8lE">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="145"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile Picture-1" translatesAutoresizingMaskIntoConstraints="NO" id="zKO-Ao-BYV">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Picture-1" translatesAutoresizingMaskIntoConstraints="NO" id="zKO-Ao-BYV">
                                         <rect key="frame" x="132" y="75" width="126" height="125"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.082352941176470587" green="0.22352941176470587" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="KEI-OH-W9E"/>
+                                    <constraint firstItem="zKO-Ao-BYV" firstAttribute="centerX" secondItem="0iA-R8-8lE" secondAttribute="centerX" id="XWS-cN-a7d"/>
                                     <constraint firstAttribute="width" constant="390" id="kTH-kr-33s"/>
+                                    <constraint firstItem="zKO-Ao-BYV" firstAttribute="top" secondItem="0iA-R8-8lE" secondAttribute="top" constant="75" id="nfl-So-VQx"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrés Ramírez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SB-oK-g3d">
@@ -1618,39 +1619,61 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horas acumuladas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tb-tg-8vP">
-                                        <rect key="frame" x="227" y="130" width="83" height="58"/>
+                                        <rect key="frame" x="236" y="100" width="83" height="43"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="p0c-v3-ZYe"/>
+                                            <constraint firstAttribute="height" constant="43" id="EXf-Mz-Dc5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4q-o6-msX">
-                                        <rect key="frame" x="239" y="72.333333333333314" width="56" height="60"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horas pendientes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6G-07-CXI">
+                                        <rect key="frame" x="236" y="195" width="83" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="udt-xq-AAE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4q-o6-msX">
+                                        <rect key="frame" x="260" y="56" width="35" height="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lO-66-Mp7" customClass="JPieChart" customModule="appCaritasMty" customModuleProvider="target">
                                         <rect key="frame" x="30" y="63" width="154.33333333333334" height="148"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zom-w9-LGh">
+                                        <rect key="frame" x="260" y="151" width="35" height="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.23529411764705882" blue="0.39215686274509803" alpha="0.19621792218543047" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="I4q-o6-msX" firstAttribute="top" secondItem="NWQ-t8-lFS" secondAttribute="bottom" constant="24.333333333333314" id="3F6-0j-h7d"/>
-                                    <constraint firstAttribute="trailing" secondItem="I4q-o6-msX" secondAttribute="trailing" constant="45" id="5ux-YW-TUE"/>
+                                    <constraint firstItem="7tb-tg-8vP" firstAttribute="centerX" secondItem="Zom-w9-LGh" secondAttribute="centerX" id="2hP-Er-ajQ"/>
                                     <constraint firstItem="4lO-66-Mp7" firstAttribute="leading" secondItem="zHi-Cc-bks" secondAttribute="leading" constant="30" id="6QI-cY-YVc"/>
                                     <constraint firstAttribute="trailing" secondItem="NWQ-t8-lFS" secondAttribute="trailing" constant="65.5" id="8iT-V7-xRw"/>
                                     <constraint firstAttribute="width" constant="340" id="Fgf-w3-Fsg"/>
+                                    <constraint firstItem="7tb-tg-8vP" firstAttribute="top" secondItem="I4q-o6-msX" secondAttribute="bottom" constant="8" symbolic="YES" id="Fnm-BO-ksd"/>
+                                    <constraint firstItem="7tb-tg-8vP" firstAttribute="leading" secondItem="Q6G-07-CXI" secondAttribute="leading" id="Lmf-7X-fVD"/>
+                                    <constraint firstItem="I4q-o6-msX" firstAttribute="leading" secondItem="4lO-66-Mp7" secondAttribute="trailing" constant="75.666666666666657" id="M3a-Qn-Aha"/>
                                     <constraint firstAttribute="bottom" secondItem="4lO-66-Mp7" secondAttribute="bottom" constant="39" id="PDt-el-fLY"/>
+                                    <constraint firstItem="7tb-tg-8vP" firstAttribute="trailing" secondItem="Q6G-07-CXI" secondAttribute="trailing" id="PIM-Bm-a0d"/>
+                                    <constraint firstItem="I4q-o6-msX" firstAttribute="top" secondItem="NWQ-t8-lFS" secondAttribute="bottom" constant="8" symbolic="YES" id="PNz-ma-UUo"/>
+                                    <constraint firstItem="I4q-o6-msX" firstAttribute="leading" secondItem="Zom-w9-LGh" secondAttribute="leading" id="QRB-kz-Yfm"/>
                                     <constraint firstItem="NWQ-t8-lFS" firstAttribute="leading" secondItem="zHi-Cc-bks" secondAttribute="leading" constant="65.5" id="Syh-Lq-qcY"/>
+                                    <constraint firstItem="Q6G-07-CXI" firstAttribute="top" secondItem="Zom-w9-LGh" secondAttribute="bottom" constant="8" symbolic="YES" id="UBn-xq-K6F"/>
+                                    <constraint firstAttribute="trailing" secondItem="7tb-tg-8vP" secondAttribute="trailing" constant="21" id="VLz-wb-Nr9"/>
+                                    <constraint firstItem="Zom-w9-LGh" firstAttribute="top" secondItem="7tb-tg-8vP" secondAttribute="bottom" constant="8" symbolic="YES" id="Y6z-Qw-n2g"/>
                                     <constraint firstItem="4lO-66-Mp7" firstAttribute="top" secondItem="NWQ-t8-lFS" secondAttribute="bottom" constant="15" id="YpO-xr-bMS"/>
-                                    <constraint firstAttribute="trailing" secondItem="7tb-tg-8vP" secondAttribute="trailing" constant="30" id="eON-F0-WMD"/>
+                                    <constraint firstItem="7tb-tg-8vP" firstAttribute="leading" secondItem="4lO-66-Mp7" secondAttribute="trailing" constant="51.666666666666657" id="fOc-jS-r8x"/>
                                     <constraint firstAttribute="trailing" secondItem="4lO-66-Mp7" secondAttribute="trailing" constant="155.66666666666666" id="j23-l7-5Rh"/>
-                                    <constraint firstItem="7tb-tg-8vP" firstAttribute="leading" secondItem="4lO-66-Mp7" secondAttribute="trailing" constant="42.666666666666657" id="jN1-dE-D9Z"/>
                                     <constraint firstItem="4lO-66-Mp7" firstAttribute="top" secondItem="zHi-Cc-bks" secondAttribute="top" constant="63" id="k4O-Mq-qyB"/>
-                                    <constraint firstItem="7tb-tg-8vP" firstAttribute="top" secondItem="NWQ-t8-lFS" secondAttribute="bottom" constant="82" id="svt-ZL-D21"/>
+                                    <constraint firstItem="I4q-o6-msX" firstAttribute="centerX" secondItem="Q6G-07-CXI" secondAttribute="centerX" id="kec-1b-lHz"/>
                                     <constraint firstAttribute="height" constant="250" id="sy8-s4-mQe"/>
                                 </constraints>
                             </view>
@@ -1675,6 +1698,8 @@
                     <tabBarItem key="tabBarItem" title="Perfil" image="person.circle" catalog="system" id="Epd-kV-C68"/>
                     <navigationItem key="navigationItem" id="Oa5-qD-0pU"/>
                     <connections>
+                        <outlet property="lbHorasP" destination="Zom-w9-LGh" id="ZY7-Yb-eLU"/>
+                        <outlet property="lbHorasV" destination="I4q-o6-msX" id="fal-ed-jun"/>
                         <outlet property="lbNombre" destination="5SB-oK-g3d" id="aul-hP-sJY"/>
                         <outlet property="pieChart" destination="4lO-66-Mp7" id="YP5-tz-tDP"/>
                     </connections>
