@@ -163,7 +163,7 @@ class LogInVoluntarioViewController: UIViewController {
             searchPassword = hashing(password:  tfPassword.text!)
         }
         
-        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/vol?correo=\(searchEmail)&contrasenia=\(searchPassword)") else{
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/vol?Correo=\(searchEmail)&Contrasenia=\(searchPassword)") else{
                 return apiAnswer
             }
             
@@ -181,12 +181,13 @@ class LogInVoluntarioViewController: UIViewController {
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
                                         print("-------- Voluntario ---------")
-                                        print("Correo: \(i.correo)" )
+                                        self.defaults.setValue(i.Apellido, forKey: "apellidoVol")
                                         print("Contraseña: \(i.Contrasenia)" )
+                                        print("Correo: \(i.Correo)" )
                                         // Agregar segue a la vista de voluntario
                                         apiAnswer = "valid"
+                                        self.defaults.setValue(i.Nombre, forKey: "nombreVol")
                                         self.defaults.setValue(i.idVol, forKey: "idVol")
-                                        self.defaults.setValue(i.nombre, forKey: "nombreVol")
                                     }
                                 }else{
                                     // Ventana emergente usuario inválido

@@ -20,6 +20,8 @@ class RegistroVoluntarioViewController: UIViewController {
     @IBOutlet weak var lbNameRequired: UILabel!
     @IBOutlet weak var lbLastNameRequired: UILabel!
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         etName.layer.cornerRadius = 5
@@ -162,7 +164,8 @@ class RegistroVoluntarioViewController: UIViewController {
     }
     
     @IBAction func btnRegister(_ sender: UIButton) {
-        API()
+        let idVol1 = API()
+        defaults.setValue(idVol1, forKey: "idVol")
     }
     
     /*
@@ -182,14 +185,17 @@ class RegistroVoluntarioViewController: UIViewController {
             return (hashPassword)
     }
     
-    func API(){
+    func API()->Int{
         let email = etEmail.text
         let nombre = etName.text
+        defaults.set(nombre, forKey: "nombreVol")
         let apellido = etSecName.text
         let pass = hashing(password: etPassword.text!)
+        var apiAns = 0
+        
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/vol/registro") else{
-                return
+                return 0
             }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -212,12 +218,14 @@ class RegistroVoluntarioViewController: UIViewController {
             do {
 let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 print("No murio:  \(response)")
+                apiAns = response as! Int
             }
             catch{
                 print(error)
             }
         }
         task.resume()
+        return apiAns
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
