@@ -40,7 +40,7 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         let voluntario = voluntarios[indexPath.row]
         cell.lbNombre.text = voluntario
         
-       cell.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
+       //cell.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
         
         return cell
     }

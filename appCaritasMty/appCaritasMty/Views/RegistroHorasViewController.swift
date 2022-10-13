@@ -233,6 +233,8 @@ class RegistroHorasViewController: UIViewController {
     }
     
     func validaFecha()->Bool{
+        
+        if(tfStartDate.text == "" || tfEndDate.text == ""){ return false}
         var horasTotal = 0, ini = 0, fin = 0
         let dateIni = tfStartDate.text
         let dateFin = tfEndDate.text
