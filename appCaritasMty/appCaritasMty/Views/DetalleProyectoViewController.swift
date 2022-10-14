@@ -27,13 +27,14 @@ class DetalleProyectoViewController: UIViewController {
     @IBOutlet weak var imgProyecto: UIImageView!
     @IBOutlet weak var btnInscribirme: UIButton!
     
+    @IBOutlet weak var viewButton: UIView!
+    
     var projectReceived = projectList(projectName: "oli", projectDesc: "",projectActivities: "", projectImage: UIImage(named: "imgAlimentos")!)
 
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         API01()
         let V = defaults.integer(forKey: "idVol")
         let P = defaults.integer(forKey: "idProyecto")
@@ -158,13 +159,15 @@ class DetalleProyectoViewController: UIViewController {
     }
     
     @IBAction func inscribirme(_ sender: UIButton) {
-        /*let alerta = UIAlertController(title: "Inscripción completada", message: "La inscripción ha sido validada correctamente.", preferredStyle: .alert);
-                   let botonCancel = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
-                   alerta.addAction(botonCancel)
-                   present(alerta, animated: true)*/
-        btnInscribirme.isEnabled = false
-        btnInscribirme.setTitle("Inscrito", for: .normal)
-        API()
+        showAlert(title: "Confirmación", message: "¿Estás seguro que deseas inscribirte?", handlerAceptar: { action in
+            self.btnInscribirme.isEnabled = false
+            self.btnInscribirme.setTitle("Inscrito", for: .normal)
+            print(self.defaults.integer(forKey: "idVol"))
+            self.API()
+        }, handlerCancelar: {actionCanel in
+            print("Action cancel called")
+        })
+
     }
     
     func API01(){
@@ -205,5 +208,20 @@ class DetalleProyectoViewController: UIViewController {
 
         group.wait()
         return
+    }
+}
+
+
+extension UIViewController {
+    
+    func showAlert(title: String, message: String, handlerAceptar:((UIAlertAction) -> Void)?, handlerCancelar: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Aceptar", style: .cancel, handler: handlerAceptar)
+        let actionCanel = UIAlertAction(title: "Cancelar", style: .destructive, handler: handlerCancelar)
+        alert.addAction(action)
+        alert.addAction(actionCanel)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
