@@ -133,7 +133,7 @@ class DetalleProyectoViewController: UIViewController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let parameters: [String: AnyHashable] = [
-            "idVol": idVol,
+            "idVol": Int(idVol),
             "idProyecto": idProyecto,
             "fechaInscripcion": f1
         ]
@@ -158,10 +158,10 @@ let response =  try JSONSerialization.jsonObject(with: data, options: .allowFrag
     }
     
     @IBAction func inscribirme(_ sender: UIButton) {
-        let alerta = UIAlertController(title: "Inscripción completada", message: "La inscripción ha sido validada correctamente.", preferredStyle: .alert);
+        /*let alerta = UIAlertController(title: "Inscripción completada", message: "La inscripción ha sido validada correctamente.", preferredStyle: .alert);
                    let botonCancel = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
                    alerta.addAction(botonCancel)
-                   present(alerta, animated: true)
+                   present(alerta, animated: true)*/
         btnInscribirme.isEnabled = false
         btnInscribirme.setTitle("Inscrito", for: .normal)
         API()

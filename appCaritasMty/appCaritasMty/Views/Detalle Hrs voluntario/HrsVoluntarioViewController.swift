@@ -14,15 +14,11 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var hrsTable: UITableView!
     
-    @IBOutlet weak var btnNoValidar: UIButton!
-    
-    @IBOutlet weak var btnValidarHoras: UIButton!
-    
+
     var backButton = UIBarButtonItem()
     
-    let fechas = ["09/08/2022", "10/08/2022", "11/08/2022", "09/08/2022", "10/08/2022", "11/08/2022","09/08/2022", "10/08/2022", "11/08/2022", "09/08/2022", "10/08/2022", "11/08/2022"]
-    let horasEntrada = ["9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM","9:00 AM", "10:00 AM", "8:00 AM"]
-    let horasSalida = ["13:00 PM", "14:00 PM", "12:00 PM","13:00 PM", "14:00 PM", "12:00 PM","13:00 PM", "14:00 PM", "12:00 PM","13:00 PM", "14:00 PM", "12:00 PM"]
+    let fechas = ["Banco de alimentos", "Ducha-T", "Banco de dinero", "Ropa", "Bañatec"]
+    let horasAcumuladas = ["120", "100", "300","500", "20"]
     
     
     override func viewDidLoad() {
@@ -33,10 +29,6 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
         backButton.tintColor = .white
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        
-        btnNoValidar.layer.borderWidth = 2
-        btnNoValidar.layer.borderColor = UIColor(rgb: 0xFFAF80).cgColor
-        btnNoValidar.layer.cornerRadius = 10
         
         
         vistaTabla.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
@@ -53,13 +45,11 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = hrsTable.dequeueReusableCell(withIdentifier: "hrsData") as! HrsDataTableViewCell
         
         let fecha = fechas[indexPath.row]
-        let horaEntrada = horasEntrada[indexPath.row]
-        let horaSalida = horasSalida[indexPath.row]
+        let horasAcumuladasP = horasAcumuladas[indexPath.row]
         
         
         cell.lbFecha.text = fecha
-        cell.lbHoraEntrada.text = horaEntrada
-        cell.lbHoraSalida.text = horaSalida
+        cell.lbHoraSalida.text = horasAcumuladasP
         
         
         
@@ -86,3 +76,4 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // Pass the selected object to the new view controller.
 }
 */
+

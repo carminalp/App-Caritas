@@ -75,6 +75,7 @@ class PerfilViewController: UIViewController {
         group.wait()
         return apiAnswer
     }
+    
     func API2() -> String{
         let idVolun = defaults.integer(forKey: "idVol")
         var apiAnswer = ""
@@ -126,4 +127,10 @@ class PerfilViewController: UIViewController {
     }
     */
 
+    
+    @IBAction func cerrarSesion(_ sender: UIButton) {
+        defaults.removeObject(forKey: "idVol")
+        defaults.removeObject(forKey: "nombreVol")
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
