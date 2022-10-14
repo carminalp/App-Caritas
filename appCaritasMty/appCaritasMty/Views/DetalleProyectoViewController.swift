@@ -191,8 +191,8 @@ let response =  try JSONSerialization.jsonObject(with: data, options: .allowFrag
                                         self.defaults.setValue(i.idProyecto, forKey: "idProyectoCheck")
                                     }
                                 }else{
-                                    // Ventana emergente usuario inválido
-                                    print("----- ERROR -----")
+                                  
+                                    print("----- NO INSCRITO -----")
                                 }
                             }catch{
                                 print(error)
