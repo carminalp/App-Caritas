@@ -237,7 +237,7 @@ class RegistroHorasViewController: UIViewController {
     func validaFecha()->Bool{
         
         if(tfStartDate.text == "" || tfEndDate.text == "" || tfProject.text == ""){ return false}
-        var horasTotal = 0, ini = 0, fin = 0
+        var horasTotal = 0, ini = 0, fin = 0, horasIni = 0,horasFin = 0
         let dateIni = tfStartDate.text
         let dateFin = tfEndDate.text
         let diaIni = Int(dateIni!.substring(with: 0..<2))
@@ -246,11 +246,19 @@ class RegistroHorasViewController: UIViewController {
         let mesFin = Int(dateFin!.substring(with: 3..<5))
         let anioIni = Int(dateIni!.substring(with: 6..<8))
         let anioFin = Int(dateFin!.substring(with: 6..<8))
-        let horasIni = Int(dateIni!.substring(with: 10..<12))
-        let horasFin = Int(dateFin!.substring(with: 10..<12))
+        if(dateIni?.count == 15){
+            horasIni = Int(dateIni!.substring(with: 10..<12))!
+        }else{
+            horasIni = Int(dateIni!.substring(with: 10..<11))!
+        }
+        if(dateFin?.count == 15){
+            horasFin = Int(dateFin!.substring(with: 10..<12))!
+        }else{
+            horasFin = Int(dateFin!.substring(with: 10..<11))!
+        }
 
-        ini = (horasIni!) + (diaIni! * 24) + (mesIni! * 730) + (anioIni! * 8760)
-        fin = (horasFin!) + (diaFin! * 24) + (mesFin! * 730) + (anioFin! * 8760)
+        ini = (horasIni) + (diaIni! * 24) + (mesIni! * 730) + (anioIni! * 8760)
+        fin = (horasFin) + (diaFin! * 24) + (mesFin! * 730) + (anioFin! * 8760)
         horasTotal = fin - ini
         
         if (horasTotal > 0){
@@ -262,12 +270,20 @@ class RegistroHorasViewController: UIViewController {
     }
     
     func calculaHoras()->Int{
-        var horas = 0
+        var horas = 0, horasIni = 0, horasFin = 0
         let dateIni = tfStartDate.text
         let dateFin = tfEndDate.text
-        let horasIni = Int(dateIni!.substring(with: 10..<12))
-        let horasFin = Int(dateFin!.substring(with: 10..<12))
-        horas = horasFin! - horasIni!
+        if(dateIni?.count == 15){
+            horasIni = Int(dateIni!.substring(with: 10..<12))!
+        }else{
+            horasIni = Int(dateIni!.substring(with: 10..<11))!
+        }
+        if(dateFin?.count == 15){
+            horasFin = Int(dateFin!.substring(with: 10..<12))!
+        }else{
+            horasFin = Int(dateFin!.substring(with: 10..<11))!
+        }
+        horas = horasFin - horasIni
         return horas
     }
     

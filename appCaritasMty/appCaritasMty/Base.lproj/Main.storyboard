@@ -1070,27 +1070,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6C-X7-8zc">
-                                <rect key="frame" x="20" y="710" width="350" height="80"/>
+                                <rect key="frame" x="20" y="722" width="350" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Quiero participar!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdI-Yk-91T">
-                                        <rect key="frame" x="20" y="30" width="160" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="0Az-EH-aAY"/>
-                                            <constraint firstAttribute="width" secondItem="kdI-Yk-91T" secondAttribute="height" multiplier="8:1" id="31G-nj-Apr"/>
-                                            <constraint firstAttribute="width" constant="160" id="ete-oK-Vp4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-rO-tgp">
-                                        <rect key="frame" x="200" y="20" width="130" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="53"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="LgT-6G-ZP8"/>
+                                            <constraint firstAttribute="height" constant="53" id="LgT-6G-ZP8"/>
                                         </constraints>
                                         <color key="tintColor" red="0.9529411793" green="0.69803923369999998" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="-1" height="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Inscribirme">
+                                        <buttonConfiguration key="configuration" style="filled" title="¡Quiero Participar!">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.9529411793" green="0.69803923369999998" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -1098,14 +1090,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.5568627451" green="0.76078431369999999" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="kdI-Yk-91T" firstAttribute="centerY" secondItem="E6C-X7-8zc" secondAttribute="centerY" id="4PP-ym-1EA"/>
-                                    <constraint firstItem="kdI-Yk-91T" firstAttribute="leading" secondItem="E6C-X7-8zc" secondAttribute="leading" constant="20" id="4aJ-AJ-7h7"/>
-                                    <constraint firstAttribute="height" constant="80" id="7ZI-bs-bFW"/>
-                                    <constraint firstItem="9kL-rO-tgp" firstAttribute="leading" secondItem="kdI-Yk-91T" secondAttribute="trailing" constant="20" id="L9i-9K-222"/>
+                                    <constraint firstAttribute="height" constant="53" id="7ZI-bs-bFW"/>
                                     <constraint firstItem="9kL-rO-tgp" firstAttribute="centerY" secondItem="E6C-X7-8zc" secondAttribute="centerY" id="b6I-d9-aKC"/>
-                                    <constraint firstAttribute="trailing" secondItem="9kL-rO-tgp" secondAttribute="trailing" constant="20" id="w90-qD-Jsx"/>
+                                    <constraint firstAttribute="trailing" secondItem="9kL-rO-tgp" secondAttribute="trailing" id="mOr-ao-8wr"/>
+                                    <constraint firstItem="9kL-rO-tgp" firstAttribute="leading" secondItem="E6C-X7-8zc" secondAttribute="leading" id="nR5-54-9xK"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnH-nv-KD4">
@@ -1311,7 +1301,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="E6C-X7-8zc" firstAttribute="leading" secondItem="WKx-Mo-rb8" secondAttribute="leading" constant="20" id="Vrv-Rj-f2x"/>
-                            <constraint firstItem="WKx-Mo-rb8" firstAttribute="bottom" secondItem="E6C-X7-8zc" secondAttribute="bottom" id="gjE-zl-kNm"/>
+                            <constraint firstItem="WKx-Mo-rb8" firstAttribute="bottom" secondItem="E6C-X7-8zc" secondAttribute="bottom" constant="15" id="gjE-zl-kNm"/>
                             <constraint firstItem="WKx-Mo-rb8" firstAttribute="trailing" secondItem="E6C-X7-8zc" secondAttribute="trailing" constant="20" id="yCn-lt-ueD"/>
                         </constraints>
                     </view>
@@ -1327,6 +1317,7 @@
                         <outlet property="postularseView" destination="E6C-X7-8zc" id="Ub0-09-Oyg"/>
                         <outlet property="tlFecha" destination="AaC-Ho-sMJ" id="jtn-AH-2Vg"/>
                         <outlet property="tlHoras" destination="1Vl-dd-DAx" id="Pa5-9Z-A2t"/>
+                        <outlet property="viewButton" destination="E6C-X7-8zc" id="cqi-xt-aPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YND-T3-VK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
