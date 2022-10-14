@@ -10,31 +10,21 @@ import UIKit
 class DetalleProyectoViewController: UIViewController {
     
     //@IBOutlet weak var tituloHeight: NSLayoutConstraint!
-    
-
     @IBOutlet weak var lbDescripcion: UILabel!
     //    @IBOutlet weak var textViewHeightDescription: NSLayoutConstraint!
-    
-
     @IBOutlet weak var lbActividades: UILabel!
     //    @IBOutlet weak var textViewHeightSub: NSLayoutConstraint!
-    
-
 //    @IBOutlet weak var textViewHeightAct: NSLayoutConstraint!
     
     @IBOutlet weak var degradadoImagen: UIView!
-    
     @IBOutlet weak var postularseView: UIView!
     @IBOutlet weak var imageViewAlimentos: UIView!
     //@IBOutlet weak var postularseV: UIView!
     
-    
     @IBOutlet weak var tlHoras: UILabel!
     @IBOutlet weak var tlFecha: UILabel!
-    
     @IBOutlet weak var lbNombreProyecto: UILabel!
     @IBOutlet weak var imgProyecto: UIImageView!
-    
     @IBOutlet weak var btnInscribirme: UIButton!
     
     var projectReceived = projectList(projectName: "oli", projectDesc: "",projectActivities: "", projectImage: UIImage(named: "imgAlimentos")!)
@@ -44,6 +34,17 @@ class DetalleProyectoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        API01()
+        let V = defaults.integer(forKey: "idVol")
+        let P = defaults.integer(forKey: "idProyecto")
+        let V1 = defaults.integer(forKey: "idVolCheck")
+        let P1 = defaults.integer(forKey: "idProyectoCheck")
+        
+        if(V==V1 && P==P1){
+            btnInscribirme.isEnabled = false
+            btnInscribirme.setTitle("Inscrito", for: .normal)
+        }
+            
         self.view.bringSubviewToFront(postularseView)
         lbActividades.numberOfLines = 0
         lbDescripcion.numberOfLines = 0
@@ -162,7 +163,47 @@ let response =  try JSONSerialization.jsonObject(with: data, options: .allowFrag
                    alerta.addAction(botonCancel)
                    present(alerta, animated: true)
         btnInscribirme.isEnabled = false
+        btnInscribirme.setTitle("Inscrito", for: .normal)
         API()
     }
     
+    func API01(){
+        let id = defaults.integer(forKey: "idVol")
+        let idProyecto = defaults.integer(forKey: "idProyecto")
+        
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/inscripcionPasada?idVol=\(id)&idProyecto=\(idProyecto)") else{
+                return
+        }
+            
+            let group = DispatchGroup()
+            group.enter()
+        
+            let task = URLSession.shared.dataTask(with: url){
+                data, response, error in
+                        if let data = data{
+                            do{
+                                let decoder = JSONDecoder()
+                                let tasks = try decoder.decode([Inscripcion].self, from: data)
+                                if (!tasks.isEmpty){
+                                    tasks.forEach{ i in
+                                        print("-------- Jaló ---------")
+                                        self.defaults.setValue(i.idVol, forKey: "idVolCheck")
+                                        self.defaults.setValue(i.idProyecto, forKey: "idProyectoCheck")
+                                    }
+                                }else{
+                                    // Ventana emergente usuario inválido
+                                    print("----- ERROR -----")
+                                }
+                            }catch{
+                                print(error)
+                                print("----- ERROR2 -----")
+                            }
+                        }
+                group.leave()
+            }
+            task.resume()
+
+        group.wait()
+        return
+    }
 }
