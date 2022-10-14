@@ -166,6 +166,7 @@ class LogInAdministradorViewController: UIViewController {
                                         print("Correo: \(i.Correo)" )
                                         print("Contraseña: \(i.Contrasenia)" )
                                         self.defaults.setValue(i.nombreAdmin, forKey: "nombreAd")
+                                        self.defaults.setValue(i.idAdmin, forKey: "idAdmin")
                                         // Agregar segue a la vista de voluntario
                                         apiAnswer = "valid"
                                     }

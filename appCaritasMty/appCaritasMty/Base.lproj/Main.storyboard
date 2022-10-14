@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -438,7 +439,9 @@
                             <constraint firstItem="SPh-nu-wxR" firstAttribute="leading" secondItem="GK8-hV-7pn" secondAttribute="leading" id="txM-FC-mVk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Validación" selectedImage="square.and.pencil" catalog="system" id="YVp-8J-gL1"/>
+                    <tabBarItem key="tabBarItem" title="Validación" selectedImage="square.and.pencil" catalog="system" id="YVp-8J-gL1">
+                        <color key="badgeColor" name="AccentColor"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="ZeF-CY-SGU"/>
                     <connections>
                         <outlet property="lbNombre" destination="JgU-ii-OMV" id="b42-aZ-xd0"/>
@@ -1811,7 +1814,9 @@
                             <constraint firstItem="tw2-c4-Qok" firstAttribute="bottom" secondItem="gKc-GS-jJq" secondAttribute="bottom" id="ul3-ZN-Zn3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Voluntarios" selectedImage="person" catalog="system" id="Fha-Vy-q49"/>
+                    <tabBarItem key="tabBarItem" title="Voluntarios" selectedImage="person" catalog="system" id="Fha-Vy-q49">
+                        <color key="badgeColor" name="AccentColor"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tablaVoluntarios" destination="tw2-c4-Qok" id="n8e-md-xeH"/>
                     </connections>
@@ -1830,6 +1835,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="FfD-7f-zDL" kind="relationship" relationship="viewControllers" id="V5j-2U-VC8"/>
@@ -2041,6 +2047,9 @@
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

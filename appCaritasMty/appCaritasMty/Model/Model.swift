@@ -16,6 +16,7 @@ struct Voluntario:Codable{
 }
 
 struct Administrador:Codable{
+    let idAdmin: Int
     let Contrasenia: String
     let Correo: String
     let nombreAdmin: String
