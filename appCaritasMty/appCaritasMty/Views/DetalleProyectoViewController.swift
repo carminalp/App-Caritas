@@ -39,6 +39,7 @@ class DetalleProyectoViewController: UIViewController {
     
     var projectReceived = projectList(projectName: "oli", projectDesc: "",projectActivities: "", projectImage: UIImage(named: "imgAlimentos")!)
 
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,12 +114,55 @@ class DetalleProyectoViewController: UIViewController {
     }
     */
 
+    func API(){
+        let idVol = defaults.integer(forKey: "idVol")
+        let idProyecto = defaults.integer(forKey: "idProyecto")
+        let fechaInscripcion = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let f1 = dateFormatter.string(from: fechaInscripcion)
+
+        
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/vol/proyecto") else{
+                return
+            }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let parameters: [String: AnyHashable] = [
+            "idVol": idVol,
+            "idProyecto": idProyecto,
+            "fechaInscripcion": f1
+        ]
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            do {
+let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                print("No murio:  \(response)")
+            }
+            catch{
+                print(error)
+            }
+        }
+        task.resume()
+        return
+    }
+    
     @IBAction func inscribirme(_ sender: UIButton) {
         let alerta = UIAlertController(title: "Inscripción completada", message: "La inscripción ha sido validada correctamente.", preferredStyle: .alert);
                    let botonCancel = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
                    alerta.addAction(botonCancel)
                    present(alerta, animated: true)
         btnInscribirme.isEnabled = false
+        API()
     }
     
 }

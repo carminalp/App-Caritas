@@ -15,6 +15,7 @@ class ProyectosViewController: UIViewController, UICollectionViewDelegate, UICol
     var itemList = [projectList]()
     
     var backButton = UIBarButtonItem()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class ProyectosViewController: UIViewController, UICollectionViewDelegate, UICol
     
 
       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+          let index = indexPath.row + 1
+          defaults.setValue(index, forKey: "idProyecto")
           let selectedData = itemList[indexPath.row]
           performSegue(withIdentifier: "showDetail", sender: selectedData)
       }
