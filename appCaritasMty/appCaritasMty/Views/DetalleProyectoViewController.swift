@@ -133,7 +133,7 @@ class DetalleProyectoViewController: UIViewController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let parameters: [String: AnyHashable] = [
-            "idVol": Int(idVol),
+            "idVol": idVol,
             "idProyecto": idProyecto,
             "fechaInscripcion": f1
         ]
@@ -146,7 +146,7 @@ class DetalleProyectoViewController: UIViewController {
                 return
             }
             do {
-let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 print("No murio:  \(response)")
             }
             catch{

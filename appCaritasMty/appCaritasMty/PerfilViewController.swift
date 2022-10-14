@@ -20,8 +20,9 @@ class PerfilViewController: UIViewController {
         
         let nombre = defaults.string(forKey: "nombreVol")
         lbNombre.text = nombre!
-        API()
-        API2()
+        let idVol = defaults.integer(forKey: "idVol")
+        API(idVol: idVol)
+        API2(idVol: idVol)
         let hV = defaults.integer(forKey: "hValidas")
         let hP = defaults.integer(forKey: "hPend")
         lbHorasV.text = String(hV)
@@ -34,12 +35,10 @@ class PerfilViewController: UIViewController {
          pieChart.lineWidth = 0.85
     }
     
-    func API() -> String{
-        let idVolun = defaults.integer(forKey: "idVol")
-        var apiAnswer = ""
+    func API(idVol: Int){
         
-        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/volHoras?idVol=\(idVolun)") else{
-                return apiAnswer
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/volHoras?idVol=\(idVol)") else{
+                return
             }
             
             let group = DispatchGroup()
@@ -55,13 +54,9 @@ class PerfilViewController: UIViewController {
                                 let tasks = try decoder.decode([HorasR].self, from: data)
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
-                                        // Agregar segue a la vista de voluntario
-                                        apiAnswer = "valid"
                                         self.defaults.setValue(i.HorasVol, forKey: "hValidas")
                                     }
                                 }else{
-                                    // Ventana emergente usuario inválido
-                                    apiAnswer = "invalid"
                                     print("----- HORAS NO ENCONTRADAS -----")
                                 }
                             }catch{
@@ -73,15 +68,13 @@ class PerfilViewController: UIViewController {
             task.resume()
 
         group.wait()
-        return apiAnswer
+        return
     }
     
-    func API2() -> String{
-        let idVolun = defaults.integer(forKey: "idVol")
-        var apiAnswer = ""
+    func API2(idVol: Int){
         
-        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/volHorasPend?idVol=\(idVolun)") else{
-                return apiAnswer
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/volHorasPend?idVol=\(idVol)") else{
+                return
             }
             
             let group = DispatchGroup()
@@ -97,13 +90,11 @@ class PerfilViewController: UIViewController {
                                 let tasks = try decoder.decode([HorasR].self, from: data)
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
-                                        // Agregar segue a la vista de voluntario
-                                        apiAnswer = "valid"
+                                        
                                         self.defaults.setValue(i.HorasVol, forKey: "hPend")
                                     }
                                 }else{
-                                    // Ventana emergente usuario inválido
-                                    apiAnswer = "invalid"
+                                    
                                     print("----- HORAS NO ENCONTRADAS -----")
                                 }
                             }catch{
@@ -115,7 +106,7 @@ class PerfilViewController: UIViewController {
             task.resume()
 
         group.wait()
-        return apiAnswer
+        return
     }
     /*
     // MARK: - Navigation
