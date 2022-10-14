@@ -107,6 +107,8 @@
                     <connections>
                         <outlet property="btnAdmin" destination="6nj-6U-cOH" id="w5B-da-YcU"/>
                         <outlet property="viewInfo" destination="D5a-3S-J3A" id="xsz-Ta-Hff"/>
+                        <segue destination="dzu-nT-KxC" kind="show" identifier="adminActivo" id="3xI-TH-Z2x"/>
+                        <segue destination="SaS-hl-GfI" kind="show" identifier="volActivo" id="5Xb-i1-5Mm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -621,6 +623,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Proyectos" image="books.vertical" catalog="system" id="Nnv-l2-DlI"/>
+                    <navigationItem key="navigationItem" id="Lth-yJ-fon"/>
                     <connections>
                         <outlet property="projectCollectionView" destination="rMh-Pd-bni" id="lFp-uC-RoV"/>
                         <segue destination="0Sb-hZ-Gu5" kind="presentation" identifier="showDetail" id="eXh-Lq-pmM"/>
@@ -2031,7 +2034,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2ht-7N-iSX"/>
+        <segue reference="3xI-TH-Z2x"/>
+        <segue reference="5Xb-i1-5Mm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
