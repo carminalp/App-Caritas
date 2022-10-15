@@ -18,8 +18,14 @@ class LogInAdministradorViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
+    var backButton = UIBarButtonItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backButton.title = "Back"
+        backButton.isEnabled = true
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         tfEmail.layer.cornerRadius = 5
         tfEmail.layer.masksToBounds = true

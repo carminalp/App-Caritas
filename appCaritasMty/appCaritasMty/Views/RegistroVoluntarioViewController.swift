@@ -21,9 +21,15 @@ class RegistroVoluntarioViewController: UIViewController {
     @IBOutlet weak var lbLastNameRequired: UILabel!
     
     let defaults = UserDefaults.standard
+    var backButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backButton.title = "Back"
+        backButton.isEnabled = true
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         etName.layer.cornerRadius = 5
         etName.layer.masksToBounds = true
         etName.layer.borderWidth = 1
