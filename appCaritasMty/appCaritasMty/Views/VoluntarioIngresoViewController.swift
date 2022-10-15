@@ -11,10 +11,13 @@ class VoluntarioIngresoViewController: UIViewController {
     @IBOutlet weak var btnLogIn: UIButton!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var MenuVolunteer: UIView!
-    
+    var backButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.title = "Back"
+        backButton.isEnabled = true
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     override func viewWillLayoutSubviews() {

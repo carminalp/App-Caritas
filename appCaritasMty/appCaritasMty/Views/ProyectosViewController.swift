@@ -20,9 +20,9 @@ class ProyectosViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.backButton.title = ""
-        self.backButton.isEnabled = false
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        backButton.title = ""
+        backButton.isEnabled = false
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         // aqui van los projects
         itemList.append(projectList(projectName: "Banco de Alimentos", projectDesc: "Maneja alimentos a gran escala para hacerlos llegar a comunidades de extrema pobreza con problemas de desnutrición.",projectActivities: "• Apoyar en la selección, peso y clasificación de alimentos\n• Lavar tarimas y cajas plásticas con pistola y cepillos en exterior del almacén\n• Apoyar en el registro y captura de vales de las instituciones beneficiadas con algún programa", projectImage: UIImage(named: "bancosalimentos")!))

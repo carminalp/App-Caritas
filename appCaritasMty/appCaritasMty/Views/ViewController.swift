@@ -11,11 +11,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var btnAdmin: UIButton!
     @IBOutlet weak var viewInfo: UIView!
-    
+    var backButton = UIBarButtonItem()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.title = ""
+        backButton.isEnabled = false
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        print(defaults.integer(forKey: "idAdmin"))
         if((defaults.integer(forKey: "idAdmin")) != 0){
             performSegue(withIdentifier: "adminActivo", sender: nil)
         }else if((defaults.integer(forKey: "idVol")) != 0){

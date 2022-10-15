@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FfD-7f-zDL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZV2-a7-gOl">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -251,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhu-fd-ryc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="911" y="945"/>
+            <point key="canvasLocation" x="2454" y="945"/>
         </scene>
         <!--Validación-->
         <scene sceneID="u8c-Zm-F6Q">
@@ -500,7 +500,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Validación" selectedImage="square.and.pencil" catalog="system" id="YVp-8J-gL1">
-                        <color key="badgeColor" name="AccentColor"/>
+                        <color key="badgeColor" systemColor="systemOrangeColor"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="ZeF-CY-SGU"/>
                     <connections>
@@ -510,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1z-qL-e30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3533.8461538461538" y="944.78672985781986"/>
+            <point key="canvasLocation" x="4105" y="945"/>
         </scene>
         <!--Proyectos-->
         <scene sceneID="ckx-Pe-Mka">
@@ -689,7 +689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0Y-4X-xnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4069" y="-689"/>
+            <point key="canvasLocation" x="4106" y="-284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="z7e-g6-BT9">
@@ -1414,7 +1414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YND-T3-VK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4992" y="-690"/>
+            <point key="canvasLocation" x="4105" y="-989"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="Kst-55-woa">
@@ -1564,7 +1564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77G-0I-EHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5790.7692307692305" y="-284.36018957345971"/>
+            <point key="canvasLocation" x="5820" y="-284"/>
         </scene>
         <!--Horas-->
         <scene sceneID="h4J-80-O75">
@@ -1752,7 +1752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdB-6w-jMB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4070.1612903225805" y="88.702559576345976"/>
+            <point key="canvasLocation" x="4954" y="-284"/>
         </scene>
         <!--Voluntarios-->
         <scene sceneID="N2h-70-1wO">
@@ -1920,7 +1920,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NF6-ts-2VO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3534" y="1682"/>
+            <point key="canvasLocation" x="4954" y="945"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nmC-uu-27G">
@@ -1941,7 +1941,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOF-6m-u8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2604.6153846153843" y="944.78672985781986"/>
+            <point key="canvasLocation" x="3285" y="945"/>
         </scene>
         <!--Hrs Voluntario View Controller-->
         <scene sceneID="mtI-gG-qMP">
@@ -2124,12 +2124,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNZ-ck-iPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4424.6153846153848" y="1681.9905213270142"/>
+            <point key="canvasLocation" x="4954" y="1686"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3xI-TH-Z2x"/>
-        <segue reference="qZ5-n9-q4F"/>
+        <segue reference="07H-xd-eEo"/>
+        <segue reference="5Xb-i1-5Mm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
@@ -2152,6 +2152,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

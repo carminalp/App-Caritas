@@ -11,7 +11,9 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBOutlet weak var tablaVoluntarios: UITableView!
     @IBOutlet weak var lbNombre: UILabel!
+    
     let defaults = UserDefaults.standard
+    
     
     let voluntarios = ["Geraldine Torres", "Cristina Hernández", "Carmina López", "Eduardo Hernández", "Andrés Ramírez"]
     
@@ -21,6 +23,7 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         let nombreA = defaults.string(forKey: "nombreAd")
         lbNombre.text = "Hola, " + nombreA!
+
         
         backButton.title = ""
         backButton.isEnabled = false
@@ -28,6 +31,7 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         
         tablaVoluntarios.delegate = self
         tablaVoluntarios.dataSource = self
+        configureItems()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +48,23 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         
         return cell
     }
+    
+    private func configureItems(){
+        navigationItem.rightBarButtonItem =
+        UIBarButtonItem(
+            image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .done, target: self, action: nil
+        )
+        
+    }
+    
+//    @IBAction func btnCerrarSesion(_ sender: UIButton) {
+//        print("SI JALÓ")
+//        defaults.removeObject(forKey: "idVol")
+//        defaults.removeObject(forKey: "nombreVol")
+//        defaults.removeObject(forKey: "idAdmin")
+//        defaults.removeObject(forKey: "nombreAd")
+//        navigationController?.popToRootViewController(animated: true)
+//    }
     
 }
 

@@ -122,6 +122,8 @@ class PerfilViewController: UIViewController {
     @IBAction func cerrarSesion(_ sender: UIButton) {
         defaults.removeObject(forKey: "idVol")
         defaults.removeObject(forKey: "nombreVol")
+        defaults.removeObject(forKey: "idAdmin")
+        defaults.removeObject(forKey: "nombreAd")
         navigationController?.popToRootViewController(animated: true)
     }
 }
