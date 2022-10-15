@@ -72,16 +72,20 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func btnCerrarSesion(_ sender: UIButton) {
-        defaults.removeObject(forKey: "idVol")
-        defaults.removeObject(forKey: "nombreVol")
-        defaults.removeObject(forKey: "idAdmin")
-        defaults.removeObject(forKey: "nombreAd")
-        defaults.removeObject(forKey: "idProyecto")
-        defaults.removeObject(forKey: "idVolCheck")
-        defaults.removeObject(forKey: "idProyectoCheck")
-        defaults.removeObject(forKey: "hValidas")
-        defaults.removeObject(forKey: "hPend")
-        navigationController?.popToRootViewController(animated: true)
+        showAlert(title: "Cerrar sesión", message: "¿Estás seguro que deseas cerrar sesión?", handlerAceptar: { action in
+            self.defaults.removeObject(forKey: "idVol")
+            self.defaults.removeObject(forKey: "nombreVol")
+            self.defaults.removeObject(forKey: "idAdmin")
+            self.defaults.removeObject(forKey: "nombreAd")
+            self.defaults.removeObject(forKey: "idProyecto")
+            self.defaults.removeObject(forKey: "idVolCheck")
+            self.defaults.removeObject(forKey: "idProyectoCheck")
+            self.defaults.removeObject(forKey: "hValidas")
+            self.defaults.removeObject(forKey: "hPend")
+            self.navigationController?.popToRootViewController(animated: true)
+        }, handlerCancelar: {actionCanel in
+            print("Action cancel called")
+        })
     }
     
     func API(){
