@@ -32,6 +32,22 @@ struct HorasR:Codable{
 }
 
 struct Inscripcion:Codable{
-    let idVol:Int
-    let idProyecto:Int
+    let idVol: Int
+    let idProyecto: Int
 }
+
+struct RegistroVoluntariado:Codable{
+    let horaFechaEntrada: String
+    let horaFechaSalida: String
+    let horas: Int
+    let idProyecto: Int
+    let idVol: Int
+    let idVoluntariado: Int
+    let validacion: Int
+}
+
+struct NyP:Codable{
+    let Nombre: String
+    let Proyecto: String
+}
+

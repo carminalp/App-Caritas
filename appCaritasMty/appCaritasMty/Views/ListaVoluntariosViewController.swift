@@ -14,13 +14,16 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     
     let defaults = UserDefaults.standard
     
-    
-    let voluntarios = ["Geraldine Torres", "Cristina Hernández", "Carmina López", "Eduardo Hernández", "Andrés Ramírez"]
+    var voluntarios = [String] ()
+    var proyectos = [String] ()
     
     var backButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        API()
+
+        
         let nombreA = defaults.string(forKey: "nombreAd")
         lbNombre.text = "Hola, " + nombreA!
 
@@ -44,6 +47,10 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         let voluntario = voluntarios[indexPath.row]
         cell.lbNombre.text = voluntario
         
+        let proyecto = proyectos[indexPath.row]
+        cell.lbTituloProyecto.text = proyecto
+
+        
        //cell.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
         
         return cell
@@ -56,6 +63,46 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         )
         
     }
+        func API(){
+            
+            guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/getNyP") else{
+                    return
+                }
+                
+                let group = DispatchGroup()
+                group.enter()
+            
+                let task = URLSession.shared.dataTask(with: url){
+                    data, response, error in
+                    
+                    
+                    let decoder = JSONDecoder()
+                            if let data = data{
+                                do{
+                                    let tasks = try decoder.decode([NyP].self, from: data)
+                                    if (!tasks.isEmpty){
+                                        tasks.forEach{ i in
+                                            print("-------- INFO ---------")
+                                            self.proyectos.append(i.Proyecto)
+                                            print(self.proyectos)
+                                            self.voluntarios.append(i.Nombre)
+                                            print(self.voluntarios)
+                                        }
+                                    }else{
+                                        print("----- INFO NO ENCONTRADA -----")
+                                    }
+                                }catch{
+                                    print(error)
+                                }
+                            }
+                    group.leave()
+                }
+                task.resume()
+
+            group.wait()
+            return
+        }
+
     
 //    @IBAction func btnCerrarSesion(_ sender: UIButton) {
 //        print("SI JALÓ")
