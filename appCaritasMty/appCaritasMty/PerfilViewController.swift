@@ -20,7 +20,7 @@ class PerfilViewController: UIViewController {
         super.viewDidLoad()
         ivPerfil.layer.cornerRadius = 150.0/2.0
         ivPerfil.layer.borderWidth = 6
-        ivPerfil.layer.borderColor = UIColor(red: Int(255.0/255.0), green: Int(175.0/255.0), blue: Int(128.0/255.0)).cgColor
+        ivPerfil.layer.borderColor = UIColor(red: 255/255, green: 175/255, blue: 128/255, alpha: 1).cgColor
         let nombre = defaults.string(forKey: "nombreVol")
         lbNombre.text = nombre!
         let idVol = defaults.integer(forKey: "idVol")

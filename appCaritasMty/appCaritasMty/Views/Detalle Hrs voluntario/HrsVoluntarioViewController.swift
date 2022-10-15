@@ -10,6 +10,7 @@ import UIKit
 class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
+    @IBOutlet weak var ivPerfil: UIImageView!
     @IBOutlet weak var vistaTabla: UIView!
     @IBOutlet weak var hrsTable: UITableView!
     @IBOutlet weak var NombreVoluntario: UILabel!
@@ -26,7 +27,9 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ivPerfil.layer.cornerRadius = 150.0/2.0
+        ivPerfil.layer.borderWidth = 6
+        ivPerfil.layer.borderColor = UIColor(red: 255/255, green: 175/255, blue: 128/255, alpha: 1).cgColor
         backButton.title = "Back"
         backButton.isEnabled = true
         backButton.tintColor = .white
