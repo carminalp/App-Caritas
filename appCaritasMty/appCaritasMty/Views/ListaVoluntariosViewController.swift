@@ -15,12 +15,17 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     let defaults = UserDefaults.standard
     
     
-    let voluntarios = ["Geraldine Torres", "Cristina Hernández", "Carmina López", "Eduardo Hernández", "Andrés Ramírez"]
+    var voluntarios = [String] ()
+    var proyectos = [String] ()
+    var Fecha = [String] ()
+    var Hora = [String] ()
     
     var backButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        API()
+        
         let nombreA = defaults.string(forKey: "nombreAd")
         lbNombre.text = "Hola, " + nombreA!
 
@@ -43,6 +48,15 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         
         let voluntario = voluntarios[indexPath.row]
         cell.lbNombre.text = voluntario
+                
+        let proyecto = proyectos[indexPath.row]
+        cell.lbTituloProyecto.text = proyecto
+                
+        let fecha = Fecha[indexPath.row]
+        cell.lbFechaInicio.text = fecha
+                
+        let hora = Hora[indexPath.row]
+        cell.lbHrsAcumuladas.text = hora
         
        //cell.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
         
@@ -64,28 +78,49 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         defaults.removeObject(forKey: "nombreAd")
         navigationController?.popToRootViewController(animated: true)
     }
-    //    @IBAction func btnCerrarSesion(_ sender: UIButton) {
-//        print("SI JALÓ")
-//        defaults.removeObject(forKey: "idVol")
-//        defaults.removeObject(forKey: "nombreVol")
-//        defaults.removeObject(forKey: "idAdmin")
-//        defaults.removeObject(forKey: "nombreAd")
-//        navigationController?.popToRootViewController(animated: true)
-//    }
+    
+    func API(){
+                
+                guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/getNyP") else{
+                        return
+                    }
+                    
+                    let group = DispatchGroup()
+                    group.enter()
+                
+                    let task = URLSession.shared.dataTask(with: url){
+                        data, response, error in
+                        
+                        
+                        let decoder = JSONDecoder()
+                                if let data = data{
+                                    do{
+                                        let tasks = try decoder.decode([NyP].self, from: data)
+                                        if (!tasks.isEmpty){
+                                            tasks.forEach{ i in
+                                                print("-------- INFO ---------")
+                                                self.proyectos.append(i.Proyecto)
+                                                self.Fecha.append(i.Mes + " " + i.Dia)
+                                                self.Hora.append(i.HoraEntrada + " - " + i.HoraSalida + " hrs")
+                                                self.voluntarios.append(i.Nombre + " " + i.Apellido)
+                                            }
+                                        }else{
+                                            print("----- INFO NO ENCONTRADA -----")
+                                        }
+                                    }catch{
+                                        print(error)
+                                    }
+                                }
+                        group.leave()
+                    }
+                    task.resume()
+     
+                group.wait()
+                return
+            }
+
     
 }
 
 
 
-
-
-
-/*
-// MARK: - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-}
-*/

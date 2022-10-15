@@ -50,6 +50,15 @@ struct horasProyecto:Codable{
     let Proyecto: String
 }
 
+struct NyP:Codable{
+    let Nombre: String
+    let Apellido: String
+    let Dia: String
+    let Mes: String
+    let HoraEntrada: String
+    let HoraSalida: String
+    let Proyecto: String
+}
 
 //SE LE AGREGÓ
 
