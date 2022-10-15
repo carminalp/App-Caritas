@@ -22,6 +22,7 @@
 		1A6E806928C795D300C195F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E806828C795D300C195F7 /* ViewController.swift */; };
 		1A6E806C28C795D300C195F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E806A28C795D300C195F7 /* Main.storyboard */; };
 		1A6E806E28C795D900C195F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E806D28C795D900C195F7 /* Assets.xcassets */; };
+		1ACECF5428F9EE930026AEAD /* voluntariosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACECF5328F9EE930026AEAD /* voluntariosManager.swift */; };
 		1AE8E15A28F2515600F05E1D /* ListaVoluntariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */; };
 		DF556F8128F5400C0079D7DC /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF556F8028F5400C0079D7DC /* PerfilViewController.swift */; };
 		F1330F9928EF10E9004EA682 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1330F9828EF10E8004EA682 /* colors.swift */; };
@@ -55,6 +56,7 @@
 		1A6E806B28C795D300C195F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A6E806D28C795D900C195F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A6E807228C795D900C195F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ACECF5328F9EE930026AEAD /* voluntariosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voluntariosManager.swift; sourceTree = "<group>"; };
 		1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaVoluntariosViewController.swift; sourceTree = "<group>"; };
 		DF556F8028F5400C0079D7DC /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		F1330F9828EF10E8004EA682 /* colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		1A026C5828C8E46900632C31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1ACECF5528F9F0E40026AEAD /* Tabla Voluntarios Admin */,
 				1A551AC428F3383C0036A278 /* Detalle Hrs voluntario */,
 				FBD1566128E8C11500830139 /* ProyectosViewController.swift */,
 				1A6E806828C795D300C195F7 /* ViewController.swift */,
@@ -96,8 +99,6 @@
 				1A669AD028EF1BFB0022FC89 /* RegistroHorasViewController.swift */,
 				1AE8E15928F2515600F05E1D /* ListaVoluntariosViewController.swift */,
 				1A551AB928F26A490036A278 /* CustomTableViewCell.swift */,
-				F1841C7C28F7A885009FE4D5 /* VoluntariosAdminViewController.swift */,
-				F1841C7E28F7AE41009FE4D5 /* VoluntarioTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,11 +147,21 @@
 			path = appCaritasMty;
 			sourceTree = "<group>";
 		};
+		1ACECF5528F9F0E40026AEAD /* Tabla Voluntarios Admin */ = {
+			isa = PBXGroup;
+			children = (
+				F1841C7E28F7AE41009FE4D5 /* VoluntarioTableViewCell.swift */,
+				F1841C7C28F7A885009FE4D5 /* VoluntariosAdminViewController.swift */,
+			);
+			path = "Tabla Voluntarios Admin";
+			sourceTree = "<group>";
+		};
 		F175E70628DA918700AC01CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FBF878BD28EC80510038A5AA /* projectList.swift */,
 				F175E70728DA91B000AC01CB /* Model.swift */,
+				1ACECF5328F9EE930026AEAD /* voluntariosManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 			files = (
 				FBF878BC28EC78180038A5AA /* ProjectCollectionViewCell.swift in Sources */,
 				1AE8E15A28F2515600F05E1D /* ListaVoluntariosViewController.swift in Sources */,
+				1ACECF5428F9EE930026AEAD /* voluntariosManager.swift in Sources */,
 				1A551AC828F33FD20036A278 /* HrsDataTableViewCell.swift in Sources */,
 				F1C28F0928F5A0160015C3ED /* UIColor+Extension.swift in Sources */,
 				1A551AC628F338540036A278 /* HrsVoluntarioViewController.swift in Sources */,

@@ -1701,8 +1701,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tw2-c4-Qok">
                                 <rect key="frame" x="0.0" y="140" width="390" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" red="0.83137255909999996" green="0.87450981139999995" blue="0.84705877299999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="volCell" rowHeight="83" id="Amf-k4-nTr" customClass="VoluntarioTableViewCell" customModule="appCaritasMty" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VoluntariosCell" rowHeight="83" id="Amf-k4-nTr" customClass="VoluntarioTableViewCell" customModule="appCaritasMty" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Amf-k4-nTr" id="2vc-n8-vKK">
@@ -1728,7 +1729,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correo@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLO-Lh-yUl">
-                                                                    <rect key="frame" x="64" y="36" width="117" height="17"/>
+                                                                    <rect key="frame" x="64" y="36" width="230" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -1827,7 +1828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NF6-ts-2VO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3534" y="1682"/>
+            <point key="canvasLocation" x="3533.8461538461538" y="1681.9905213270142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nmC-uu-27G">
@@ -1997,6 +1998,15 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zic-8A-xI2">
                                 <rect key="frame" x="22" y="718" width="346" height="53"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="texto prueba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqK-Rz-TCm">
+                                        <rect key="frame" x="46" y="-20" width="215" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="GpG-07-NdH"/>
@@ -2025,6 +2035,7 @@
                     <navigationItem key="navigationItem" id="QDh-EL-XJp"/>
                     <connections>
                         <outlet property="hrsTable" destination="vyr-pw-3SL" id="Khy-na-OAf"/>
+                        <outlet property="textoPrueba" destination="mqK-Rz-TCm" id="dJy-ZG-jHr"/>
                         <outlet property="vistaTabla" destination="y3s-8k-LOb" id="uBg-tg-Car"/>
                     </connections>
                 </viewController>
@@ -2034,7 +2045,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2ht-7N-iSX"/>
+        <segue reference="qZ5-n9-q4F"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
