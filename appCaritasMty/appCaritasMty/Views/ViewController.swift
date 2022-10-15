@@ -11,8 +11,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var btnAdmin: UIButton!
     @IBOutlet weak var viewInfo: UIView!
+    
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if((defaults.integer(forKey: "idAdmin")) != 0){
+            performSegue(withIdentifier: "adminActivo", sender: nil)
+        }else if((defaults.integer(forKey: "idVol")) != 0){
+            performSegue(withIdentifier: "volActivo", sender: nil)
+        }
         // Do any additional setup after loading the view.
     }
 
