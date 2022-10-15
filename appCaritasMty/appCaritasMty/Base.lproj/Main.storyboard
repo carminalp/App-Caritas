@@ -2118,6 +2118,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QDh-EL-XJp"/>
                     <connections>
+                        <outlet property="NombreVoluntario" destination="6Pl-Qz-4VZ" id="Xq7-o9-bWS"/>
                         <outlet property="hrsTable" destination="vyr-pw-3SL" id="Khy-na-OAf"/>
                         <outlet property="vistaTabla" destination="y3s-8k-LOb" id="uBg-tg-Car"/>
                     </connections>
