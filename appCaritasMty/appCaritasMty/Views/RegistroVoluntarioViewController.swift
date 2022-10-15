@@ -125,8 +125,18 @@ class RegistroVoluntarioViewController: UIViewController {
             return "La longitud mínima es de 8 caracteres."
         }
         if containsDigit(password){
-            return nil
+            return "La contraseña debe contener mínimo 1 número."
         }
+        if containsLowerCase(password){
+            return "La contraseña debe contener mínimo una letra minúscula."
+        }
+        if containsUpperCase(password){
+            return "La contraseña debe contener mínimo una letra mayúscula."
+        }
+        // Me falta el de caracteres especiales
+        /*if containsSpecialChar(password){
+            return "La contraseña debe contener mínimo un caracter especial."
+        }*/
         return nil
     }
     
@@ -136,12 +146,25 @@ class RegistroVoluntarioViewController: UIViewController {
         return !predicate.evaluate(with: value)
     }
     
-    func containsLetters(_ value: String) -> Bool{
+    func containsLowerCase(_ value: String) -> Bool{
         let Regex = ".*[a-z]+.*"
         let predicate = NSPredicate(format:"SELF MATCHES %@", Regex)
         return !predicate.evaluate(with: value)
     }
-
+    
+    func containsUpperCase(_ value: String) -> Bool{
+        let Regex = ".*[A-Z]+.*"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", Regex)
+        return !predicate.evaluate(with: value)
+    }
+    
+    // Me falta el de caracteres especiales
+    /*func containsSpecialChar(_ value: String) -> Bool{
+        let Regex = "^[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~].{8,}$"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", Regex)
+        return !predicate.evaluate(with: value)
+    }*/
+    
     func checkForValidForm(){
         if lbEmailError.isHidden && lbPasswordError.isHidden && lbNameRequired.isHidden && lbLastNameRequired.isHidden{
             btnRegistrarse.isEnabled = true
