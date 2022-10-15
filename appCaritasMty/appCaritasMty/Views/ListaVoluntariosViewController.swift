@@ -57,7 +57,14 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         
     }
     
-//    @IBAction func btnCerrarSesion(_ sender: UIButton) {
+    @IBAction func btnCerrarSesion(_ sender: UIButton) {
+        defaults.removeObject(forKey: "idVol")
+        defaults.removeObject(forKey: "nombreVol")
+        defaults.removeObject(forKey: "idAdmin")
+        defaults.removeObject(forKey: "nombreAd")
+        navigationController?.popToRootViewController(animated: true)
+    }
+    //    @IBAction func btnCerrarSesion(_ sender: UIButton) {
 //        print("SI JALÓ")
 //        defaults.removeObject(forKey: "idVol")
 //        defaults.removeObject(forKey: "nombreVol")

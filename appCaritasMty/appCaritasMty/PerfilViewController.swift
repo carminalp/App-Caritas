@@ -13,11 +13,14 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var lbNombre: UILabel!
     @IBOutlet weak var lbHorasV: UILabel!
     @IBOutlet weak var lbHorasP: UILabel!
+    @IBOutlet weak var ivPerfil: UIImageView!
     
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ivPerfil.layer.cornerRadius = 150.0/2.0
+        ivPerfil.layer.borderWidth = 6
+        ivPerfil.layer.borderColor = UIColor(red: Int(255.0/255.0), green: Int(175.0/255.0), blue: Int(128.0/255.0)).cgColor
         let nombre = defaults.string(forKey: "nombreVol")
         lbNombre.text = nombre!
         let idVol = defaults.integer(forKey: "idVol")
@@ -118,6 +121,7 @@ class PerfilViewController: UIViewController {
     }
     */
 
+    
     
     @IBAction func cerrarSesion(_ sender: UIButton) {
         defaults.removeObject(forKey: "idVol")
