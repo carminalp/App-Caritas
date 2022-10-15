@@ -11,20 +11,17 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
     
 
     @IBOutlet weak var vistaTabla: UIView!
-    
     @IBOutlet weak var hrsTable: UITableView!
-    
-    @IBOutlet weak var textoPrueba: UILabel!
-    
+    @IBOutlet weak var NombreVoluntario: UILabel!
     
     var voluntarioRecibido: horasValidadasVoluntario?
     var backButton = UIBarButtonItem()
-    
     var listHorasProyecto = [horasProyecto]()
     
-    
-//    let fechas = ["Banco de alimentos", "Ducha-T", "Banco de dinero", "Ropa", "Bañatec"]
-//    let horasAcumuladas = ["120", "100", "300","500", "20"]
+    var listHoras = [String] ()
+    var listProyectos = [String] ()
+    var apellido = ""
+    var nombre = ""
     
     
     override func viewDidLoad() {
@@ -41,60 +38,75 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
         hrsTable.dataSource = self
         
         if (voluntarioRecibido != nil){
-            
-            textoPrueba.text = voluntarioRecibido!.Nombre
-            API(idVoluntario: voluntarioRecibido!.idVol)
-            
+            API01()
+            NombreVoluntario.text = nombre + " " + apellido
         }
         
     }
     
-    func API(idVoluntario: Int) {
-        var listHorasProyecto2 = [horasProyecto]()
+    func API01(){
+        let id = self.voluntarioRecibido?.idVol
+        var apiAnswer = ""
         
-        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/admin/horasproyecto?idVol=\(voluntarioRecibido?.idVol)") else {return}
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/admin/horasproyecto?idVol=\(id!)") else{
+                return
+        }
+            
+            let group = DispatchGroup()
+            group.enter()
         
-        let group = DispatchGroup()
-        group.enter()
-        
-        
-        let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
-            if error != nil || data == nil {
-                print("error")
+            let task = URLSession.shared.dataTask(with: url){
+                data, response, error in
+                        if let data = data{
+                            do{
+                                let decoder = JSONDecoder()
+                                let tasks = try decoder.decode([horasProyecto].self, from: data)
+                                if (!tasks.isEmpty){
+                                    tasks.forEach{ i in
+                                        print("-------- Jaló ---------")
+                                        self.listHoras.append(i.Horas)
+                                        self.listProyectos.append(i.Proyecto)
+                                        self.apellido = i.Apellido
+                                        self.nombre = i.Nombre
+                                        
+                                        print(i.Horas)
+                                        print(i.Proyecto)
+                                        print(i.Nombre)
+                                        print(i.Apellido)
+                                        
+                                        // Agregar segue a la vista de voluntario
+                                        apiAnswer = "valid"
+                                    }
+                                }else{
+                                    // Ventana emergente usuario inválido
+                                    apiAnswer = "invalid"
+                                    print("----- ERROR -----")
+                                }
+                            }catch{
+                                print(error)
+                                print("----- ERROR2 -----")
+                            }
+                        }
+                group.leave()
             }
-            else{
-                if let responseText = String.init(data: data!, encoding: .ascii){
-                    let jsonData = responseText.data(using: .utf8)!
-                    listHorasProyecto2 = try! JSONDecoder().decode([horasProyecto].self, from: jsonData)
-                    
-                    self.listHorasProyecto = listHorasProyecto2
-                    
-                    
-                }
-            }
-        })
-        
-        task.resume()
+            task.resume()
+
+        group.wait()
+        return
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listHorasProyecto.count
+        return listProyectos.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = hrsTable.dequeueReusableCell(withIdentifier: "hrsData") as! HrsDataTableViewCell
 
-        let proyectos = listHorasProyecto[indexPath.row]
-        let proyecto = proyectos.Proyecto
-        let hora = proyectos.Horas
-
+        let proyecto = listProyectos[indexPath.row]
+        let hora = listHoras[indexPath.row]
 
         cell.lbFecha.text = proyecto
         cell.lbHoraSalida.text = hora
-
-
-
-
 
         return cell
     }
