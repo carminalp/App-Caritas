@@ -38,6 +38,16 @@ class PerfilViewController: UIViewController {
          pieChart.lineWidth = 0.85
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let idVol = defaults.integer(forKey: "idVol")
+        API(idVol: idVol)
+        API2(idVol: idVol)
+        let hV = defaults.integer(forKey: "hValidas")
+        let hP = defaults.integer(forKey: "hPend")
+        lbHorasV.text = String(hV)
+        lbHorasP.text = String(hP)
+    }
+    
     func API(idVol: Int){
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/volHoras?idVol=\(idVol)") else{
@@ -128,6 +138,11 @@ class PerfilViewController: UIViewController {
         defaults.removeObject(forKey: "nombreVol")
         defaults.removeObject(forKey: "idAdmin")
         defaults.removeObject(forKey: "nombreAd")
+        defaults.removeObject(forKey: "idProyecto")
+        defaults.removeObject(forKey: "idVolCheck")
+        defaults.removeObject(forKey: "idProyectoCheck")
+        defaults.removeObject(forKey: "hValidas")
+        defaults.removeObject(forKey: "hPend")
         navigationController?.popToRootViewController(animated: true)
     }
 }

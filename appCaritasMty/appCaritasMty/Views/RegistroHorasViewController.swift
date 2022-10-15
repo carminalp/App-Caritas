@@ -60,6 +60,12 @@ class RegistroHorasViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        projects = [String] ()
+        idP = [String: Int] ()
+        API01()
+    }
+    
     func API01() -> String{
         let id = defaults.integer(forKey: "idVol")
         var apiAnswer = ""

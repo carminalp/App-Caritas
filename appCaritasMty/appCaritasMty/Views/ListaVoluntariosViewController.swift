@@ -76,6 +76,11 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         defaults.removeObject(forKey: "nombreVol")
         defaults.removeObject(forKey: "idAdmin")
         defaults.removeObject(forKey: "nombreAd")
+        defaults.removeObject(forKey: "idProyecto")
+        defaults.removeObject(forKey: "idVolCheck")
+        defaults.removeObject(forKey: "idProyectoCheck")
+        defaults.removeObject(forKey: "hValidas")
+        defaults.removeObject(forKey: "hPend")
         navigationController?.popToRootViewController(animated: true)
     }
     
