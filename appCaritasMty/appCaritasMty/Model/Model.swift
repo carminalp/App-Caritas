@@ -48,6 +48,11 @@ struct RegistroVoluntariado:Codable{
 
 struct NyP:Codable{
     let Nombre: String
+    let Apellido: String
+    let Dia: String
+    let Mes: String
+    let HoraEntrada: String
+    let HoraSalida: String
     let Proyecto: String
 }
 

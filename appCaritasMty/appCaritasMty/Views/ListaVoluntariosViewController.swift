@@ -16,6 +16,8 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     
     var voluntarios = [String] ()
     var proyectos = [String] ()
+    var Fecha = [String] ()
+    var Hora = [String] ()
     
     var backButton = UIBarButtonItem()
     
@@ -49,6 +51,12 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         
         let proyecto = proyectos[indexPath.row]
         cell.lbTituloProyecto.text = proyecto
+        
+        let fecha = Fecha[indexPath.row]
+        cell.lbFechaInicio.text = fecha
+        
+        let hora = Hora[indexPath.row]
+        cell.lbHrsAcumuladas.text = hora
 
         
        //cell.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
@@ -84,9 +92,9 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                                         tasks.forEach{ i in
                                             print("-------- INFO ---------")
                                             self.proyectos.append(i.Proyecto)
-                                            print(self.proyectos)
-                                            self.voluntarios.append(i.Nombre)
-                                            print(self.voluntarios)
+                                            self.Fecha.append(i.Mes + " " + i.Dia)
+                                            self.Hora.append(i.HoraEntrada + " - " + i.HoraSalida + " hrs")
+                                            self.voluntarios.append(i.Nombre + " " + i.Apellido)
                                         }
                                     }else{
                                         print("----- INFO NO ENCONTRADA -----")
