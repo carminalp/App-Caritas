@@ -414,7 +414,7 @@
                                                                                         <constraint firstAttribute="width" constant="100" id="SlC-WB-9RQ"/>
                                                                                         <constraint firstAttribute="height" constant="30" id="sHw-oX-sOZ"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -451,7 +451,7 @@
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="30" id="HJh-FE-rkA"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -468,7 +468,7 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstItem="2VK-Ev-3AN" firstAttribute="top" secondItem="eKs-O2-Oeh" secondAttribute="top" constant="-3" id="0uc-xu-TC8"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="9sr-uk-6Uy" secondAttribute="trailing" constant="5" id="2cy-UU-9eZ"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="9sr-uk-6Uy" secondAttribute="trailing" constant="3" id="2cy-UU-9eZ"/>
                                                                         <constraint firstAttribute="trailing" secondItem="B6c-fV-YVe" secondAttribute="trailing" constant="15" id="9QY-t9-aAV"/>
                                                                         <constraint firstItem="2VK-Ev-3AN" firstAttribute="width" secondItem="TSr-en-54T" secondAttribute="width" multiplier="1.00221" id="AB2-xA-bwA"/>
                                                                         <constraint firstItem="2VK-Ev-3AN" firstAttribute="leading" secondItem="eKs-O2-Oeh" secondAttribute="leading" constant="15" id="B9u-Zo-zDg"/>
