@@ -75,6 +75,8 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         let idVoluntariado = idReg[indexPath.row]
         let idVol = idVo[indexPath.row]
         API01(idR: idVoluntariado, idV: idVol)
+        voluntarios.remove(at: indexPath.row)
+        tablaVoluntarios.deleteRows(at: [indexPath], with: .fade)
     }
     
     @objc func deleteButton(sender:UIButton){
@@ -83,6 +85,8 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         let idVol1 = idVo[indexPath.row]
         API02(idR: idVoluntariado1, idV: idVol1)
         voluntarios.remove(at: indexPath.row)
+        tablaVoluntarios.deleteRows(at: [indexPath], with: .fade)
+        
     }
     
     private func configureItems(){
