@@ -14,7 +14,8 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     
     let defaults = UserDefaults.standard
     
-    
+    var idReg = [Int] ()
+    var idVo = [Int] ()
     var voluntarios = [String] ()
     var proyectos = [String] ()
     var Fecha = [String] ()
@@ -108,6 +109,8 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                                         if (!tasks.isEmpty){
                                             tasks.forEach{ i in
                                                 print("-------- INFO ---------")
+                                                self.idReg.append(i.idVoluntariado)
+                                                self.idVo.append(i.idVol)
                                                 self.proyectos.append(i.Proyecto)
                                                 self.Fecha.append(i.Mes + " " + i.Dia)
                                                 self.Hora.append(i.HoraEntrada + " - " + i.HoraSalida + " hrs")
@@ -129,6 +132,7 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
             }
     
     func API01(){
+        //Usar los arreglos con los registros de los ids
         let idVoluntariado = 12
         let idVol = 1
         
@@ -154,8 +158,10 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         task.resume()
         return
     }
-    @IBAction func btValidacion(_ sender: Any) {
-        API01()
+    
+    //Corregir la llamada del boton para que detecte el cell
+    @IBAction func btValida(_ sender: UIButton) {
+        //API01()
     }
     
     
