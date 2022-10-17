@@ -424,6 +424,9 @@
                                                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                                                 <color key="baseBackgroundColor" red="1" green="0.68627450980000004" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             </buttonConfiguration>
+                                                                            <connections>
+                                                                                <action selector="btValidacion:" destination="FfD-7f-zDL" eventType="touchUpInside" id="M9W-U8-pDJ"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6c-fV-YVe">
                                                                             <rect key="frame" x="180.66666666666663" y="38" width="150.33333333333337" height="43"/>
