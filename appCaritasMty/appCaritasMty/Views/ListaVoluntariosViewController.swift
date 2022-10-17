@@ -59,9 +59,30 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         let hora = Hora[indexPath.row]
         cell.lbHrsAcumuladas.text = hora
         
+        cell.btnValidar.tag = indexPath.row
+        cell.btnValidar.addTarget(self, action: #selector(addtoButton), for: .touchUpInside)
+        
+        cell.btnNoValidar1.tag = indexPath.row
+        cell.btnNoValidar1.addTarget(self, action: #selector(deleteButton), for: .touchUpInside)
+        
        //cell.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
         
         return cell
+    }
+    
+    @objc func addtoButton(sender:UIButton){
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let idVoluntariado = idReg[indexPath.row]
+        let idVol = idVo[indexPath.row]
+        API01(idR: idVoluntariado, idV: idVol)
+    }
+    
+    @objc func deleteButton(sender:UIButton){
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let idVoluntariado1 = idReg[indexPath.row]
+        let idVol1 = idVo[indexPath.row]
+        API02(idR: idVoluntariado1, idV: idVol1)
+        voluntarios.remove(at: indexPath.row)
     }
     
     private func configureItems(){
@@ -131,10 +152,10 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                 return
             }
     
-    func API01(){
+    func API01(idR: Int, idV: Int){
         //Usar los arreglos con los registros de los ids
-        let idVoluntariado = 12
-        let idVol = 1
+        let idVoluntariado = idR
+        let idVol = idV
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/horas/validas?idVoluntariado=\(idVoluntariado)&idVol=\(idVol)") else{
                 return
@@ -159,9 +180,32 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         return
     }
     
-    //Corregir la llamada del boton para que detecte el cell
-    @IBAction func btValida(_ sender: UIButton) {
-        //API01()
+    func API02(idR: Int, idV: Int){
+        //Usar los arreglos con los registros de los ids
+        let idVoluntariado = idR
+        let idVol = idV
+        
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/borrarHoras?idVoluntariado=\(idVoluntariado)&idVol=\(idVol)") else{
+                return
+            }
+ 
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+ 
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            do {
+                let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                print("No murio:  \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+        return
     }
     
     
