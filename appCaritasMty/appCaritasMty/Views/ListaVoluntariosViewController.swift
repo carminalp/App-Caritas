@@ -28,7 +28,7 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         API()
         
         let nombreA = defaults.string(forKey: "nombreAd")
-        //lbNombre.text = "Hola, " + nombreA!
+        lbNombre.text = "Hola, " + nombreA!
 
         
         backButton.title = ""
