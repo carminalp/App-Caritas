@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZV2-a7-gOl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ndi-0O-1KO">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -156,7 +156,7 @@
                                     <constraint firstAttribute="height" constant="60" id="Dto-E5-P5e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="emailChanged:" destination="6pf-Qs-uAp" eventType="editingChanged" id="Pej-jS-iKk"/>
                                 </connections>
@@ -167,7 +167,7 @@
                                     <constraint firstAttribute="height" constant="60" id="zIU-fo-bLK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="passwordChanged:" destination="6pf-Qs-uAp" eventType="editingChanged" id="Nkw-df-NlN"/>
                                 </connections>
@@ -872,7 +872,7 @@
                                     <constraint firstAttribute="height" constant="60" id="MWe-1N-V7z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                 <connections>
                                     <action selector="emailChanged:" destination="ndi-0O-1KO" eventType="editingChanged" id="Jjg-Wb-ZIE"/>
                                 </connections>
@@ -884,7 +884,7 @@
                                     <constraint firstAttribute="height" constant="60" id="Gn6-Iv-TS0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="passwordChanged:" destination="ndi-0O-1KO" eventType="editingChanged" id="c8U-6d-8xD"/>
                                 </connections>
@@ -909,7 +909,7 @@
                                         <rect key="frame" x="175" y="0.0" width="171" height="60"/>
                                         <color key="backgroundColor" red="0.26274509800000001" green="0.59215686270000001" blue="0.65490196079999996" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
                                         <connections>
                                             <action selector="lastNameChanged:" destination="ndi-0O-1KO" eventType="editingChanged" id="Zj6-1a-fzc"/>
                                         </connections>
@@ -1042,7 +1042,7 @@
                                     <constraint firstAttribute="height" constant="60" id="LI6-3e-dKS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                 <connections>
                                     <action selector="emailChanged:" destination="5Vg-I8-Eki" eventType="editingChanged" id="USp-ET-euT"/>
                                 </connections>
@@ -1053,7 +1053,7 @@
                                     <constraint firstAttribute="height" constant="60" id="NXw-kN-6mm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="passwordChanged:" destination="5Vg-I8-Eki" eventType="editingChanged" id="D3O-lP-oyf"/>
                                 </connections>
@@ -2144,7 +2144,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="07H-xd-eEo"/>
-        <segue reference="2ht-7N-iSX"/>
+        <segue reference="qZ5-n9-q4F"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

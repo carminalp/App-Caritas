@@ -133,10 +133,9 @@ class RegistroVoluntarioViewController: UIViewController {
         if containsUpperCase(password){
             return "La contraseña debe contener mínimo una letra mayúscula."
         }
-        // Me falta el de caracteres especiales
-        /*if containsSpecialChar(password){
+        if containsSpecialChar(password){
             return "La contraseña debe contener mínimo un caracter especial."
-        }*/
+        }
         return nil
     }
     
@@ -158,12 +157,11 @@ class RegistroVoluntarioViewController: UIViewController {
         return !predicate.evaluate(with: value)
     }
     
-    // Me falta el de caracteres especiales
-    /*func containsSpecialChar(_ value: String) -> Bool{
-        let Regex = "^[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~].{8,}$"
+    func containsSpecialChar(_ value: String) -> Bool{
+        let Regex = ".*[!\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]+.*"
         let predicate = NSPredicate(format:"SELF MATCHES %@", Regex)
         return !predicate.evaluate(with: value)
-    }*/
+    }
     
     func checkForValidForm(){
         if lbEmailError.isHidden && lbPasswordError.isHidden && lbNameRequired.isHidden && lbLastNameRequired.isHidden{
