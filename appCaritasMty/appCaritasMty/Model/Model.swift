@@ -51,6 +51,8 @@ struct horasProyecto:Codable{
 }
 
 struct NyP:Codable{
+    let idVoluntariado: Int
+    let idVol: Int
     let Nombre: String
     let Apellido: String
     let Dia: String
