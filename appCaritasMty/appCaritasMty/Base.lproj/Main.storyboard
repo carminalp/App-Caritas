@@ -2003,7 +2003,7 @@
                                                 <rect key="frame" x="181" y="0.0" width="159" height="50"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="159" id="iI7-QR-QYf"/>
+                                                    <constraint firstAttribute="height" constant="50" id="v86-u3-9pi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.41176470590000003" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -2013,12 +2013,12 @@
                                         <color key="backgroundColor" red="0.84705882349999995" green="0.86274509799999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="wqr-PM-fVK" firstAttribute="height" secondItem="tlh-zS-Alb" secondAttribute="height" id="3Zj-eC-xbG"/>
+                                            <constraint firstItem="wqr-PM-fVK" firstAttribute="leading" secondItem="tlh-zS-Alb" secondAttribute="trailing" constant="13" id="AiI-Xv-kb3"/>
                                             <constraint firstItem="tlh-zS-Alb" firstAttribute="leading" secondItem="H2F-xv-03b" secondAttribute="leading" constant="10" id="EEy-8O-Fhq"/>
                                             <constraint firstAttribute="bottom" secondItem="tlh-zS-Alb" secondAttribute="bottom" id="Hvl-Eg-1B9"/>
                                             <constraint firstAttribute="trailing" secondItem="wqr-PM-fVK" secondAttribute="trailing" constant="10" id="NJM-Yi-qMu"/>
                                             <constraint firstItem="tlh-zS-Alb" firstAttribute="top" secondItem="H2F-xv-03b" secondAttribute="top" id="VZS-Uv-gHp"/>
                                             <constraint firstAttribute="height" constant="50" id="XsD-BO-Kpg"/>
-                                            <constraint firstItem="wqr-PM-fVK" firstAttribute="leading" secondItem="tlh-zS-Alb" secondAttribute="trailing" constant="13" id="eV9-JX-lVP"/>
                                             <constraint firstItem="wqr-PM-fVK" firstAttribute="top" secondItem="H2F-xv-03b" secondAttribute="top" id="mLw-CR-sW6"/>
                                             <constraint firstAttribute="bottom" secondItem="wqr-PM-fVK" secondAttribute="bottom" id="tJH-w6-Z9r"/>
                                         </constraints>
@@ -2047,7 +2047,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-Av-YdD">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-Av-YdD">
                                                                     <rect key="frame" x="181" y="-3" width="159" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="BLB-19-FSA"/>
