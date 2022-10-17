@@ -127,7 +127,38 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                 group.wait()
                 return
             }
-
+    
+    func API01(){
+        let idVoluntariado = 12
+        let idVol = 1
+        
+        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/horas/validas?idVoluntariado=\(idVoluntariado)&idVol=\(idVol)") else{
+                return
+            }
+ 
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+ 
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            do {
+                let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                print("No murio:  \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+        return
+    }
+    @IBAction func btValidacion(_ sender: Any) {
+        API01()
+    }
+    
+    
     
 }
 
