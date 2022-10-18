@@ -38,6 +38,16 @@ class VoluntariosAdminViewController: UIViewController, UITableViewDelegate, UIT
         tablaVoluntarios.dataSource = self
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        nombresVoluntarios = [String] ()
+        sectionTittle = [String]()
+        volDict = [String: [String]]()
+        volManager.fetchVoluntarios{volArray in self.listaVoluntarios = volArray}
+        
+        tablaVoluntarios.delegate = self
+        tablaVoluntarios.dataSource = self
+        tablaVoluntarios.reloadData()
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

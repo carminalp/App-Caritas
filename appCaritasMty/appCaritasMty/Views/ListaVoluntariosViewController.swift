@@ -39,6 +39,19 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         tablaVoluntarios.dataSource = self
         configureItems()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        idReg = [Int] ()
+        idVo = [Int] ()
+        voluntarios = [String] ()
+        proyectos = [String] ()
+        Fecha = [String] ()
+        Hora = [String] ()
+        API()
+        let nombreA = defaults.string(forKey: "nombreAd")
+        tablaVoluntarios.delegate = self
+        tablaVoluntarios.dataSource = self
+        tablaVoluntarios.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return voluntarios.count

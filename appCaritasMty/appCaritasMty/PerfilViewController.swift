@@ -25,6 +25,7 @@ class PerfilViewController: UIViewController {
         lbNombre.text = nombre!
         let idVol = defaults.integer(forKey: "idVol")
         API(idVol: idVol)
+        
         API2(idVol: idVol)
         let hV = defaults.integer(forKey: "hValidas")
         let hP = defaults.integer(forKey: "hPend")
@@ -40,12 +41,20 @@ class PerfilViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let idVol = defaults.integer(forKey: "idVol")
+        self.defaults.removeObject(forKey: "hValidas")
+        self.defaults.removeObject(forKey: "hPend")
         API(idVol: idVol)
         API2(idVol: idVol)
         let hV = defaults.integer(forKey: "hValidas")
         let hP = defaults.integer(forKey: "hPend")
         lbHorasV.text = String(hV)
         lbHorasP.text = String(hP)
+        
+        pieChart.addChartData(data: [
+            JPieChartDataSet(percent: CGFloat(hP), colors: [UIColor(red: 21/255.0, green: 57/255, blue: 90/255, alpha: 1.0), UIColor(red: 21/255.0, green: 57/255, blue: 90/255, alpha: 0.5)]),
+            JPieChartDataSet(percent: CGFloat(hV), colors: [UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 1.0),UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 0.5)])
+         ])
+         pieChart.lineWidth = 0.85
     }
     
     func API(idVol: Int){
