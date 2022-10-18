@@ -47,22 +47,22 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+
     /*
      
      Autora: GERALDINE TORRES
      
-     Lo que hace la función de API01 es obtener las horas por proyecto del voluntario de acuerdo al id que tiene el voluntario.
+     API01 obtiene las horas por proyecto del voluntario de acuerdo al id que tiene el voluntario.
      
-     El id se envía de la pantalla de voluntarios hacia la de hrsVoluntario y con él se hace la llamada a la API.
+     :condiciones: es importante que
+            * La base de datos debe tener datos del voluntario.
+            * Se deben crear dos arreglos de tipo string en el view controller
      
-     Si hay información, entonces decodifica los datos de tipo horasProyecto y guarda individualmente los nombres y horas de los proyectos en diferentes arrays.
+     :param: una variable de tipo int que representa el id del voluntario
+     :returns: popula los arreglos de tipo string llamados listHoras y listProyectos con la infromación de la API.
      
-     Se guardó la información en arrays diferentes de tipo string y no de tipo horasProyecto para poder tener más fácil acceso a la infroamción necesaria que se debe mostrar.
-     
-     Si hay algún error, se imprimen los errores en la terminal.
-     
+
      */
-    
     func API01(){
         let id = self.voluntarioRecibido?.idVol
         var apiAnswer = ""

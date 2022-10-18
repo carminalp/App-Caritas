@@ -15,9 +15,14 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var lbHorasP: UILabel!
     @IBOutlet weak var ivPerfil: UIImageView!
     
+    
+    @IBOutlet weak var vistaGrafica: UIView!
+    
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
+        vistaGrafica.roundCorners(corners: [.topLeft, .topRight, .bottomRight, .bottomLeft], radius: 10)
+        
         ivPerfil.layer.cornerRadius = 150.0/2.0
         ivPerfil.layer.borderWidth = 6
         ivPerfil.layer.borderColor = UIColor(red: 255/255, green: 175/255, blue: 128/255, alpha: 1).cgColor
@@ -37,6 +42,8 @@ class PerfilViewController: UIViewController {
             JPieChartDataSet(percent: CGFloat(hV), colors: [UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 1.0),UIColor(red: 69/255.0, green: 154/255, blue: 164/255, alpha: 0.5)])
          ])
          pieChart.lineWidth = 0.85
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

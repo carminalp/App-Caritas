@@ -7,18 +7,26 @@
 
 import UIKit
 
-/*
- Autora: GERALDINE TORRES
- 
- Se crea un arreglo de la clase horasValidadasVoluntario llamado listVoluntarios para guardar todos los voluntarios que s eobtengan por medio de la API.
- 
- Al momento de hacer la llamada a la API, si no hay información o si hay algún error, se imprime el mensaje de "error" en la terminal.
- 
- En caso de sí haber información, se agregan al arreglo los datos extraidos del voluntario.
- 
- */
 
 struct voluntariosManager{
+    
+    /*
+     
+     Autora: GERALDINE TORRES
+     
+     Esta función lo que hace es traer a todos los voluntarios registrados en la base de datos.
+     
+     :condiciones: Para que la funcione, es importante que
+            * Si hay datos, entonces guarda todos los datos de tipo horasValidadasVoluntario en el arreglo listVoluntarios.
+     
+            * Si no hay datos, entonces imprime "error".
+     
+     :param: un arreglo de tipo horasValidadasVoluntario
+     
+     :returns: @escaping closure que regresa el arreglo de listVoluntarios
+     
+     
+     */
     
     func fetchVoluntarios(completionHandler:@escaping ([horasValidadasVoluntario]) -> Void){
         

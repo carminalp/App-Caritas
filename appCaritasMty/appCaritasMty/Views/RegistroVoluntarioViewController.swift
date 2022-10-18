@@ -201,6 +201,12 @@ class RegistroVoluntarioViewController: UIViewController {
             return (hashPassword)
     }
     
+    /**
+     Esta función genera una estructura JSON con los datos del voluntario para hacer un método POST al llamar a la API
+     
+     author: Andrés Ramírez
+     */
+    
     func API(){
         let nombre = etName.text!
         defaults.set(nombre, forKey: "nombreVol")

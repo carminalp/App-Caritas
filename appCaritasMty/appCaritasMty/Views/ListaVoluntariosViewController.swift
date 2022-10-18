@@ -170,6 +170,11 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         })
     }
     
+    /**
+     Esta función es un método GET que consulta la API para extraer los datos del registro de voluntariado y las horas que tiene pendiente por validar
+     
+     author: Andrés Ramírez
+     */
     func API(){
                 
                 guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/getNyP") else{
@@ -208,6 +213,13 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                 group.wait()
                 return
             }
+    
+    /**
+     Esta función es un método PUT que actualiza un valor booleano en la base de datos para validar las horas del voluntario
+     
+     param: Enteros que indican el id del registro de voluntariado y el id del voluntario
+     author: Andrés Ramírez
+     */
     
     func API01(idR: Int, idV: Int){
         //Usar los arreglos con los registros de los ids
