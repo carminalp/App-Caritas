@@ -49,8 +49,6 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                 
                 let x1 = data.acceleration.x
 
-                //print(x1)
-                //print(y1)
                 if (x1 > 0.9 || x1 < -0.99){
                     self.idReg = [Int] ()
                     self.idVo = [Int] ()
@@ -107,17 +105,14 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         cell.btnNoValidar1.tag = indexPath.row
         cell.btnNoValidar1.addTarget(self, action: #selector(deleteButton), for: .touchUpInside)
         
-       //cell.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 10)
-        
         return cell
     }
     
-    // CHECAR BACKEND VALIDACIÓN
+
     @objc func addtoButton(sender:UIButton){
         let indexPath = IndexPath(row: sender.tag, section: 0)
         let idVoluntariado = idReg[indexPath.row]
         let idVol = idVo[indexPath.row]
-        print(indexPath.row)
         API01(idR: idVoluntariado, idV: idVol)
         self.idReg = [Int] ()
         self.idVo = [Int] ()
@@ -194,7 +189,6 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                                         let tasks = try decoder.decode([NyP].self, from: data)
                                         if (!tasks.isEmpty){
                                             tasks.forEach{ i in
-                                                print("-------- INFO ---------")
                                                 self.idReg.append(i.idVoluntariado)
                                                 self.idVo.append(i.idVol)
                                                 self.proyectos.append(i.Proyecto)
@@ -202,8 +196,6 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
                                                 self.Hora.append(i.HoraEntrada + " - " + i.HoraSalida + " hrs")
                                                 self.voluntarios.append(i.Nombre + " " + i.Apellido)
                                             }
-                                        }else{
-                                            print("----- INFO NO ENCONTRADA -----")
                                         }
                                     }catch{
                                         print(error)
@@ -236,7 +228,7 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
             }
             do {
                 let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print("No murio:  \(response)")
+                print(response)
             }catch{
                 print(error)
             }
@@ -264,7 +256,7 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
             }
             do {
                 let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print("No murio:  \(response)")
+                print(response)
             }catch{
                 print(error)
             }

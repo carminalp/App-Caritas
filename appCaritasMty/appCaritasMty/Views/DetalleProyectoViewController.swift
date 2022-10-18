@@ -17,7 +17,6 @@ class DetalleProyectoViewController: UIViewController {
     
     @IBOutlet weak var degradadoImagen: UIView!
     @IBOutlet weak var imageViewAlimentos: UIView!
-    //@IBOutlet weak var postularseV: UIView!
 
     @IBOutlet weak var lbNombreProyecto: UILabel!
     @IBOutlet weak var tlFecha: UILabel!
@@ -63,9 +62,7 @@ class DetalleProyectoViewController: UIViewController {
         lbDescripciontext.font = lbDescripciontext.font.withSize(self.view.frame.height * 0.021)
         lbActividadestext.font = lbActividadestext.font.withSize(self.view.frame.height * 0.021)
         
-        // FECHA
         tlFecha.text = "06 octubre"
-        
         
         lbNombreProyecto.text = projectReceived.projectName
         lbDescripciontext.text = projectReceived.projectDesc
@@ -106,7 +103,7 @@ class DetalleProyectoViewController: UIViewController {
             }
             do {
                 let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print("No murio:  \(response)")
+                print(response)
             }
             catch{
                 print(error)
@@ -120,7 +117,6 @@ class DetalleProyectoViewController: UIViewController {
         showAlert(title: "Confirmación", message: "¿Estás seguro que deseas inscribirte?", handlerAceptar: { action in
             self.btnInscribirme.isEnabled = false
             self.btnInscribirme.setTitle("Inscrito", for: .normal)
-            print(self.defaults.integer(forKey: "idVol"))
             self.API()
         }, handlerCancelar: {actionCanel in
             print("Action cancel called")
@@ -147,17 +143,12 @@ class DetalleProyectoViewController: UIViewController {
                                 let tasks = try decoder.decode([Inscripcion].self, from: data)
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
-                                        print("-------- Jaló ---------")
                                         self.defaults.setValue(i.idVol, forKey: "idVolCheck")
                                         self.defaults.setValue(i.idProyecto, forKey: "idProyectoCheck")
                                     }
-                                }else{
-                                  
-                                    print("----- NO INSCRITO -----")
                                 }
                             }catch{
                                 print(error)
-                                print("----- ERROR2 -----")
                             }
                         }
                 group.leave()

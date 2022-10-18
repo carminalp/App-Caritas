@@ -71,9 +71,7 @@ struct voluntariosManager{
 
                     if(!listVoluntarios.isEmpty){
                         listVoluntarios.forEach{ i in
-                            print("-------- Jaló ---------")
                             nombresVoluntarios.append(i.Nombre)
-                            print(i.Nombre)
                         }
                     }
                 }
@@ -84,48 +82,6 @@ struct voluntariosManager{
 
         return nombresVoluntarios
     }
-    
-    
-//    func getNombresVoluntarios() -> [String] {
-//        var nombresVoluntarios = [String] ()
-//        var listVoluntarios = [horasValidadasVoluntario]()
-//        
-//        guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/admin/horasVal") else {
-//            return []
-//        }
-//        
-//        let group = DispatchGroup()
-//        group.enter()
-//        
-//        let task = URLSession.shared.dataTask(with: url){
-//            data, response, error in
-//                    if let data = data{
-//                        do{
-//                            let decoder = JSONDecoder()
-//                            let tasks = try decoder.decode([horasValidadasVoluntario].self, from: data)
-//                            if (!tasks.isEmpty){
-//                                tasks.forEach{ i in
-//                                    print("-------- Jaló ---------")
-//                                    nombresVoluntarios.append(i.Nombre)
-//                                    
-//                                }
-//                            }else{
-//                                print("----- ERROR -----")
-//                            }
-//                        }catch{
-//                            print(error)
-//                            print("----- ERROR2 -----")
-//                        }
-//                    }
-//            group.leave()
-//        }
-//        
-//        task.resume()
-//        group.wait()
-////        createsPickers()
-//        
-//        return nombresVoluntarios
-//    }
 
 
     

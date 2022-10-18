@@ -82,28 +82,19 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
                                 let tasks = try decoder.decode([horasProyecto].self, from: data)
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
-                                        print("-------- Jaló ---------")
                                         self.listHoras.append(i.Horas)
                                         self.listProyectos.append(i.Proyecto)
                                         self.apellido = i.Apellido
                                         self.nombre = i.Nombre
-                                        
-                                        print(i.Horas)
-                                        print(i.Proyecto)
-                                        print(i.Nombre)
-                                        print(i.Apellido)
-                                        
-                                        // Agregar segue a la vista de voluntario
+
                                         apiAnswer = "valid"
                                     }
                                 }else{
                                     // Ventana emergente usuario inválido
                                     apiAnswer = "invalid"
-                                    print("----- ERROR -----")
                                 }
                             }catch{
                                 print(error)
-                                print("----- ERROR2 -----")
                             }
                         }
                 group.leave()
@@ -133,19 +124,4 @@ class HrsVoluntarioViewController: UIViewController, UITableViewDelegate, UITabl
 
 
 }
-
-
-
-
-
-
-/*
-// MARK: - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-}
-*/
 

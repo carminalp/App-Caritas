@@ -62,7 +62,6 @@ struct NyP:Codable{
     let Proyecto: String
 }
 
-//SE LE AGREGÓ
 
 class JSONNull: Codable, Hashable {
 

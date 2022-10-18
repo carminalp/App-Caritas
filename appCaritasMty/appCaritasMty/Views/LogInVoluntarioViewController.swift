@@ -40,7 +40,6 @@ class LogInVoluntarioViewController: UIViewController {
         tfPassword.setRightPaddingPoints(10)
         
         resetForm()
-        // Do any additional setup after loading the view.
     }
     
     func resetForm(){
@@ -137,12 +136,8 @@ class LogInVoluntarioViewController: UIViewController {
         activityIndicator("Logging...")
         let ans = API()
         if ans == "valid"{
-            print("FUNCIONA")
-            // Se va a mover a donde vamos a usar el id de voluntario y el nombre
             let idVol = defaults.integer(forKey: "idVol")
             let nombre = defaults.string(forKey: "nombreVol")
-            print("ID: \(idVol)" )
-            print("Nombre: \(nombre ?? "")" )
         }else{
             activityIndicator.stopAnimating()
             self.effectView.removeFromSuperview()
@@ -202,11 +197,7 @@ class LogInVoluntarioViewController: UIViewController {
                                 let tasks = try decoder.decode([Voluntario].self, from: data)
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
-                                        print("-------- Voluntario ---------")
                                         self.defaults.setValue(i.Apellido, forKey: "apellidoVol")
-                                        print("Contraseña: \(i.Contrasenia)" )
-                                        print("Correo: \(i.Correo)" )
-                                        // Agregar segue a la vista de voluntario
                                         apiAnswer = "valid"
                                         self.defaults.setValue(i.Nombre, forKey: "nombreVol")
                                         self.defaults.setValue(i.idVol, forKey: "idVol")
@@ -214,7 +205,6 @@ class LogInVoluntarioViewController: UIViewController {
                                 }else{
                                     // Ventana emergente usuario inválido
                                     apiAnswer = "invalid"
-                                    print("----- USUARIO NO ENCONTRADO -----")
                                 }
                             }catch{
                                 print(error)

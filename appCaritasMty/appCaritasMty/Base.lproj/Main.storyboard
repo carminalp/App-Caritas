@@ -793,7 +793,6 @@
                                             <color key="baseBackgroundColor" red="1" green="0.68627450980392157" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="btnLogIn:" destination="iwG-PD-mif" eventType="touchUpInside" id="JYQ-B7-mhx"/>
                                             <segue destination="5Vg-I8-Eki" kind="show" id="xGj-XM-TK2"/>
                                         </connections>
                                     </button>
@@ -965,7 +964,6 @@
                                     <color key="baseBackgroundColor" red="1" green="0.68627450980392157" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnLogIn:" destination="iwG-PD-mif" eventType="touchUpInside" id="UpM-9O-lhw"/>
                                     <action selector="btnRegister:" destination="ndi-0O-1KO" eventType="touchUpInside" id="2VD-U8-1Jg"/>
                                     <segue destination="SaS-hl-GfI" kind="show" id="2ht-7N-iSX"/>
                                 </connections>
@@ -1498,7 +1496,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="BtnRegistrarHoras:" destination="Y3C-rg-e19" eventType="touchUpInside" id="jCu-C2-EdA"/>
-                                    <action selector="btnLogIn:" destination="iwG-PD-mif" eventType="touchUpInside" id="5Ks-IT-vNC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2133,7 +2130,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="07H-xd-eEo"/>
-        <segue reference="qZ5-n9-q4F"/>
+        <segue reference="2ht-7N-iSX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.23137254901960785" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

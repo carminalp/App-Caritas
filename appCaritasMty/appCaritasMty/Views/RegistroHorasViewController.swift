@@ -85,21 +85,18 @@ class RegistroHorasViewController: UIViewController {
                                 let tasks = try decoder.decode([Proyecto].self, from: data)
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
-                                        print("-------- Jaló ---------")
                                         self.projects.append(i.Proyecto)
                                         self.idP[i.Proyecto]=(i.idProyecto)
-                                        
+                        
                                         // Agregar segue a la vista de voluntario
                                         apiAnswer = "valid"
                                     }
                                 }else{
                                     // Ventana emergente usuario inválido
                                     apiAnswer = "invalid"
-                                    print("----- ERROR -----")
                                 }
                             }catch{
                                 print(error)
-                                print("----- ERROR2 -----")
                             }
                         }
                 group.leave()
@@ -204,12 +201,6 @@ class RegistroHorasViewController: UIViewController {
         let fechaFi = defaults.string(forKey: "FechaFin")
         let validar = 0
         let h = calculaHoras()
-        print("idVol: \(idVol)")
-        print("idCat: \(idCat)")
-        print("fechaIn: \(fechaIn!)")
-        print("fechaFi: \(fechaFi!)")
-        print("validar: \(validar)")
-        print("h: \(h)")
         
         guard let url = URL(string: "https://equipo02.tc2007b.tec.mx:10210/registro/horas") else{
                 return
@@ -236,7 +227,7 @@ class RegistroHorasViewController: UIViewController {
             }
             do {
                 let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print("No murio:  \(response)")
+                print(response)
             }
             catch{
                 print(error)
@@ -359,11 +350,6 @@ extension RegistroHorasViewController: UIPickerViewDelegate, UIPickerViewDataSou
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return projects[row]
     }
-    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        tfProject.text = projects[row]
-//        tfProject.resignFirstResponder()
-//    }
     
 }
 

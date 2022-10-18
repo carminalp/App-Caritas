@@ -27,7 +27,6 @@ class CustomTableViewCell: UITableViewCell {
         btnNoValidar1.layer.borderColor = UIColor(rgb: 0xFFAF80).cgColor
         btnNoValidar1.layer.backgroundColor = UIColor(rgb: 0xFFAF80).cgColor
         btnNoValidar1.layer.cornerRadius = 10
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

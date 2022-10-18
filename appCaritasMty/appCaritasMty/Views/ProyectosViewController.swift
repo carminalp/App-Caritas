@@ -2,7 +2,7 @@
 //  ProyectosViewController.swift
 //  appCaritasMty
 //
-//  Created by Alumno on 01/10/22.
+//  Created by Cristina Hernandez on 01/10/22.
 //
 
 import UIKit
@@ -16,6 +16,12 @@ class ProyectosViewController: UIViewController, UICollectionViewDelegate, UICol
     
     var backButton = UIBarButtonItem()
     let defaults = UserDefaults.standard
+    
+    /**
+    Esta función despliega la informacion de todos los proyectos disponibles. Si el usuario hace click en alguno de los proyectos, lo lleva a su pantalla correspondiente de detalles.
+         
+    :author: Cristina Hernandez
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +59,12 @@ class ProyectosViewController: UIViewController, UICollectionViewDelegate, UICol
           let selectedData = itemList[indexPath.row]
           performSegue(withIdentifier: "showDetail", sender: selectedData)
       }
+    /**
+    Esta funcion se encarga de preparar el segue hacia la pantalla de detalles de proyecto.
+     
+     
+    :author: Cristina Hernandez
+    */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedItem = sender as? projectList else{

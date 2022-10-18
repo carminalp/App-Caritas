@@ -41,21 +41,10 @@ class LogInAdministradorViewController: UIViewController {
         tfPassword.backgroundColor = UIColor(rgb: 0x4397A7).withAlphaComponent(0.08)
         tfPassword.setLeftPaddingPoints(10)
         tfPassword.setRightPaddingPoints(10)
-        
-        // Do any additional setup after loading the view.
+
         resetForm()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func resetForm(){
         btnLogin.isEnabled = false
         
@@ -120,10 +109,6 @@ class LogInAdministradorViewController: UIViewController {
                        alerta.addAction(botonCancel)
                        present(alerta, animated: true)
         }
-        else if API() == "valid"{
-            
-            // segue
-        }
     }
     
     func hashing(password : String) -> String{
@@ -132,6 +117,14 @@ class LogInAdministradorViewController: UIViewController {
             let hashPassword = hashed.compactMap { String(format: "%02x", $0) }.joined()
             return (hashPassword)
     }
+    
+    /**
+    Esta función llama a la API, para consultar el correo y contraseña del administrador y hacer la validación.
+
+    :returns: Confirma si el usuario es valido o invalido
+
+    :author: Cristina Hernandez
+    */
     
     func API() -> String{
         var searchEmail = "dummy"
@@ -160,9 +153,6 @@ class LogInAdministradorViewController: UIViewController {
                                 let tasks = try decoder.decode([Administrador].self, from: data)
                                 if (!tasks.isEmpty){
                                     tasks.forEach{ i in
-                                        print("-------- Administrador ---------")
-                                        print("Correo: \(i.Correo)" )
-                                        print("Contraseña: \(i.Contrasenia)" )
                                         self.defaults.setValue(i.nombreAdmin, forKey: "nombreAd")
                                         self.defaults.setValue(i.idAdmin, forKey: "idAdmin")
                                         // Agregar segue a la vista de voluntario
@@ -171,7 +161,6 @@ class LogInAdministradorViewController: UIViewController {
                                 }else{
                                     // Ventana emergente usuario inválido
                                     apiAnswer = "invalid"
-                                    print("----- USUARIO NO ENCONTRADO -----")
                                 }
                             }catch{
                                 print(error)

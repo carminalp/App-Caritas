@@ -14,7 +14,7 @@ class JPieChart : UIView {
     private var currentValue: CGFloat = 0.0
     private var layers : [CAShapeLayer]! = [CAShapeLayer]()
     private var currentAnimationIndex  = 0
-    public var lineWidth : CGFloat = 1.0 // change value from 0 to 1
+    public var lineWidth : CGFloat = 1.0
     
     private  var data: [JPieChartDataSet]!
     
@@ -62,8 +62,7 @@ class JPieChart : UIView {
             let angle : CGFloat = (item.percent / 1.0) * 2 * CGFloat.pi
             let endAngle : CGFloat = startAngle + angle
             
-            print(startAngle)
-            print(endAngle)
+
             let path = UIBezierPath(arcCenter: arcCenter,
                                     radius: radius,
                                     startAngle: startAngle,
@@ -71,9 +70,8 @@ class JPieChart : UIView {
                                     clockwise: true)
             startAngle = endAngle
             let arcLayer = CAShapeLayer()
-            // if currentValue <= 1.0 {
+            
             arcLayer.path = path.cgPath
-            //}
             
             arcLayer.fillColor = nil
             arcLayer.strokeColor = UIColor.green.cgColor

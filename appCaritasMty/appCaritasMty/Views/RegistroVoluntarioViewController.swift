@@ -60,8 +60,7 @@ class RegistroVoluntarioViewController: UIViewController {
         etPassword.setRightPaddingPoints(10)
         
         resetForm()
-        
-        // Do any additional setup after loading the view.
+
     }
     
     func resetForm(){
@@ -194,15 +193,6 @@ class RegistroVoluntarioViewController: UIViewController {
         API()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func hashing(password : String) -> String{
             let inputdata = Data(password.utf8)
@@ -241,7 +231,6 @@ class RegistroVoluntarioViewController: UIViewController {
             }
             do {
 let response =  try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print("No murio:  \(response)")
                 self.defaults.setValue(response, forKey: "idVol")
             }
             catch{

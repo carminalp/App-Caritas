@@ -29,10 +29,6 @@ class VoluntarioIngresoViewController: UIViewController {
         btnSignIn.layer.borderColor = UIColor(rgb: 0xFFAF80).cgColor
         btnSignIn.layer.cornerRadius = 10
     }
-
-    
-    @IBAction func btnLogIn(_ sender: UIButton) {
-    }
     
 
 }
