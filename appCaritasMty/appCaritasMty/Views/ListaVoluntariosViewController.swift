@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -23,6 +24,8 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
     
     var backButton = UIBarButtonItem()
     
+    let manager = CMMotionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         API()
@@ -38,7 +41,33 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         tablaVoluntarios.delegate = self
         tablaVoluntarios.dataSource = self
         configureItems()
+        
+        manager.startAccelerometerUpdates()
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if let data = self.manager.accelerometerData{
+                
+                let x1 = data.acceleration.x
+
+                //print(x1)
+                //print(y1)
+                if (x1 > 0.9 || x1 < -0.99){
+                    self.idReg = [Int] ()
+                    self.idVo = [Int] ()
+                    self.voluntarios = [String] ()
+                    self.proyectos = [String] ()
+                    self.Fecha = [String] ()
+                    self.Hora = [String] ()
+                    self.API()
+                    let nombreA = self.defaults.string(forKey: "nombreAd")
+                    self.tablaVoluntarios.delegate = self
+                    self.tablaVoluntarios.dataSource = self
+                    self.tablaVoluntarios.reloadData()
+                }
+            }
+        }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         idReg = [Int] ()
         idVo = [Int] ()
@@ -83,13 +112,24 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         return cell
     }
     
+    // CHECAR BACKEND VALIDACIÓN
     @objc func addtoButton(sender:UIButton){
         let indexPath = IndexPath(row: sender.tag, section: 0)
         let idVoluntariado = idReg[indexPath.row]
         let idVol = idVo[indexPath.row]
+        print(indexPath.row)
         API01(idR: idVoluntariado, idV: idVol)
-        voluntarios.remove(at: indexPath.row)
-        tablaVoluntarios.deleteRows(at: [indexPath], with: .fade)
+        self.idReg = [Int] ()
+        self.idVo = [Int] ()
+        self.voluntarios = [String] ()
+        self.proyectos = [String] ()
+        self.Fecha = [String] ()
+        self.Hora = [String] ()
+        self.API()
+        let nombreA = self.defaults.string(forKey: "nombreAd")
+        self.tablaVoluntarios.delegate = self
+        self.tablaVoluntarios.dataSource = self
+        self.tablaVoluntarios.reloadData()
     }
     
     @objc func deleteButton(sender:UIButton){
@@ -97,9 +137,17 @@ class ListaVoluntariosViewController: UIViewController, UITableViewDelegate, UIT
         let idVoluntariado1 = idReg[indexPath.row]
         let idVol1 = idVo[indexPath.row]
         API02(idR: idVoluntariado1, idV: idVol1)
-        voluntarios.remove(at: indexPath.row)
-        tablaVoluntarios.deleteRows(at: [indexPath], with: .fade)
-        
+        self.idReg = [Int] ()
+        self.idVo = [Int] ()
+        self.voluntarios = [String] ()
+        self.proyectos = [String] ()
+        self.Fecha = [String] ()
+        self.Hora = [String] ()
+        self.API()
+        let nombreA = self.defaults.string(forKey: "nombreAd")
+        self.tablaVoluntarios.delegate = self
+        self.tablaVoluntarios.dataSource = self
+        self.tablaVoluntarios.reloadData()
     }
     
     private func configureItems(){
