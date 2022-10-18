@@ -56,6 +56,18 @@ class LogInVoluntarioViewController: UIViewController {
         tfPassword.text = ""
     }
     
+    
+    /**
+    Esta función checa el text field del correo, para desplegar un mensaje de error o esconderlo.
+    
+    :condiciones: Si el correo es inválido:
+                * El borde se sombrea en rojo
+                * Aparece el mensaje de error
+              Si no:
+                * Desaparece el mensaje de error
+     
+    :author: Carmina López
+    */
     @IBAction func emailChanged(_ sender: Any) {
         if let email = tfEmail.text{
             if let errorMessage = invalidEmail(email){
@@ -150,6 +162,13 @@ class LogInVoluntarioViewController: UIViewController {
         }
     }
     
+    /**
+    Esta función hashea la contraseña del voluntario.
+
+    :param: String la contraseña que se va a hashear
+    :returns: String devuelve la contraseña cifrada
+    :author: Carmina López
+    */
     func hashing(password : String) -> String{
             let inputdata = Data(password.utf8)
             let hashed = SHA512.hash(data: inputdata)
@@ -157,6 +176,12 @@ class LogInVoluntarioViewController: UIViewController {
             return (hashPassword)
     }
     
+    /**
+    Esta función permite llamar a la API, para consultar el correo y contraseña del voluntario y hacer la validación.
+
+    :returns: String devuelve si el usuario es válido o inválido
+    :author: Carmina López
+    */
     let defaults = UserDefaults.standard
     func API() -> String{
         var searchEmail = "dummy"
