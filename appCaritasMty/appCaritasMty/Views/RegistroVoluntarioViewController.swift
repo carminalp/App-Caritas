@@ -191,7 +191,7 @@ class RegistroVoluntarioViewController: UIViewController {
     }
     
     @IBAction func btnRegister(_ sender: UIButton) {
-        let idVol1 = Int(API())
+        let idVol1 = API()
         defaults.setValue(idVol1, forKey: "idVol")
     }
     
