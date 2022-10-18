@@ -197,8 +197,25 @@ class RegistroHorasViewController: UIViewController {
     func API(){
         let idVol = defaults.integer(forKey: "idVol")
         let idCat = Int(idP[tfProject.text!]!)
-        let fechaIn = defaults.string(forKey: "FechaIn")
-        let fechaFi = defaults.string(forKey: "FechaFin")
+        var fechaIn = defaults.string(forKey: "FechaIn")
+        var fechaFi = defaults.string(forKey: "FechaFin")
+        
+        if(fechaIn?.count == 23){
+            fechaIn = fechaIn!.substring(with: 0..<18)
+        }else if(fechaIn?.count == 24){
+            fechaIn = fechaIn!.substring(with: 0..<19)
+        }
+        
+        if(fechaFi?.count == 23){
+            fechaFi = fechaFi!.substring(with: 0..<18)
+        }else if(fechaFi?.count == 24){
+            fechaFi = fechaFi!.substring(with: 0..<19)
+        }
+        
+        
+        // 2 0 2 2 - 1 0 - 1 8    9  :  2  3  :  0  5      p .  m  .
+        // 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+        
         let validar = 0
         let h = calculaHoras()
         
@@ -262,16 +279,33 @@ class RegistroHorasViewController: UIViewController {
         let mesFin = Int(dateFin!.substring(with: 3..<5))
         let anioIni = Int(dateIni!.substring(with: 6..<8))
         let anioFin = Int(dateFin!.substring(with: 6..<8))
-        if(dateIni?.count == 15){
-            horasIni = Int(dateIni!.substring(with: 10..<12))!
-        }else{
-            horasIni = Int(dateIni!.substring(with: 10..<11))!
+        
+        print(dateIni!.substring(with: 8..<9))
+        if(dateIni!.substring(with: 8..<9) == ","){
+            if(dateIni?.count == 15){
+                horasIni = Int(dateIni!.substring(with: 10..<12))!
+            }else{
+                horasIni = Int(dateIni!.substring(with: 10..<11))!
+            }
+            if(dateFin?.count == 15){
+                horasFin = Int(dateFin!.substring(with: 10..<12))!
+            }else{
+                horasFin = Int(dateFin!.substring(with: 10..<11))!
+            }
+        }else {
+            if(dateIni?.count == 14){
+                horasIni = Int(dateIni!.substring(with: 9..<11))!
+            }else{
+                horasIni = Int(dateIni!.substring(with: 9..<10))!
+            }
+            if(dateFin?.count == 14){
+                horasFin = Int(dateFin!.substring(with: 9..<11))!
+            }else{
+                horasFin = Int(dateFin!.substring(with: 9..<10))!
+            }
         }
-        if(dateFin?.count == 15){
-            horasFin = Int(dateFin!.substring(with: 10..<12))!
-        }else{
-            horasFin = Int(dateFin!.substring(with: 10..<11))!
-        }
+        
+
         
         horasTotal = horasFin - horasIni
         
@@ -287,15 +321,28 @@ class RegistroHorasViewController: UIViewController {
         var horas = 0, horasIni = 0, horasFin = 0
         let dateIni = tfStartDate.text
         let dateFin = tfEndDate.text
-        if(dateIni?.count == 15){
-            horasIni = Int(dateIni!.substring(with: 10..<12))!
-        }else{
-            horasIni = Int(dateIni!.substring(with: 10..<11))!
-        }
-        if(dateFin?.count == 15){
-            horasFin = Int(dateFin!.substring(with: 10..<12))!
-        }else{
-            horasFin = Int(dateFin!.substring(with: 10..<11))!
+        if(dateIni!.substring(with: 8..<9) == ","){
+            if(dateIni?.count == 15){
+                horasIni = Int(dateIni!.substring(with: 10..<12))!
+            }else{
+                horasIni = Int(dateIni!.substring(with: 10..<11))!
+            }
+            if(dateFin?.count == 15){
+                horasFin = Int(dateFin!.substring(with: 10..<12))!
+            }else{
+                horasFin = Int(dateFin!.substring(with: 10..<11))!
+            }
+        }else {
+            if(dateIni?.count == 14){
+                horasIni = Int(dateIni!.substring(with: 9..<11))!
+            }else{
+                horasIni = Int(dateIni!.substring(with: 9..<10))!
+            }
+            if(dateFin?.count == 14){
+                horasFin = Int(dateFin!.substring(with: 9..<11))!
+            }else{
+                horasFin = Int(dateFin!.substring(with: 9..<10))!
+            }
         }
         horas = horasFin - horasIni
         return horas
