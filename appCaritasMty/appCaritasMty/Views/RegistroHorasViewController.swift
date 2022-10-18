@@ -243,7 +243,7 @@ class RegistroHorasViewController: UIViewController {
     func validaFecha()->Bool{
         
         if(tfStartDate.text == "" || tfEndDate.text == "" || tfProject.text == ""){ return false}
-        var horasTotal = 0, ini = 0, fin = 0, horasIni = 0,horasFin = 0
+        var horasTotal = 0, horasIni = 0,horasFin = 0
         let dateIni = tfStartDate.text
         let dateFin = tfEndDate.text
         let diaIni = Int(dateIni!.substring(with: 0..<2))
@@ -262,12 +262,10 @@ class RegistroHorasViewController: UIViewController {
         }else{
             horasFin = Int(dateFin!.substring(with: 10..<11))!
         }
-
-        ini = (horasIni) + (diaIni! * 24) + (mesIni! * 730) + (anioIni! * 8760)
-        fin = (horasFin) + (diaFin! * 24) + (mesFin! * 730) + (anioFin! * 8760)
-        horasTotal = fin - ini
         
-        if (horasTotal > 0){
+        horasTotal = horasFin - horasIni
+        
+        if (diaIni == diaFin && mesIni == mesFin && anioIni == anioFin &&  horasTotal > 0){
             return true
         }else{
             return false
