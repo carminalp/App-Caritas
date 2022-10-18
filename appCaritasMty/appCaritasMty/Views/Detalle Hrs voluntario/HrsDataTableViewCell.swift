@@ -13,7 +13,6 @@ class HrsDataTableViewCell: UITableViewCell {
     @IBOutlet weak var celdaView: UIView!
     
     @IBOutlet weak var lbFecha: UILabel!
-    @IBOutlet weak var lbHoraEntrada: UILabel!
     @IBOutlet weak var lbHoraSalida: UILabel!
     
     override func awakeFromNib() {
