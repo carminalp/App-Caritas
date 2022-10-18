@@ -95,18 +95,10 @@ class LogInVoluntarioViewController: UIViewController {
     }
     
     @IBAction func passwordChanged(_ sender: Any) {
-        if let password = tfPassword.text{
-            if containsDigit(password){
-                lbPasswordError.isHidden = true
-            }
+        if ((tfPassword.text?.isEmpty) != nil) {
+            lbPasswordError.isHidden = true
         }
         checkForValidForm()
-    }
-    
-    func containsDigit(_ password: String) -> Bool{
-        let passwordRegex = ".*[0-9]+.*"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
-        return !predicate.evaluate(with: password)
     }
     
     func checkForValidForm(){
