@@ -1605,7 +1605,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correo@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLO-Lh-yUl">
-                                                                    <rect key="frame" x="64" y="36" width="117" height="17"/>
+                                                                    <rect key="frame" x="64" y="36" width="213" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -1706,7 +1706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NF6-ts-2VO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4954" y="945"/>
+            <point key="canvasLocation" x="4953.8461538461534" y="944.78672985781986"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nmC-uu-27G">
@@ -1808,7 +1808,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqM-TT-5TU">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banco de alimentos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajt-Gy-fgN">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banco de alimentos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajt-Gy-fgN">
                                                                     <rect key="frame" x="10" y="-3" width="158" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="158" id="2f8-k6-PTC"/>
