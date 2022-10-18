@@ -20,12 +20,27 @@ class ViewController: UIViewController {
         backButton.isEnabled = false
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         print(defaults.integer(forKey: "idAdmin"))
+
+        usuarioActivo()
+    }
+    
+    
+    /**
+    Esta función verifica si la aplicación tiene un usuario activo revisando si el singleton de idVol o idAdmin existe
+    
+    :condiciones: Si el singleton idAdmin es diferente de 0:
+                * Se realiza el segue para mostrar el menú de administrador
+              Si no revisa si el singleton de idVol es diferente de 0 :
+                * Se realiza el segue para mostrar el menú de voluntario
+
+    :author: Eduardo Hernández
+    */
+    func usuarioActivo(){
         if((defaults.integer(forKey: "idAdmin")) != 0){
             performSegue(withIdentifier: "adminActivo", sender: nil)
         }else if((defaults.integer(forKey: "idVol")) != 0){
             performSegue(withIdentifier: "volActivo", sender: nil)
         }
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillLayoutSubviews() {

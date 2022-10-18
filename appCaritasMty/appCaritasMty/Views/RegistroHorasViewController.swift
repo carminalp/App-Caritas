@@ -147,6 +147,11 @@ class RegistroHorasViewController: UIViewController {
         return toolbar
     }
     
+    /**
+    Esta función crea los pickers para las fechas y los proyectos, genera los toolbar para cada picker y define el estilo del picker.
+                            
+    :author: Eduardo Hernández
+    */
     func createsPickers(){
         datePicker.preferredDatePickerStyle = .wheels
         tfStartDate.inputView = datePicker
@@ -240,6 +245,20 @@ class RegistroHorasViewController: UIViewController {
         task.resume()
     }
     
+    /**
+    Esta función valida las fechas de inicio y de fin, con el fin de verificar que la resta de horas sea positiva.
+    
+    :condiciones: Si alguna fecha o proyecto está vacía:
+                * Se invalida la fecha
+              Si no:
+                * Calcula la diferencia de horas
+                * Verifica si la diferencia es mayor a 0
+                * Verifica si el día, mes y año es el mismo en ambas fechas
+                            
+    :returns: Booleano que indica si la fecha es válida
+    :author: Eduardo Hernández
+    */
+    
     func validaFecha()->Bool{
         
         if(tfStartDate.text == "" || tfEndDate.text == "" || tfProject.text == ""){ return false}
@@ -290,6 +309,7 @@ class RegistroHorasViewController: UIViewController {
         horas = horasFin - horasIni
         return horas
     }
+    
     
     
     @IBAction func BtnRegistrarHoras(_ sender: UIButton) {
