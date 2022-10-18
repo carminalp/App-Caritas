@@ -15,6 +15,12 @@ class VoluntariosAdminViewController: UIViewController, UITableViewDelegate, UIT
     
     var volManager = voluntariosManager()
     
+    /*
+     Autora: GERALDINE TORRES
+     
+     Esta variable lo que hace es llenar la tabla con los datos del modelo horasValidadasVoluntario en caso de que haber creado objetos de ese tipo.
+     
+     */
     var listaVoluntarios = [horasValidadasVoluntario](){
         didSet {
             DispatchQueue.main.async {
@@ -32,6 +38,13 @@ class VoluntariosAdminViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+         Autora: GERALDINE TORRES
+         
+         VolManager es una variable que equivale a una clase que se encarga de extraer todos los voluntarios registrados en la base de datos por medio de una llamada get a la API.
+         
+         Al momento de inicializar la vista, la variable inicializa el array de listaVoluntarios con el array generado dentro de la función de fetchVoluntarios perteneciente a volManager
+         */
         volManager.fetchVoluntarios{volArray in self.listaVoluntarios = volArray}
         
         tablaVoluntarios.delegate = self
